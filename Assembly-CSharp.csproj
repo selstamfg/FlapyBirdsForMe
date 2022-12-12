@@ -53,17 +53,44 @@
     <UnityVersion>2020.3.26f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Box.cs" />
+    <Compile Include="Assets\Scripts\Box\Box.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\Timer.cs" />
-    <Compile Include="Assets\Scripts\Obstacle.cs" />
+    <Compile Include="Assets\Scripts\Timer\Timer.cs" />
+    <Compile Include="Assets\Scripts\Box\BonusBox.cs" />
+    <Compile Include="Assets\Scripts\Obstacle\Obstacle.cs" />
     <Compile Include="Assets\Scripts\BirdFly.cs" />
-    <Compile Include="Assets\Scripts\SimpleTimer.cs" />
-    <Compile Include="Assets\Scripts\SpawnPoint.cs" />
-    <Compile Include="Assets\Scripts\Score.cs" />
-    <Compile Include="Assets\Scripts\ObstacleSpawner.cs" />
-    <Compile Include="Assets\Scripts\AddScore.cs" />
-    <Compile Include="Assets\Scripts\Spawner.cs" />
+    <Compile Include="Assets\Scripts\Timer\SimpleTimer.cs" />
+    <Compile Include="Assets\Scripts\Obstacle\SpawnPoint.cs" />
+    <Compile Include="Assets\Scripts\Obstacle\Score\Score.cs" />
+    <Compile Include="Assets\Scripts\Box\AddBonusBox.cs" />
+    <Compile Include="Assets\Scripts\Obstacle\ObstacleSpawner.cs" />
+    <Compile Include="Assets\Scripts\Box\AddBonusBox3.cs" />
+    <Compile Include="Assets\Scripts\Obstacle\Score\AddScore.cs" />
+    <Compile Include="Assets\Scripts\Box\AddBonusBox5.cs" />
+    <Compile Include="Assets\Scripts\Box\AddBonusBox7.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
