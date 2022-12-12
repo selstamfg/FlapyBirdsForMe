@@ -2,88 +2,131 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//[RequireComponent(typeof(Obstacle))]
+
 public class ObstacleSpawner : MonoBehaviour
 {
     [Header("General")]
-    //[SerializeField] private Transform _container;
     [SerializeField] float _maxTime;
-    [SerializeField] private GameObject[] _obstacleTemplates;
     [SerializeField] float _height;
-    [Header("Tower")]
-    [SerializeField] private GameObject _blockTemplate;
-    [SerializeField] private int _blockSpawnChance;
-    //[SerializeField]
-    //private GameObject _blockSpawnPoint;
- //  private SpawnPoint[] _blockSpawnPoint; //2
+    private Transform _currentPoint;
+    [SerializeField] private Obstacle[] _obstacleTemplates;
+    [Header("Box")]
+    [SerializeField] private Box[] _boxTemplates;
+    [SerializeField] int _spawnChance;
+
+
+    //public Obstacle _buildPoint;
+    // _buildPoint= GameObject.FindGameObjectsWithTag("Respawn");
+
+    
     private float timer = 0;
 
     void Start()
     {
-
-      // _blockSpawnPoint = GetComponentsInChildren<GameObject>();
-       // _blockSpawnPoints = GetComponentsInChildren<SpawnPoint>();
-        // GameObject spawnedObstacle = _obstacleTemplates[Random.Range(0, _obstacleTemplates.Length)];
-
+        
         //GameObject newpipe = Instantiate(spawnedObstacle);
         //newpipe.transform.position = transform.position + new Vector3(0, Random.Range(-_height, _height), 0);
-
-      
-
-
+        
     }
 
 
     void Update()
     {
-        if (timer >_maxTime)
-        {
-         //   _blockSpawnPoint = GetComponentsInChildren<SpawnPoint>(); //2
-            GenerateRandomTower( _obstacleTemplates,  _height);
-         //   GenerateRandomElements( _blockSpawnPoint, _blockTemplate.gameObject, _blockSpawnChance);
-        }
-        timer += Time.deltaTime;
+        BuildTower();
+
     }
 
-    private void GenerateRandomTower(GameObject[] _obstacleTemplates,float _height)
-    {
-        GameObject spawnedObstacle = _obstacleTemplates[Random.Range(0, _obstacleTemplates.Length)];
-        GameObject newpipe = Instantiate(spawnedObstacle);
 
-        newpipe.transform.position = transform.position + new Vector3(0, Random.Range(-_height, _height), 0);
-        Destroy(newpipe, 15);
+    private void BuildTower()
+    {
+        
+       // _buildPoint = GetComponent<Obstacle>();
+       // _currentPoint = _buildPoint.transform;
+       // Obstacle currentPoint = _buildPoint.transform.position;
+
+        if (timer > _maxTime)
+        {
+
+            // GenerateRandomObstacle( _obstacleTemplates,  _height);
+            // GenerateRandomBox(_boxTemplates, _spawnChance,);
+            GenerateRandomObstacle(_obstacleTemplates, _height, _boxTemplates, _spawnChance);
+
+
+        }
+        timer += Time.deltaTime;
+            
+
+    }
+
+
+    public void GenerateRandomObstacle(Obstacle[] _obstacleTemplates, float _height, Box[] _boxTemplates, int _spawnChance)
+    {
+        Obstacle spawnedObstacle = _obstacleTemplates[Random.Range(0, _obstacleTemplates.Length)];
+        Obstacle newObstacle = Instantiate(spawnedObstacle);
+      //  GetComponent();
+        newObstacle.transform.position = transform.position + new Vector3(0, Random.Range(-_height, _height), 0);
+        Transform _currentPoint=newObstacle.SpawnPoint;
+         
+        if (Random.Range(0, 100) < _spawnChance)
+        {
+           
+            Box spawnedBox = _boxTemplates[Random.Range(0, _boxTemplates.Length)];
+            Box newBox = Instantiate(spawnedBox);
+
+            newBox.transform.position = _currentPoint.position;//newObstacle.transform.position+ new Vector3(3, 1.5f, 0);
+
+            Destroy(newBox, 15);
+            timer = 0;
+        }
+
+
+        Destroy(newObstacle, 15);
         timer = 0;
     }
 
-    //private void GenerateRandomElements(SpawnPoint[] spawnPoint, GameObject generatedElement, int spawnChance)
+
+
+    //public void GenerateRandomObstacle(Obstacle[] _obstacleTemplates,float _height)
     //{
-    //    if (Random.Range(0, 100) < spawnChance)
+    //    Obstacle spawnedObstacle = _obstacleTemplates[Random.Range(0, _obstacleTemplates.Length)];
+    //    Obstacle newObstacle = Instantiate(spawnedObstacle);
+    //    newObstacle.transform.position = transform.position + new Vector3(0, Random.Range(-_height, _height), 0);
+    //    //  currentSegment
+    //   // _currentPoint.position = newObstacle.transform.position;
+
+    //    Destroy(newObstacle, 15);
+    //   timer = 0;
+    //}
+
+
+
+    //private void GenerateRandomBox(Box[] _boxTemplates, int _spawnChance,Obstacle newObstacle)
+    //{
+    //    if (Random.Range(0, 100) < _spawnChance)
     //    {
-    //        GameObject element = GenerateElement(spawnPoint[0].transform.position, generatedElement);
+    //        //  Transform currentPoint = _buildPoint;
 
-    //        element.transform.position = transform.position;
-    //        Destroy(element, 15);
-    //        timer = 0;
+    //        Box spawnedBox = _boxTemplates[Random.Range(0, _boxTemplates.Length)];
+    //        Box newBox = Instantiate(spawnedBox);
+    //        //currentPoint = newBox.transform;
+    //        newBox.transform.position = newObstacle.transform.position;//transform.position + new Vector3(0, Random.Range(-_height, _height), 0);
 
+    //        Destroy(newBox, 15);
+    //       timer = 0;
     //    }
 
-
     //}
 
 
-    //private GameObject GenerateElement(Vector3 spawnPoint, GameObject generatedElement)
+    //private Vector3 GetBuildPoint(Transform currentPoint)
     //{
-    //    // spawnPoint.y -= generatedElement.transform.localScale.y;
-    //    return Instantiate(generatedElement, spawnPoint, Quaternion.identity);
-
+    //    return new Vector3(transform.position.x, currentPoint.position.y + currentPoint.localScale.y / 2, transform.position.z);
     //}
-
-
-
-
 
 
 }
 
-    
+
 
 

@@ -5,6 +5,9 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
     public float speed;
+    [SerializeField] private Transform _spawnPoint;
+
+    public Transform SpawnPoint => _spawnPoint;
 
     void Start()
     {
