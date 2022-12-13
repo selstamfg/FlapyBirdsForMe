@@ -56,18 +56,24 @@
     <Compile Include="Assets\Scripts\Box\Box.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Timer\Timer.cs" />
-    <Compile Include="Assets\Scripts\Box\BonusBox.cs" />
+    <Compile Include="Assets\Scripts\BonusEffect\SpawnPointBonus.cs" />
+    <Compile Include="Assets\Scripts\Box\CoinBox.cs" />
     <Compile Include="Assets\Scripts\Obstacle\Obstacle.cs" />
+    <Compile Include="Assets\Scripts\BonusEffect\BonusSpawner.cs" />
     <Compile Include="Assets\Scripts\BirdFly.cs" />
     <Compile Include="Assets\Scripts\Timer\SimpleTimer.cs" />
-    <Compile Include="Assets\Scripts\Obstacle\SpawnPoint.cs" />
+    <Compile Include="Assets\Scripts\Box\SpawnPoint.cs" />
     <Compile Include="Assets\Scripts\Obstacle\Score\Score.cs" />
-    <Compile Include="Assets\Scripts\Box\AddBonusBox.cs" />
+    <Compile Include="Assets\Scripts\Box\AddCoinBox7.cs" />
+    <Compile Include="Assets\Scripts\Box\AddCoinBox5.cs" />
+    <Compile Include="Assets\Scripts\Box\AddCoinBox.cs" />
+    <Compile Include="Assets\Scripts\BonusEffect\Bonus.cs" />
+    <Compile Include="Assets\Scripts\BonusEffect\AddBonusGost.cs" />
     <Compile Include="Assets\Scripts\Obstacle\ObstacleSpawner.cs" />
-    <Compile Include="Assets\Scripts\Box\AddBonusBox3.cs" />
+    <Compile Include="Assets\Scripts\Bird.cs" />
+    <Compile Include="Assets\Scripts\Box\AddCoinBox3.cs" />
     <Compile Include="Assets\Scripts\Obstacle\Score\AddScore.cs" />
-    <Compile Include="Assets\Scripts\Box\AddBonusBox5.cs" />
-    <Compile Include="Assets\Scripts\Box\AddBonusBox7.cs" />
+    <Compile Include="Assets\Scripts\Timer\TimerLight.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -85,6 +91,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\Resources\Customizable Skybox\Stylized Sky\Shaders\Stylized Sky.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
@@ -687,6 +694,9 @@
     <Reference Include="Unity.VisualStudio.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.ProBuilder.AddOns.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.AddOns.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
     </Reference>
@@ -699,14 +709,17 @@
     <Reference Include="Unity.2D.Sprite.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Psdimporter.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll</HintPath>
+    <Reference Include="Unity.ProBuilder">
+      <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Path.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Path.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.InternalAPIEditorBridge.001">
-      <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
+    <Reference Include="Unity.2D.Psdimporter.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
@@ -717,6 +730,9 @@
     <Reference Include="Unity.Rider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.InternalAPIEditorBridge.001">
+      <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
@@ -725,6 +741,9 @@
     </Reference>
     <Reference Include="Unity.2D.IK.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
+      <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Animation.Triangle.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Triangle.Runtime.dll</HintPath>

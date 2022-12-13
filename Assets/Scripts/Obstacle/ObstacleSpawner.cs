@@ -9,17 +9,21 @@ public class ObstacleSpawner : MonoBehaviour
     [Header("General")]
     [SerializeField] float _maxTime;
     [SerializeField] float _height;
-    private Transform _currentPoint;
+   
     [SerializeField] private Obstacle[] _obstacleTemplates;
     [Header("Box")]
     [SerializeField] private Box[] _boxTemplates;
-    [SerializeField] int _spawnChance;
-
+    [SerializeField] int _spawnChanceBox;
+    private Transform _currentPointBox;
+    [Header("Bonus")]
+    [SerializeField] private Bonus[] _bonusTemplates;
+    [SerializeField] int _spawnChanceBonus;
+    private Transform _currentPointBonus;
 
     //public Obstacle _buildPoint;
     // _buildPoint= GameObject.FindGameObjectsWithTag("Respawn");
 
-    
+
     private float timer = 0;
 
     void Start()
@@ -50,7 +54,7 @@ public class ObstacleSpawner : MonoBehaviour
 
             // GenerateRandomObstacle( _obstacleTemplates,  _height);
             // GenerateRandomBox(_boxTemplates, _spawnChance,);
-            GenerateRandomObstacle(_obstacleTemplates, _height, _boxTemplates, _spawnChance);
+            GenerateRandomObstacle(_obstacleTemplates, _height, _boxTemplates, _spawnChanceBox, _bonusTemplates, _spawnChanceBonus);
 
            // Destroy(Box)
 
@@ -61,7 +65,7 @@ public class ObstacleSpawner : MonoBehaviour
     }
 
 
-    public void GenerateRandomObstacle(Obstacle[] _obstacleTemplates, float _height, Box[] _boxTemplates, int _spawnChance)
+    public void GenerateRandomObstacle(Obstacle[] _obstacleTemplates, float _height, Box[] _boxTemplates, int _spawnChanceBox, Bonus[] _bonusTemplates, int _spawnChanceBonus)
     {
 
         Obstacle spawnedObstacle = _obstacleTemplates[Random.Range(0, _obstacleTemplates.Length)];
@@ -70,23 +74,33 @@ public class ObstacleSpawner : MonoBehaviour
         //public Obstacle desObs = newObstacle;
          //  GetComponent();
         newObstacle.transform.position = transform.position + new Vector3(0, Random.Range(-_height, _height), 0);
-        Transform _currentPoint=newObstacle.SpawnPoint;
-        
-         
-        if (Random.Range(0, 100) < _spawnChance)
+        Transform _currentPointBox=newObstacle.SpawnPoint;
+        Transform _currentPointBonus = newObstacle.SpawnPointBonus;
+
+
+        if (Random.Range(0, 100) < _spawnChanceBox)
         {
            
             Box spawnedBox = _boxTemplates[Random.Range(0, _boxTemplates.Length)];
             Box newBox = Instantiate(spawnedBox);
 
-            newBox.transform.position = _currentPoint.position;//newObstacle.transform.position+ new Vector3(3, 1.5f, 0);
+            newBox.transform.position = _currentPointBox.position;
 
-            Destroy(newBox, 15);
-           // timer = 0;
+          
+        }
+
+        if (Random.Range(0, 100) < _spawnChanceBonus)
+        {
+
+            Bonus spawnedBonus = _bonusTemplates[Random.Range(0, _bonusTemplates.Length)];
+            Bonus newBonus = Instantiate(spawnedBonus);
+
+            newBonus.transform.position = _currentPointBonus.position; 
+
+          
         }
 
 
-        
         timer = 0;
     }
 

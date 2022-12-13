@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class SimpleTimer : MonoBehaviour
 {
-    [SerializeField] private float time;
+    [SerializeField] private float _time;
     [SerializeField] private Text _timerText;
     [SerializeField] private Image timerImage1;
     [SerializeField] private Image timerImage2;
@@ -16,53 +16,14 @@ public class SimpleTimer : MonoBehaviour
 
     void Start()
     {
-        _timeLeft = time;
+        _timeLeft = _time;
         _timerOn = true;
     }
 
     
     void Update()
     {
-        if (_timerOn)
-        { 
-
-            if (_timeLeft > 0 && _scet == 0)
-            {
-                _timeLeft -= Time.deltaTime;
-                UpdateTimeText();
-
-                var normalizedValue1 = Mathf.Clamp(_timeLeft / time, 0.0f, 1.0f);
-                timerImage1.fillAmount = normalizedValue1;
-               
-
-                if (_timeLeft==0)
-                 {
-                  _timeLeft = time;
-                  _scet = 1;
-
-                 }
-            }
-            else if (_timeLeft > 0 && _scet == 1)
-            {
-                
-
-                _timeLeft -= Time.deltaTime;
-                UpdateTimeText();
-
-                var normalizedValue2 = Mathf.Clamp(_timeLeft / time, 0.0f, 1.0f);
-                timerImage2.fillAmount = normalizedValue2;
-
-
-            }
-            else
-            {
-                _timeLeft = time;
-
-                _timerOn = false;
-            }
-
-
-        }
+        Timer();
     }
 
     private void UpdateTimeText()
@@ -80,7 +41,68 @@ public class SimpleTimer : MonoBehaviour
 
     }
 
+    private void TimerHard()
+    {
+        if (_timerOn)
+        {
+
+            if (_timeLeft > 0 && _scet == 0)
+            {
+                _timeLeft -= Time.deltaTime;
+                UpdateTimeText();
+
+                var normalizedValue1 = Mathf.Clamp(_timeLeft / _time, 0.0f, 1.0f);
+                timerImage1.fillAmount = normalizedValue1;
 
 
+                if (_timeLeft == 0)
+                {
+                    _timeLeft = _time;
+                    _scet = 1;
 
+                }
+            }
+            else if (_timeLeft > 0 && _scet == 1)
+            {
+
+
+                _timeLeft -= Time.deltaTime;
+                UpdateTimeText();
+
+                var normalizedValue2 = Mathf.Clamp(_timeLeft / _time, 0.0f, 1.0f);
+                timerImage2.fillAmount = normalizedValue2;
+
+
+            }
+            else
+            {
+                _timeLeft = _time;
+
+                _timerOn = false;
+            }
+        }
+
+    }
+
+    private void Timer()
+    {
+        if (_timerOn)
+        {
+
+            if (_timeLeft > 0 )
+            {
+                _timeLeft -= Time.deltaTime;
+                UpdateTimeText();
+
+                var normalizedValue1 = Mathf.Clamp(_timeLeft / _time, 0.0f, 1.0f);
+                timerImage1.fillAmount = normalizedValue1;
+            }
+            else
+            {
+                _timeLeft = _time;
+
+                _timerOn = false;
+            }
+        }
+    }
 }

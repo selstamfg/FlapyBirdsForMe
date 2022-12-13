@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class Box : MonoBehaviour
 {
     public float speed;
-    public event UnityAction<Box> BirdHit;
+   // public event UnityAction<Box> BirdHit;
     private int _bonusSize;
 
 

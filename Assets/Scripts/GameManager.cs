@@ -6,9 +6,10 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public GameObject gameOverCanvas;
+   // public GameObject timer12Canvas;
     void Start()
     {
-        Time.timeScale = 1;
+        Time.timeScale = 1f;
     }
 
     
@@ -22,4 +23,16 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+    //public void TimerLight12()
+    //{
+    //    timer12Canvas.SetActive(true);
+
+       
+    //}
+
+    //public void ReloadTimer12()
+    //{
+    //    timer12Canvas.SetActive(false);
+    //}
 }

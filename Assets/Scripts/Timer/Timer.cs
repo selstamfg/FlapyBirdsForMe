@@ -21,7 +21,7 @@ public class Timer : MonoBehaviour
         if (timeLeft>0)
         {
             timeLeft -= Time.deltaTime;
-            timerBar.fillAmount = timeLeft / maxTime;
+           timerBar.fillAmount = timeLeft / maxTime;
         }
         else
         {

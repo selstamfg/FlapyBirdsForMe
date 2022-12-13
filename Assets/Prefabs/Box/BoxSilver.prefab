@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1359032589048603110}
   - component: {fileID: -7524030527561800019}
   - component: {fileID: 2818182549545136643}
-  - component: {fileID: -5451121853643194445}
+  - component: {fileID: 7175051961283773463}
   m_Layer: 0
   m_Name: BoxSilver
   m_TagString: Untagged
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
---- !u!114 &-5451121853643194445
+--- !u!114 &7175051961283773463
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
