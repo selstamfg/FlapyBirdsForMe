@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7420300532049862974}
   - component: {fileID: 4945222899929035309}
   - component: {fileID: 8793530686767635327}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PipeUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 6059223862150682081}
   - component: {fileID: 712860334949706455}
   - component: {fileID: 9127819648298710386}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Mobile - Flappy Bird - Version 12 Sprites_53
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,7 +196,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5270491963466250675}
   - component: {fileID: 6501941025831126620}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpawnPointBonus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,7 +239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5378474554535804165}
   - component: {fileID: 8182677357233091679}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 6021877077310728494}
   - component: {fileID: 2036275026506341594}
   - component: {fileID: 5815026407614413204}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}

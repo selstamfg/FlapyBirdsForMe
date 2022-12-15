@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4464561811216980175}
   - component: {fileID: 4356641597155892773}
-  - component: {fileID: 7202561712051465273}
   - component: {fileID: -6225707081595039966}
   - component: {fileID: -5430605096134591409}
+  - component: {fileID: 2903480522809597878}
   m_Layer: 0
   m_Name: Gost
   m_TagString: Untagged
@@ -85,19 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7202561712051465273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1842206288236945592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b328b480ab548f84690fb6ba5189a0d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
 --- !u!61 &-6225707081595039966
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -136,5 +123,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 597ee4a48f8820e419171b033ec9aa50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _obstacle: {fileID: 0}
-  _birdfly: {fileID: 0}
+--- !u!114 &2903480522809597878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842206288236945592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b328b480ab548f84690fb6ba5189a0d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  _gameManager: {fileID: 0}

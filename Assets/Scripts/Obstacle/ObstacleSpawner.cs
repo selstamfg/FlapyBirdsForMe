@@ -19,9 +19,11 @@ public class ObstacleSpawner : MonoBehaviour
     [SerializeField] private Bonus[] _bonusTemplates;
     [SerializeField] int _spawnChanceBonus;
     private Transform _currentPointBonus;
-
-    //public Obstacle _buildPoint;
-    // _buildPoint= GameObject.FindGameObjectsWithTag("Respawn");
+    [Header("Scet")]
+    [SerializeField] private Scet _scetTemplates;
+    private Transform _currentPointScet;
+   
+ 
 
 
     private float timer = 0;
@@ -29,9 +31,6 @@ public class ObstacleSpawner : MonoBehaviour
     void Start()
     {
 
-        //GameObject newpipe = Instantiate(spawnedObstacle);
-        //newpipe.transform.position = transform.position + new Vector3(0, Random.Range(-_height, _height), 0);
-        //GetComponent<Obstacle>()
     }
 
 
@@ -54,7 +53,7 @@ public class ObstacleSpawner : MonoBehaviour
 
             // GenerateRandomObstacle( _obstacleTemplates,  _height);
             // GenerateRandomBox(_boxTemplates, _spawnChance,);
-            GenerateRandomObstacle(_obstacleTemplates, _height, _boxTemplates, _spawnChanceBox, _bonusTemplates, _spawnChanceBonus);
+            GenerateRandomObstacle(_obstacleTemplates, _height, _boxTemplates, _spawnChanceBox, _bonusTemplates, _spawnChanceBonus,_scetTemplates);
 
            // Destroy(Box)
 
@@ -65,7 +64,7 @@ public class ObstacleSpawner : MonoBehaviour
     }
 
 
-    public void GenerateRandomObstacle(Obstacle[] _obstacleTemplates, float _height, Box[] _boxTemplates, int _spawnChanceBox, Bonus[] _bonusTemplates, int _spawnChanceBonus)
+    public void GenerateRandomObstacle(Obstacle[] _obstacleTemplates, float _height, Box[] _boxTemplates, int _spawnChanceBox, Bonus[] _bonusTemplates, int _spawnChanceBonus,Scet _scetTemplates)
     {
 
         Obstacle spawnedObstacle = _obstacleTemplates[Random.Range(0, _obstacleTemplates.Length)];
@@ -76,6 +75,7 @@ public class ObstacleSpawner : MonoBehaviour
         newObstacle.transform.position = transform.position + new Vector3(0, Random.Range(-_height, _height), 0);
         Transform _currentPointBox=newObstacle.SpawnPoint;
         Transform _currentPointBonus = newObstacle.SpawnPointBonus;
+        Transform _currentPointScet = newObstacle.SpawnPointScet;
 
 
         if (Random.Range(0, 100) < _spawnChanceBox)
@@ -100,6 +100,20 @@ public class ObstacleSpawner : MonoBehaviour
           
         }
 
+
+
+
+        Scet spawnedScet = _scetTemplates;
+            Scet newScet = Instantiate(spawnedScet);
+            newScet.transform.position = _currentPointScet.position;
+
+
+        
+
+
+        //  Scet spawnedScet = _scetTemplates[];
+        // Scet newScet = Instantiate(spawnedScet);
+        // newScet.transform.position = _currentPointScet.position;
 
         timer = 0;
     }

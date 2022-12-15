@@ -56,6 +56,7 @@
     <Compile Include="Assets\Scripts\Box\Box.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Timer\Timer.cs" />
+    <Compile Include="Assets\Scripts\Timer\TimerLight.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\SpawnPointBonus.cs" />
     <Compile Include="Assets\Scripts\Box\CoinBox.cs" />
     <Compile Include="Assets\Scripts\Obstacle\Obstacle.cs" />
@@ -68,12 +69,15 @@
     <Compile Include="Assets\Scripts\Box\AddCoinBox5.cs" />
     <Compile Include="Assets\Scripts\Box\AddCoinBox.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Bonus.cs" />
-    <Compile Include="Assets\Scripts\BonusEffect\AddBonusGost.cs" />
+    <Compile Include="Assets\Scripts\BonusEffect\Gost\AddBonusGost.cs" />
     <Compile Include="Assets\Scripts\Obstacle\ObstacleSpawner.cs" />
     <Compile Include="Assets\Scripts\Bird.cs" />
     <Compile Include="Assets\Scripts\Box\AddCoinBox3.cs" />
     <Compile Include="Assets\Scripts\Obstacle\Score\AddScore.cs" />
-    <Compile Include="Assets\Scripts\Timer\TimerLight.cs" />
+    <Compile Include="Assets\Scripts\Obstacle\SpawnPointScet.cs" />
+    <Compile Include="Assets\Scripts\Scet.cs" />
+    <Compile Include="Assets\Scripts\BonusEffect\AddBonusSnow.cs" />
+    <Compile Include="Assets\Scripts\BonusEffect\AddBonusSandTime.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

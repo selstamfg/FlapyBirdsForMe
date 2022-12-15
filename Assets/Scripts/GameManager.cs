@@ -6,17 +6,17 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public GameObject gameOverCanvas;
-   // public GameObject timer12Canvas;
+ 
     void Start()
     {
-        Time.timeScale = 1f;
+        Time.timeScale = 1;
     }
 
     
     public void  GameOver()
     {
         gameOverCanvas.SetActive(true);
-        Time.timeScale = 0.0f;
+        Time.timeScale = 0;
     }
 
     public void Replay()

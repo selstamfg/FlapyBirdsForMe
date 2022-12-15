@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Bonus : MonoBehaviour
 {
-    public float speed;
-   
+     public float speed;
+   // [SerializeField] GameManager _gameManager;
+  //  [Header("Gost Bonus")]
+  //  [SerializeField] private AddBonusGost _bonusGostTemplates;
 
 
     private void Start()
@@ -20,10 +22,6 @@ public class Bonus : MonoBehaviour
         Destroy(gameObject, 15);
     }
 
-    public void Break()
-    {
-
-        Destroy(gameObject);
-    }
+   
 
 }
