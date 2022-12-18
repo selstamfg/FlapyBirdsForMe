@@ -164,7 +164,8 @@ MonoBehaviour:
   - {fileID: -8537506482535811566, guid: ee1d95203824ecd42bc9c4a95d5cd572, type: 3}
   _spawnChanceBox: 100
   _bonusTemplates:
-  - {fileID: 7202561712051465273, guid: bd84f89888952494791485ae5a8817fb, type: 3}
+  - {fileID: 2355004528674739683, guid: 19b206274625cb045a8cf3bc33f9d7a5, type: 3}
+  - {fileID: 2903480522809597878, guid: bd84f89888952494791485ae5a8817fb, type: 3}
   _spawnChanceBonus: 100
   _scetTemplates: {fileID: 3947359839665594290, guid: 3247ce351eeb9034ab47b01c1a233540, type: 3}
 --- !u!4 &99622762
@@ -311,7 +312,6 @@ MonoBehaviour:
   timerImage1: {fileID: 418168036}
   _bird: {fileID: 1912031703}
   timer12Canvas: {fileID: 1151803870}
-  gost: {fileID: -5430605096134591409, guid: bd84f89888952494791485ae5a8817fb, type: 3}
   _timeLeft: 0
 --- !u!114 &418168036
 MonoBehaviour:
@@ -2484,7 +2484,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.3
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -2507,7 +2507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1293818419}
   timer12: {fileID: 418168035}
-  velocity: 3
+  velocity: 4
 --- !u!70 &1912031704
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2518,7 +2518,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.002501003, y: -0.002501003}

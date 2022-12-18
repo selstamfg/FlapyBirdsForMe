@@ -1,21 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
+using System;
 
 public class BirdFly :MonoBehaviour
 {
     [SerializeField] GameManager gameManager;
     public TimerLight timer12;
     [SerializeField] float velocity = 3;
-  
-    public AddBonusGost _gost;
+
+    // public AddBonusGost _gost;
+    bool contactNorm = true;
 
     private Rigidbody2D rigidbody;
     int playerObject, obstacleObject;
 
 
-
+    public static Action<bool> onTouchedSand;
+    bool sandi = true;
+    public static Action<bool> onTouchedGost;
+    bool gosti = true;
 
     private void Start()
     {
@@ -27,6 +31,7 @@ public class BirdFly :MonoBehaviour
     private void Update()
     {
         Fly(velocity);
+        Contact(contactNorm);
     }
 
 
@@ -39,17 +44,6 @@ public class BirdFly :MonoBehaviour
 
     }
 
-
-
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.TryGetComponent(out Obstacle obstacle))
-    //    {
-    //        Debug.Log("GameObject1 collided with " + obstacle.name);
-    //        gameManager.GameOver();
-    //    }
-
-    //}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -70,13 +64,15 @@ public class BirdFly :MonoBehaviour
 
         if (collision.TryGetComponent(out AddBonusGost bonusGost))
         {
-            timer12.TimerStart();
+            onTouchedGost?.Invoke(gosti);
+           timer12.TimerStart();
             bonusGost.Break();
             
         }
 
         if (collision.TryGetComponent(out AddBonusSandTime bonusSandTime))
         {
+            onTouchedSand?.Invoke(sandi);
             timer12.TimerStart();
             bonusSandTime.Break();
 
@@ -98,18 +94,36 @@ public class BirdFly :MonoBehaviour
         }
     }
 
-    public void SandTime()
+    private void OnEnable()
     {
+        TimerLight.onGostTimer += BonusedGost;
+    }
+    private void OnDisable()
+    {
+        TimerLight.onGostTimer -= BonusedGost;
+    }
 
-        if (timer12._timeLeft > 0)
+    private void BonusedGost(bool bonusUp)
+    {
+        if (bonusUp == true )
         {
-            Time.timeScale = 0.5f;
+            Debug.Log("бонус Gost действует  на Bird");
+            //таймер для способности
+            contactNorm = false;
+
         }
-        else
+    }
+
+
+    private void Contact(bool contactNorm)
+    {
+        if (contactNorm == true)
         {
-            Time.timeScale = 1.0f;
+            contactNorm = true;
+            Debug.Log("бонус Gost ne действует  на Bird");
         }
 
 
     }
+    
 }
