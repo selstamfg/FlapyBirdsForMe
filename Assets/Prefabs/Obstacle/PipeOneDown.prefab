@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bf1d84aa0ae20c40b552927403543eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 0.5
   _spawnPoint: {fileID: 1497251051601271285}
   _spawnPointBonus: {fileID: 7725602739755195831}
   _spawnPointScet: {fileID: 2680448247438874047}

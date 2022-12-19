@@ -10,7 +10,7 @@ public class TimerLight : MonoBehaviour
     [SerializeField] private Text _timerText;
     [SerializeField] private Image timerImage1;
     
-    public GameObject timer12Canvas;
+    public GameObject timerSand12Canvas;
   //  public AddBonusGost _gost;
    // public AddBonusSandTime _sand;
 
@@ -48,8 +48,7 @@ public class TimerLight : MonoBehaviour
                 _timeLeft -= Time.deltaTime;
                 UpdateTimeText();
 
-               // Sand(false);
-                Gost(preassureNorm);
+                Sand(_timerOn);
 
                 var normalizedValue1 = Mathf.Clamp(_timeLeft / _time, 0.0f, 1.0f);
                 timerImage1.fillAmount = normalizedValue1;
@@ -59,7 +58,7 @@ public class TimerLight : MonoBehaviour
             {
                _timeLeft = _time;
                 _timerOn = false;
-                timer12Canvas.SetActive(false);
+                timerSand12Canvas.SetActive(false);
                // Debug.Log("таймер остановился");
                
             }
@@ -73,19 +72,19 @@ public class TimerLight : MonoBehaviour
 
         _timeLeft = _time;
         _timerOn = true;
-        timer12Canvas.SetActive(true);
+        timerSand12Canvas.SetActive(true);
     }
 
 
     private void OnEnable()
     {
         BirdFly.onTouchedSand += Sand;
-        BirdFly.onTouchedGost += Gost;
+        
     }
     private void OnDisable()
     {
         BirdFly.onTouchedSand -= Sand;
-       BirdFly.onTouchedGost -= Gost;
+       
     }
 
     private void Sand(bool sandi)
@@ -101,39 +100,5 @@ public class TimerLight : MonoBehaviour
       
     }
 
-    //private void Gost(bool booli)
-    //{
-    //    if ( _timerOn == true && booli==true)
-    //    {
-    //       // Debug.Log("бонус Gost действует");
-    //        //таймер для способности
-    //        onGostTimer?.Invoke(_timerOn);
-
-    //    }
-
-
-    //}
-   
-    private void Gost(bool colision)
-    {
-        if (colision == true && _timerOn==true)
-        {
-            Debug.Log("бонус Gost действует  ");
-            //таймер для способности
-            preassureNorm = false;
-            onGostTimer?.Invoke(colision);
-        }
-    }
-
-
-    private void Speed(bool pressureNorm)
-    {
-        if (pressureNorm == true)
-        {
-            pressureNorm = true;
-            Debug.Log("бонус Gost ne действует  ");
-        }
-
-
-    }
+  
 }    

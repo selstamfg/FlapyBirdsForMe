@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-     public float speed=1;
+    [SerializeField] private float speed;
+    //public float speedLow;
 
    // [SerializeField] private NastroykaTest _nastroyka;
     [SerializeField] private Transform _spawnPoint;
@@ -25,31 +26,28 @@ public class Obstacle : MonoBehaviour
     
     void Update()
     {
-         transform.position += Vector3.left * speed* Time.deltaTime;
+       transform.position += Vector3.left *( speed)* Time.deltaTime;
         
         Speed(speedNorm);
-
-        //Speed(1);
-            Destroy(gameObject,15);
+        Destroy(gameObject,15);
         
     }
     private void OnEnable()
     {
-        TimerLight.onSandTimer += BonusedSand;
+        TimerSand.onSandTimer += BonusedSand;
     }
     private void OnDisable()
     {
-        TimerLight.onSandTimer -= BonusedSand;
+        TimerSand.onSandTimer -= BonusedSand;
     }
 
     private void BonusedSand(bool bonusUp)
     {
         if (bonusUp == true)
         {
-            Debug.Log("бонус Sand действует  на обстакле");
-            //таймер для способности
+            //Debug.Log("бонус Sand действует  на обстакле");
+            speed = 0.5f;
             speedNorm = false;
-
         }
     }
 
@@ -58,11 +56,9 @@ public class Obstacle : MonoBehaviour
         {
             if (speedNorm==true)
             {
-                 speedNorm = true;
-                Debug.Log("бонус Sand ne действует  на обстакле");
+               speed = 1f;
             }
-
-
+            speedNorm = true;
         }
 
 

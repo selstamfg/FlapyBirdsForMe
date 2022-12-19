@@ -9,6 +9,8 @@ public class ObstacleSpawner : MonoBehaviour
     [Header("General")]
     [SerializeField] float _maxTime;
     [SerializeField] float _height;
+    float _MaxTime;
+    float koefSand = 2;
    
     [SerializeField] private Obstacle[] _obstacleTemplates;
     [Header("Box")]
@@ -22,9 +24,9 @@ public class ObstacleSpawner : MonoBehaviour
     [Header("Scet")]
     [SerializeField] private Scet _scetTemplates;
     private Transform _currentPointScet;
-   
- 
 
+
+    bool speedNorm = true;
 
     private float timer = 0;
 
@@ -37,7 +39,7 @@ public class ObstacleSpawner : MonoBehaviour
     void Update()
     {
         BuildTower();
-        
+        Speed(speedNorm);
     }
 
 
@@ -48,7 +50,7 @@ public class ObstacleSpawner : MonoBehaviour
        // _currentPoint = _buildPoint.transform;
        // Obstacle currentPoint = _buildPoint.transform.position;
 
-        if (timer > _maxTime)
+        if (timer > _MaxTime)
         {
 
             // GenerateRandomObstacle( _obstacleTemplates,  _height);
@@ -103,7 +105,7 @@ public class ObstacleSpawner : MonoBehaviour
 
 
 
-        Scet spawnedScet = _scetTemplates;
+            Scet spawnedScet = _scetTemplates;
             Scet newScet = Instantiate(spawnedScet);
             newScet.transform.position = _currentPointScet.position;
 
@@ -111,16 +113,45 @@ public class ObstacleSpawner : MonoBehaviour
         
 
 
-        //  Scet spawnedScet = _scetTemplates[];
-        // Scet newScet = Instantiate(spawnedScet);
-        // newScet.transform.position = _currentPointScet.position;
+        
 
         timer = 0;
     }
 
 
+    private void OnEnable()
+    {
+        TimerSand.onSandTimer += BonusedSand;
+    }
+    private void OnDisable()
+    {
+        TimerSand.onSandTimer -= BonusedSand;
+    }
 
-    
+    private void BonusedSand(bool bonusUp)
+    {
+        if (bonusUp == true)
+        {
+
+            _MaxTime= _maxTime*koefSand;
+            speedNorm = false;
+
+        }
+    }
+
+
+    private void Speed(bool speedNorm)
+    {
+        if (speedNorm == true)
+        {
+
+            _MaxTime = _maxTime;
+            
+        }
+        speedNorm = true;
+
+    }
+
 
 }
 

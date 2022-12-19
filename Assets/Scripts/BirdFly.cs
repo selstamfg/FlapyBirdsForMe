@@ -6,11 +6,12 @@ using System;
 public class BirdFly :MonoBehaviour
 {
     [SerializeField] GameManager gameManager;
-    public TimerLight timer12;
+    public TimerSand timerSand12;
+    public TimerGost timerGost12;
     [SerializeField] float velocity = 3;
 
-    // public AddBonusGost _gost;
     bool contactNorm = true;
+    bool speedNorm = true;
 
     private Rigidbody2D rigidbody;
     int playerObject, obstacleObject;
@@ -24,14 +25,13 @@ public class BirdFly :MonoBehaviour
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
-
         playerObject = LayerMask.NameToLayer("Player");
         obstacleObject = LayerMask.NameToLayer("Obstacle");
     }
     private void Update()
     {
         Fly(velocity);
-        Contact(contactNorm);
+        Contact(true);
     }
 
 
@@ -41,7 +41,6 @@ public class BirdFly :MonoBehaviour
         {
             rigidbody.velocity = Vector2.up * velocity;
         }
-
     }
 
 
@@ -50,67 +49,49 @@ public class BirdFly :MonoBehaviour
         if (collision.TryGetComponent(out Box box))
         {
             box.Break();
-
         }
 
         if (collision.TryGetComponent(out Obstacle obstacle))
         {
-
-           // Physics2D.IgnoreLayerCollision(playerObject, obstacleObject, false);
             gameManager.GameOver();
-
-           
         }
 
         if (collision.TryGetComponent(out AddBonusGost bonusGost))
         {
             onTouchedGost?.Invoke(gosti);
-           timer12.TimerStart();
+           timerGost12.TimerStart();
             bonusGost.Break();
-            
+            timerSand12.TimerEnd(); 
         }
 
         if (collision.TryGetComponent(out AddBonusSandTime bonusSandTime))
         {
             onTouchedSand?.Invoke(sandi);
-            timer12.TimerStart();
+            timerSand12.TimerStart();
             bonusSandTime.Break();
-
-        }
-
-
-    }
-
-    public void Goster()
-    {
-        if (timer12._timeLeft>0)
-        {
-             Physics2D.IgnoreLayerCollision(playerObject, obstacleObject, true);
-            //Debug.Log("Effect");
-        }
-        else
-        {
-            Physics2D.IgnoreLayerCollision(playerObject, obstacleObject, false);
+            timerGost12.TimerEnd();
         }
     }
+
+   
 
     private void OnEnable()
     {
-        TimerLight.onGostTimer += BonusedGost;
+        TimerSand.onSandTimer += BonusedSand;
+        TimerGost.onGostTimer += BonusedGost;
     }
     private void OnDisable()
     {
-        TimerLight.onGostTimer -= BonusedGost;
+        TimerSand.onSandTimer -= BonusedSand;
+        TimerGost.onGostTimer -= BonusedGost;
     }
 
     private void BonusedGost(bool bonusUp)
     {
         if (bonusUp == true )
         {
-            Debug.Log("бонус Gost действует  на Bird");
-            //таймер для способности
             contactNorm = false;
-
+            Physics2D.IgnoreLayerCollision(playerObject, obstacleObject, true);
         }
     }
 
@@ -120,10 +101,26 @@ public class BirdFly :MonoBehaviour
         if (contactNorm == true)
         {
             contactNorm = true;
-            Debug.Log("бонус Gost ne действует  на Bird");
+            Physics2D.IgnoreLayerCollision(playerObject, obstacleObject, false);
         }
-
-
     }
     
+
+    private void BonusedSand(bool bonusUp)
+    {
+        if (bonusUp == true)
+        {
+            speedNorm = false;
+        }
+    }
+
+
+    private void Speed(bool speedNorm)
+    {
+        if (speedNorm == true)
+        {
+            //  Debug.Log("бонус Sand ne действует  на обстакле");
+        }
+        speedNorm = true;
+    }
 }
