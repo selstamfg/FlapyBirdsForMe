@@ -6,11 +6,14 @@ using System;
 public class BirdFly :MonoBehaviour
 {
     [SerializeField] GameManager gameManager;
+    [SerializeField] Shooting shooting;
     public TimerSand timerSand12;
     public TimerGost timerGost12;
+    public TimerBullet timerBullet12;
     [SerializeField] float velocity = 3;
 
     bool contactNorm = true;
+    bool bulletEnd = true;
     bool speedNorm = true;
 
     private Rigidbody2D rigidbody;
@@ -21,6 +24,8 @@ public class BirdFly :MonoBehaviour
     bool sandi = true;
     public static Action<bool> onTouchedGost;
     bool gosti = true;
+    public static Action<bool> onTouchedBullet;
+    bool bulli = true;
 
     private void Start()
     {
@@ -32,6 +37,7 @@ public class BirdFly :MonoBehaviour
     {
         Fly(velocity);
         Contact(true);
+        BonusBulletEnd(true);
     }
 
 
@@ -61,7 +67,9 @@ public class BirdFly :MonoBehaviour
             onTouchedGost?.Invoke(gosti);
            timerGost12.TimerStart();
             bonusGost.Break();
-            timerSand12.TimerEnd(); 
+
+            timerSand12.TimerEnd();
+            timerBullet12.TimerEnd();
         }
 
         if (collision.TryGetComponent(out AddBonusSandTime bonusSandTime))
@@ -69,7 +77,19 @@ public class BirdFly :MonoBehaviour
             onTouchedSand?.Invoke(sandi);
             timerSand12.TimerStart();
             bonusSandTime.Break();
+
             timerGost12.TimerEnd();
+            timerBullet12.TimerEnd();
+        }
+
+        if (collision.TryGetComponent(out AddBonusBullet bonusBulletTime))
+        {
+            onTouchedBullet?.Invoke(bulli);
+            timerBullet12.TimerStart();
+            bonusBulletTime.Break();
+
+            timerGost12.TimerEnd();
+            timerSand12.TimerEnd();
         }
     }
 
@@ -77,13 +97,15 @@ public class BirdFly :MonoBehaviour
 
     private void OnEnable()
     {
-        TimerSand.onSandTimer += BonusedSand;
+        
         TimerGost.onGostTimer += BonusedGost;
+        TimerBullet.onBulletTimer += BonusedBullet;
     }
     private void OnDisable()
     {
-        TimerSand.onSandTimer -= BonusedSand;
+        
         TimerGost.onGostTimer -= BonusedGost;
+        TimerBullet.onBulletTimer -= BonusedBullet;
     }
 
     private void BonusedGost(bool bonusUp)
@@ -104,23 +126,26 @@ public class BirdFly :MonoBehaviour
             Physics2D.IgnoreLayerCollision(playerObject, obstacleObject, false);
         }
     }
-    
 
-    private void BonusedSand(bool bonusUp)
+    private void BonusedBullet(bool bonusUp)
     {
         if (bonusUp == true)
         {
-            speedNorm = false;
+            bulletEnd = false;
+            shooting.Shoot();
         }
     }
 
 
-    private void Speed(bool speedNorm)
+    private void BonusBulletEnd(bool bulletEnd)
     {
-        if (speedNorm == true)
+        if (bulletEnd == true)
         {
-            //  Debug.Log("бонус Sand ne действует  на обстакле");
+            bulletEnd = true;
         }
-        speedNorm = true;
     }
+
+
+
+
 }

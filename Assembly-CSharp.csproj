@@ -55,31 +55,35 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Obstacle\Scet.cs" />
     <Compile Include="Assets\Scripts\Box\Box.cs" />
+    <Compile Include="Assets\Scripts\BonusEffect\AddBonusLife.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Timer\Timer.cs" />
     <Compile Include="Assets\Scripts\Timer\TimerSand.cs" />
     <Compile Include="Assets\Scripts\Obstacle\SpawnPointScet.cs" />
-    <Compile Include="Assets\Scripts\BonusEffect\SpawnPointBonus.cs" />
+    <Compile Include="Assets\Scripts\Timer\TimerBullet.cs" />
+    <Compile Include="Assets\Scripts\BonusEffect\Bonus\SpawnPointBonus.cs" />
     <Compile Include="Assets\Scripts\Box\CoinBox.cs" />
     <Compile Include="Assets\Scripts\Obstacle\Obstacle.cs" />
-    <Compile Include="Assets\Scripts\BonusEffect\BonusSpawner.cs" />
+    <Compile Include="Assets\Scripts\BonusEffect\Bonus\BonusSpawner.cs" />
     <Compile Include="Assets\Scripts\BirdFly.cs" />
     <Compile Include="Assets\Scripts\Timer\SimpleTimer.cs" />
-    <Compile Include="Assets\Scripts\BonusEffect\AddBonusSnow.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Gost\TimerGost.cs" />
     <Compile Include="Assets\Scripts\Box\SpawnPoint.cs" />
+    <Compile Include="Assets\Scripts\BonusEffect\AddBonusBullet.cs" />
     <Compile Include="Assets\Scripts\Obstacle\Score\Score.cs" />
-    <Compile Include="Assets\Scripts\BonusEffect\AddBonusSandTime.cs" />
+    <Compile Include="Assets\Scripts\BonusEffect\Sand\AddBonusSandTime.cs" />
     <Compile Include="Assets\Scripts\Box\AddCoinBox7.cs" />
     <Compile Include="Assets\Scripts\Box\AddCoinBox5.cs" />
     <Compile Include="Assets\Scripts\Box\AddCoinBox.cs" />
-    <Compile Include="Assets\Scripts\BonusEffect\Bonus.cs" />
+    <Compile Include="Assets\Scripts\BonusEffect\Bonus\Bonus.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Gost\AddBonusGost.cs" />
     <Compile Include="Assets\Scripts\Timer\TimerLight.cs" />
     <Compile Include="Assets\Scripts\Obstacle\ObstacleSpawner.cs" />
     <Compile Include="Assets\Scripts\Bird.cs" />
     <Compile Include="Assets\Scripts\Box\AddCoinBox3.cs" />
     <Compile Include="Assets\Scripts\Obstacle\Score\AddScore.cs" />
+    <Compile Include="Assets\Scripts\Bullet.cs" />
+    <Compile Include="Assets\Scripts\Shooting.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

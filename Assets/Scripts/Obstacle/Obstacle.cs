@@ -32,6 +32,7 @@ public class Obstacle : MonoBehaviour
         Destroy(gameObject,15);
         
     }
+
     private void OnEnable()
     {
         TimerSand.onSandTimer += BonusedSand;
@@ -39,6 +40,11 @@ public class Obstacle : MonoBehaviour
     private void OnDisable()
     {
         TimerSand.onSandTimer -= BonusedSand;
+    }
+
+    public void Break()
+    {
+        Destroy(gameObject);
     }
 
     private void BonusedSand(bool bonusUp)
@@ -61,7 +67,7 @@ public class Obstacle : MonoBehaviour
             speedNorm = true;
         }
 
-
+    
 }
 
 
