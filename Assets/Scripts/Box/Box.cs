@@ -9,10 +9,12 @@ public class Box : MonoBehaviour
     bool speedNorm = true;
     private int _bonusSize;
 
+    int bulletObject, boxObject;
 
     private void Start()
     {
-       
+        bulletObject = LayerMask.NameToLayer("Bullet");
+        boxObject = LayerMask.NameToLayer("Box");
     }
 
 
@@ -21,6 +23,8 @@ public class Box : MonoBehaviour
        Speed(speedNorm);
         transform.position += Vector3.left * (speed ) * Time.deltaTime;
         Destroy(gameObject, 15);
+
+        Physics2D.IgnoreLayerCollision(bulletObject, boxObject, true);
     }
 
     public void Break()

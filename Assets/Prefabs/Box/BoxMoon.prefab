@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -357797162480289542}
   - component: {fileID: -8537506482535811566}
   - component: {fileID: 5153429488829509425}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BoxMoon
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -65,11 +65,13 @@
     <Compile Include="Assets\Scripts\Box\CoinBox.cs" />
     <Compile Include="Assets\Scripts\Obstacle\Obstacle.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Bonus\BonusSpawner.cs" />
+    <Compile Include="Assets\Scripts\Shooting.cs" />
     <Compile Include="Assets\Scripts\BirdFly.cs" />
     <Compile Include="Assets\Scripts\Timer\SimpleTimer.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Gost\TimerGost.cs" />
     <Compile Include="Assets\Scripts\Box\SpawnPoint.cs" />
-    <Compile Include="Assets\Scripts\BonusEffect\AddBonusBullet.cs" />
+    <Compile Include="Assets\Scripts\Bullet.cs" />
+    <Compile Include="Assets\Scripts\BonusEffect\Bullet\AddBonusBullet.cs" />
     <Compile Include="Assets\Scripts\Obstacle\Score\Score.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Sand\AddBonusSandTime.cs" />
     <Compile Include="Assets\Scripts\Box\AddCoinBox7.cs" />
@@ -82,8 +84,7 @@
     <Compile Include="Assets\Scripts\Bird.cs" />
     <Compile Include="Assets\Scripts\Box\AddCoinBox3.cs" />
     <Compile Include="Assets\Scripts\Obstacle\Score\AddScore.cs" />
-    <Compile Include="Assets\Scripts\Bullet.cs" />
-    <Compile Include="Assets\Scripts\Shooting.cs" />
+    <Compile Include="Assets\Scripts\BonusEffect\LifeScet.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

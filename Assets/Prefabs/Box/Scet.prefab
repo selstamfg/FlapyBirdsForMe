@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6272722359573944727}
   - component: {fileID: 3947359839665594290}
   - component: {fileID: 5439458395683779262}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Scet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
