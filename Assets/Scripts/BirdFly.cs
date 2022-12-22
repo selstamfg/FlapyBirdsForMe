@@ -7,6 +7,7 @@ public class BirdFly :MonoBehaviour
 {
     [SerializeField] GameManager gameManager;
     [SerializeField] Shooting shooting;
+   // [SerializeField] LifeBox lifeBox;
     public TimerSand timerSand12;
     public TimerGost timerGost12;
     public TimerBullet timerBullet12;
@@ -18,6 +19,10 @@ public class BirdFly :MonoBehaviour
 
     private Rigidbody2D rigidbody;
     int playerObject, obstacleObject;
+
+   // public static int life = 1;
+   // public int sum;
+
 
 
     public static Action<bool> onTouchedSand;
@@ -32,9 +37,12 @@ public class BirdFly :MonoBehaviour
         rigidbody = GetComponent<Rigidbody2D>();
         playerObject = LayerMask.NameToLayer("Player");
         obstacleObject = LayerMask.NameToLayer("Obstacle");
+       // life = 1;
     }
     private void Update()
     {
+       // sum = life;
+
         Fly(velocity);
         Contact(true);
         BonusBulletEnd(true);
@@ -59,7 +67,16 @@ public class BirdFly :MonoBehaviour
 
         if (collision.TryGetComponent(out Obstacle obstacle))
         {
-            gameManager.GameOver();
+           // gameManager.GameOver();
+           LifeBox.life--;
+
+            if (LifeBox.life == 0)
+            {
+                gameManager.GameOver();
+            }
+
+
+           
         }
 
         if (collision.TryGetComponent(out AddBonusGost bonusGost))
@@ -91,6 +108,19 @@ public class BirdFly :MonoBehaviour
             timerGost12.TimerEnd();
             timerSand12.TimerEnd();
         }
+
+
+        if (collision.TryGetComponent(out AddBonusLife bonusLife))
+        {
+            //onTouchedBullet?.Invoke(bulli);
+            //timerBullet12.TimerStart();
+
+            bonusLife.Break();
+
+            //timerGost12.TimerEnd();
+            //timerSand12.TimerEnd();
+        }
+
     }
 
    
@@ -127,6 +157,8 @@ public class BirdFly :MonoBehaviour
         }
     }
 
+    /////
+    
     private void BonusedBullet(bool bonusUp)
     {
         if (bonusUp == true)
@@ -145,7 +177,12 @@ public class BirdFly :MonoBehaviour
         }
     }
 
+    /////////
+    //public void LifeLevel()
+    //{
+    //    GetComponent<UnityEngine.UI.Text>().text = sum.ToString();
 
+    //}
 
 
 }

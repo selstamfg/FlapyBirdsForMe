@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\BonusEffect\Bullet\AddBonusBullet.cs" />
     <Compile Include="Assets\Scripts\Obstacle\Score\Score.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Sand\AddBonusSandTime.cs" />
+    <Compile Include="Assets\Scripts\BonusEffect\LifeBox.cs" />
     <Compile Include="Assets\Scripts\Box\AddCoinBox7.cs" />
     <Compile Include="Assets\Scripts\Box\AddCoinBox5.cs" />
     <Compile Include="Assets\Scripts\Box\AddCoinBox.cs" />
@@ -84,7 +85,6 @@
     <Compile Include="Assets\Scripts\Bird.cs" />
     <Compile Include="Assets\Scripts\Box\AddCoinBox3.cs" />
     <Compile Include="Assets\Scripts\Obstacle\Score\AddScore.cs" />
-    <Compile Include="Assets\Scripts\BonusEffect\LifeScet.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
