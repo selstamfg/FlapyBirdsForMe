@@ -20,9 +20,9 @@ public class BirdFly :MonoBehaviour
     private Rigidbody2D rigidbody;
     int playerObject, obstacleObject;
 
-   // public static int life = 1;
-   // public int sum;
-
+    // public static int life = 1;
+    // public int sum;
+   
 
 
     public static Action<bool> onTouchedSand;
@@ -69,6 +69,7 @@ public class BirdFly :MonoBehaviour
         {
            // gameManager.GameOver();
            LifeBox.life--;
+            
 
             if (LifeBox.life == 0)
             {
@@ -177,12 +178,7 @@ public class BirdFly :MonoBehaviour
         }
     }
 
-    /////////
-    //public void LifeLevel()
-    //{
-    //    GetComponent<UnityEngine.UI.Text>().text = sum.ToString();
-
-    //}
+    
 
 
 }

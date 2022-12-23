@@ -33,6 +33,16 @@ public class Obstacle : MonoBehaviour
         
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+       
+            
+        if (LifeBox.life != 1)
+        {
+            Break();
+        }
+    }
+
     private void OnEnable()
     {
         TimerSand.onSandTimer += BonusedSand;
