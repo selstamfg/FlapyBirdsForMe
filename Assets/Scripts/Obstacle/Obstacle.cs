@@ -17,26 +17,17 @@ public class Obstacle : MonoBehaviour
     public Transform SpawnPointScet => _spawnPointScet;
 
     bool speedNorm=true;
-
-    void Start()
-    {
-        
-    }
-
     
     void Update()
     {
        transform.position += Vector3.left *( speed)* Time.deltaTime;
         
-        Speed(speedNorm);
+        Speed();
         Destroy(gameObject,15);
-        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
-    {
-       
-            
+    {  
         if (LifeBox.life != 1)
         {
             Break();
@@ -59,18 +50,19 @@ public class Obstacle : MonoBehaviour
 
     private void BonusedSand(bool bonusUp)
     {
-        if (bonusUp == true)
+        if (bonusUp)
         {
             //Debug.Log("бонус Sand действует  на обстакле");
             speed = 0.5f;
             speedNorm = false;
         }
+        speedNorm = true;
     }
 
 
-        private void Speed(bool speedNorm)
+        private void Speed()
         {
-            if (speedNorm==true)
+            if (this.speedNorm)
             {
                speed = 1f;
             }

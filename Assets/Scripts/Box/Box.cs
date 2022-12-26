@@ -20,7 +20,7 @@ public class Box : MonoBehaviour
 
     void Update()
     {
-       Speed(speedNorm);
+        Speed();
         transform.position += Vector3.left * (speed ) * Time.deltaTime;
         Destroy(gameObject, 15);
 
@@ -29,8 +29,6 @@ public class Box : MonoBehaviour
 
     public void Break()
     {
-        
-
         // ParticleSystemRenderer renderer = Instantiate(_destroyEffect, transform.position, _destroyEffect.transform.rotation).GetComponent<ParticleSystemRenderer>();
         // renderer.material.color = _meshRenderer.material.color;
         Destroy(gameObject);
@@ -47,21 +45,21 @@ public class Box : MonoBehaviour
 
     private void BonusedSnow(bool bonusUp)
     {
-        if (bonusUp == true)
+        if (bonusUp)
         {
             speed= 0.5f;
             speedNorm = false;
         }
+        speedNorm = true;
     }
 
 
-    private void Speed(bool speedNorm)
+    private void Speed()
     {
-        if (speedNorm == true)
+        if (this.speedNorm)
         {
             speed= 1f;
-            //  Debug.Log("бонус Sand ne действует  на обстакле");
+           speedNorm = true; //  Debug.Log("бонус Sand ne действует  на обстакле");
         }
-        speedNorm = true;
     }
 }

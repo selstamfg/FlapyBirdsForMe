@@ -11,18 +11,11 @@ public class Bonus : MonoBehaviour
     //  [Header("Gost Bonus")]
     //  [SerializeField] private AddBonusGost _bonusGostTemplates;
 
-
-    private void Start()
-    {
-       
-    }
-
-
     void Update()
     {
         transform.position += Vector3.left * (speed ) * Time.deltaTime;
         Destroy(gameObject, 15);
-       Speed(speedNorm);
+        Speed();
     }
     private void OnEnable()
     {
@@ -42,22 +35,19 @@ public class Bonus : MonoBehaviour
             //  transform.position += Vector3.left * speedLow * Time.deltaTime;
             speed = 0.5f;
             speedNorm = false;
-
         }
+        speedNorm = true;
     }
 
 
-    private void Speed(bool speedNorm)
+    private void Speed()
     {
-        if (speedNorm == true)
+        if (this.speedNorm)
         {
           // transform.position += Vector3.left * speed * Time.deltaTime;
             speed = 1f;
+            speedNorm = true;
             // Debug.Log("бонус Sand ne действует  на обстакле");
         }
-        speedNorm = true;
-
     }
-
-
 }

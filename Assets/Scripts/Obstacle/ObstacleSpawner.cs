@@ -32,7 +32,7 @@ public class ObstacleSpawner : MonoBehaviour
 
     void Start()
     {
-
+        BuildTower();
     }
 
 
@@ -101,19 +101,10 @@ public class ObstacleSpawner : MonoBehaviour
 
           
         }
-
-
-
-
             Scet spawnedScet = _scetTemplates;
             Scet newScet = Instantiate(spawnedScet);
             newScet.transform.position = _currentPointScet.position;
 
-
-        
-
-
-        
 
         timer = 0;
     }

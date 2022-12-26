@@ -11,17 +11,20 @@ public class BirdFly :MonoBehaviour
     public TimerSand timerSand12;
     public TimerGost timerGost12;
     public TimerBullet timerBullet12;
-    [SerializeField] float velocity = 3;
+    public TimerSnow timerSnow12;
+    public TimerSmall timerSmall12;
+    public TimerEye timerEye12;
+    [SerializeField] float velocity;
+    [SerializeField] float HowSlow = 0.5f;
 
     bool contactNorm = true;
     bool bulletEnd = true;
-    bool speedNorm = true;
+    bool snowEnd = true;
+    bool smallEnd = true;
 
     private Rigidbody2D rigidbody;
+  //  private CircleCollider2D circleCollider;
     int playerObject, obstacleObject;
-
-    // public static int life = 1;
-    // public int sum;
    
 
 
@@ -31,21 +34,29 @@ public class BirdFly :MonoBehaviour
     bool gosti = true;
     public static Action<bool> onTouchedBullet;
     bool bulli = true;
+    public static Action<bool> onTouchedSnow;
+    bool snowi = true;
+    public static Action<bool> onTouchedSmall;
+    bool smalli = true;
+    public static Action<bool> onTouchedEye;
+    bool eyei = true;
 
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
+        //circleCollider = GetComponent<CircleCollider2D>();
         playerObject = LayerMask.NameToLayer("Player");
         obstacleObject = LayerMask.NameToLayer("Obstacle");
        // life = 1;
     }
     private void Update()
     {
-       // sum = life;
-
         Fly(velocity);
-        Contact(true);
-        BonusBulletEnd(true);
+        Contact();
+        BonusBulletEnd();
+         BonusSnowEnd();
+       
+        
     }
 
 
@@ -54,6 +65,7 @@ public class BirdFly :MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             rigidbody.velocity = Vector2.up * velocity;
+            //circleCollider.radius = 1;
         }
     }
 
@@ -69,57 +81,75 @@ public class BirdFly :MonoBehaviour
         {
            // gameManager.GameOver();
            LifeBox.life--;
-            
 
             if (LifeBox.life == 0)
             {
+                TimerBonusEnd();
                 gameManager.GameOver();
             }
-
-
-           
         }
 
         if (collision.TryGetComponent(out AddBonusGost bonusGost))
         {
+            TimerBonusEnd();
             onTouchedGost?.Invoke(gosti);
-           timerGost12.TimerStart();
+            timerGost12.TimerStart();
             bonusGost.Break();
-
-            timerSand12.TimerEnd();
-            timerBullet12.TimerEnd();
         }
 
         if (collision.TryGetComponent(out AddBonusSandTime bonusSandTime))
         {
+            TimerBonusEnd();
             onTouchedSand?.Invoke(sandi);
             timerSand12.TimerStart();
             bonusSandTime.Break();
 
-            timerGost12.TimerEnd();
-            timerBullet12.TimerEnd();
         }
 
         if (collision.TryGetComponent(out AddBonusBullet bonusBulletTime))
         {
+            TimerBonusEnd();
             onTouchedBullet?.Invoke(bulli);
             timerBullet12.TimerStart();
             bonusBulletTime.Break();
-
-            timerGost12.TimerEnd();
-            timerSand12.TimerEnd();
         }
 
 
         if (collision.TryGetComponent(out AddBonusLife bonusLife))
         {
-            //onTouchedBullet?.Invoke(bulli);
-            //timerBullet12.TimerStart();
-
             bonusLife.Break();
+        }
+
+
+        if (collision.TryGetComponent(out AddBonusSnow bonusSnowTime))
+        {
+            
+            TimerBonusEnd();
+            onTouchedSnow?.Invoke(snowi);
+            timerSnow12.TimerStart();
+            bonusSnowTime.Break();
 
             //timerGost12.TimerEnd();
+            //timerBullet12.TimerEnd();
             //timerSand12.TimerEnd();
+            //timerSmall12.TimerEnd();
+           
+        }
+
+        if(collision.TryGetComponent(out AddBonusSmall bonusSmallTime))
+        {
+            TimerBonusEnd();
+            onTouchedSmall?.Invoke(smalli);
+            timerSmall12.TimerStart();
+            bonusSmallTime.Break();
+        }
+
+        if (collision.TryGetComponent(out AddBonusEye bonusEyeTime))
+        {
+            TimerBonusEnd();
+            onTouchedEye?.Invoke(eyei);
+            timerEye12.TimerStart();
+            bonusEyeTime.Break();
         }
 
     }
@@ -128,30 +158,32 @@ public class BirdFly :MonoBehaviour
 
     private void OnEnable()
     {
-        
         TimerGost.onGostTimer += BonusedGost;
         TimerBullet.onBulletTimer += BonusedBullet;
+        TimerSnow.onSnowTimer += BonusedSnow;
+        
     }
     private void OnDisable()
     {
-        
         TimerGost.onGostTimer -= BonusedGost;
         TimerBullet.onBulletTimer -= BonusedBullet;
+        TimerSnow.onSnowTimer -= BonusedSnow;
     }
 
     private void BonusedGost(bool bonusUp)
     {
-        if (bonusUp == true )
+        if (bonusUp )
         {
             contactNorm = false;
             Physics2D.IgnoreLayerCollision(playerObject, obstacleObject, true);
         }
+        contactNorm = true;
     }
 
 
-    private void Contact(bool contactNorm)
+    private void Contact()
     {
-        if (contactNorm == true)
+        if (this.contactNorm)
         {
             contactNorm = true;
             Physics2D.IgnoreLayerCollision(playerObject, obstacleObject, false);
@@ -162,23 +194,82 @@ public class BirdFly :MonoBehaviour
     
     private void BonusedBullet(bool bonusUp)
     {
-        if (bonusUp == true)
+        if (bonusUp)
         {
             bulletEnd = false;
             shooting.Shoot();
         }
+        bulletEnd = true;
     }
 
 
-    private void BonusBulletEnd(bool bulletEnd)
+    private void BonusBulletEnd()
     {
-        if (bulletEnd == true)
+        if (this.bulletEnd)
         {
             bulletEnd = true;
         }
     }
 
+    private void BonusedSnow(bool bonusUp)
+    {
+        if (bonusUp!=false)
+        {
+            snowEnd = false;
+            Time.timeScale=HowSlow;
+            Time.fixedDeltaTime = Time.timeScale * 0.015f;
+           // Debug.Log("Snow");
+        }
+        snowEnd = true;
+       // Time.timeScale = 1;
+    }
+
+
+    private void BonusSnowEnd()
+    {
+        if (snowEnd == true && LifeBox.life != 0)
+        {
+            Time.timeScale = 1;
+            snowEnd = true;
+        }
+
+
+    }
+
+    private void BonusedSmall(bool bonusUp)
+    {
+        if (bonusUp != false)
+        {
+            smallEnd = false;
+
+           // transform.localScale.x = 2f;
+            // Debug.Log("Snow");
+        }
+        smallEnd = true;
+        // Time.timeScale = 1;
+    }
+
+
+    private void BonusSmallEnd()
+    {
+        if (this.snowEnd)
+        {
+            
+            smallEnd = true;
+        }
+
+
+    }
+
+
+    private void TimerBonusEnd()
+    {
+        timerGost12.TimerEnd();
+        timerBullet12.TimerEnd();
+        timerSand12.TimerEnd();
+        timerSnow12.TimerEnd();
+        timerSmall12.TimerEnd();
+    }
+
     
-
-
 }
