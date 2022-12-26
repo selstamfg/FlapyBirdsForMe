@@ -17,31 +17,33 @@ public class Zoom : MonoBehaviour
     private void Start()
     {
         _Camera2D = Camera.main;
+       //  UpdatePosition();
+        _Camera2D.orthographicSize =  _ZoomSize;
     }
 
     private void Update()
     {
-       UpdatePosition();
+     //  UpdatePosition();
 
         BonusEyeEnd();
     }
 
-   private void UpdatePosition()
-   {
-       // if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (_isZoom==false)
-            {
-                _zoomActive = true;
-                _isZoom = true;
-            }
-            else
-            {
-                _zoomActive = false;
-                _isZoom = false;
-            }
-        }
-   }
+   //private void UpdatePosition()
+   //{
+   //    // if (Input.GetKeyDown(KeyCode.E))
+   //     {
+   //         if (_isZoom==false)
+   //         {
+   //             _zoomActive = true;
+   //             _isZoom = true;
+   //         }
+   //         else
+   //         {
+   //             _zoomActive = false;
+   //             _isZoom = false;
+   //         }
+   //     }
+   //}
 
 
     private void OnEnable()
@@ -61,7 +63,9 @@ public class Zoom : MonoBehaviour
         if (bonusUp != false)
         {
             eyeEnd = false;
-            UpdatePosition();
+
+            _zoomActive = false;
+            _isZoom = false;
         }
         eyeEnd = true;
     }
@@ -69,8 +73,11 @@ public class Zoom : MonoBehaviour
 
     private void BonusEyeEnd()
     {
-        if (eyeEnd == true)
+        if (this.eyeEnd)
         {
+           _zoomActive = true;
+            _isZoom = true; 
+
             eyeEnd = true;
         }
 
