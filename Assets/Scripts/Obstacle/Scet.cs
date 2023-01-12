@@ -6,12 +6,13 @@ public class Scet : MonoBehaviour
 {
     public float speed;
 
-    int bulletObject, scetObject;
+    int bulletObject,starObject, scetObject;
 
 
     private void Start()
     {
         bulletObject = LayerMask.NameToLayer("Bullet");
+        starObject = LayerMask.NameToLayer("Star");
         scetObject = LayerMask.NameToLayer("Scet");
     }
 
@@ -22,5 +23,6 @@ public class Scet : MonoBehaviour
         Destroy(gameObject, 15);
 
         Physics2D.IgnoreLayerCollision(bulletObject, scetObject, true);
+        Physics2D.IgnoreLayerCollision(starObject, scetObject, true);
     }
 }
