@@ -177,11 +177,11 @@ public class BirdFly :MonoBehaviour
 
         if (collision.TryGetComponent(out AddBonusGrow bonusGrowTime))
         {
-             GrowBox.growi++;
-            //if (GrowBox.growi == 0 && growEnd)
-            //{
-            //    GrowBox.growi++;
-            //}
+           //  GrowBox.growi++;
+            if (GrowBox.growi == 0 && growEnd)
+            {
+                GrowBox.growi++;
+            }
             TimerBonusEnd();
             onTouchedGrow?.Invoke(growi);
             timerGrow12.TimerStart();
