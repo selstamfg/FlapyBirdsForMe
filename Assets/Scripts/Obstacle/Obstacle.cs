@@ -32,6 +32,12 @@ public class Obstacle : MonoBehaviour
         {
             Break();
         }
+
+        if (GrowBox.growi == 1)
+        {
+            Break();
+        }
+
     }
 
     private void OnEnable()

@@ -24,6 +24,7 @@ public class BirdFly :MonoBehaviour
     public TimerEye timerEye12;
     public TimerStar timerStar12;
     public TimerGrow timerGrow12;
+   // public TimerLight timerLight12;
     
    
 
@@ -33,6 +34,7 @@ public class BirdFly :MonoBehaviour
     bool smallEnd = true;
     bool starEnd = true;
     bool growEnd = true;
+    bool lightEnd = true;
 
     private Rigidbody2D rigidbody;
     private Transform transform;
@@ -71,7 +73,7 @@ public class BirdFly :MonoBehaviour
     }
     private void Update()
     {
-        Fly(_velocity);
+         Fly(_velocity);
          Contact();
          BonusBulletEnd();
          BonusSnowEnd();
@@ -175,6 +177,11 @@ public class BirdFly :MonoBehaviour
 
         if (collision.TryGetComponent(out AddBonusGrow bonusGrowTime))
         {
+             GrowBox.growi++;
+            //if (GrowBox.growi == 0 && growEnd)
+            //{
+            //    GrowBox.growi++;
+            //}
             TimerBonusEnd();
             onTouchedGrow?.Invoke(growi);
             timerGrow12.TimerStart();
@@ -192,6 +199,10 @@ public class BirdFly :MonoBehaviour
         if (collision.TryGetComponent(out AddBonusStar bonusStarTime))
         {
             TimerBonusEnd();
+            //if (StarBox.stari==0 && starEnd)
+            //{
+            //    StarBox.stari++;
+            //}
             onTouchedStar?.Invoke(stari);
             timerStar12.TimerStart();
             bonusStarTime.Break();

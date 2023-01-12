@@ -8,16 +8,7 @@ public class SpawnStarPoint : MonoBehaviour
     [SerializeField] private Staring _staringTemplate;
 
 
-    void Start()
-    {
-        
-    }
-
    
-    void Update()
-    {
-        
-    }
 
     public void BuildStar()
     {
