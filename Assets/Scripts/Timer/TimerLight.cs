@@ -10,15 +10,15 @@ public class TimerLight : MonoBehaviour
     [SerializeField] private Text _timerText;
     [SerializeField] private Image timerImage1;
     
-    public GameObject timerSand12Canvas;
+    public GameObject timerLight12Canvas;
   //  public AddBonusGost _gost;
    // public AddBonusSandTime _sand;
 
     public float _timeLeft = 0f;
     private bool _timerOn = false;
 
-    public static Action<bool> onSandTimer;
-    public static Action<bool> onGostTimer;
+    public static Action<bool> onLightTimer;
+   // public static Action<bool> onGostTimer;
     private bool preassureNorm= true;
 
 
@@ -48,7 +48,7 @@ public class TimerLight : MonoBehaviour
                 _timeLeft -= Time.deltaTime;
                 UpdateTimeText();
 
-                Sand(_timerOn);
+                Light(_timerOn);
 
                 var normalizedValue1 = Mathf.Clamp(_timeLeft / _time, 0.0f, 1.0f);
                 timerImage1.fillAmount = normalizedValue1;
@@ -58,7 +58,7 @@ public class TimerLight : MonoBehaviour
             {
                _timeLeft = _time;
                 _timerOn = false;
-                timerSand12Canvas.SetActive(false);
+                timerLight12Canvas.SetActive(false);
                // Debug.Log("таймер остановился");
                
             }
@@ -72,28 +72,28 @@ public class TimerLight : MonoBehaviour
 
         _timeLeft = _time;
         _timerOn = true;
-        timerSand12Canvas.SetActive(true);
+        timerLight12Canvas.SetActive(true);
     }
 
 
     private void OnEnable()
     {
-        BirdFly.onTouchedSand += Sand;
+        BirdFly.onTouchedLight += Light;
         
     }
     private void OnDisable()
     {
-        BirdFly.onTouchedSand -= Sand;
+        BirdFly.onTouchedLight -= Light;
        
     }
 
-    private void Sand(bool sandi)
+    private void Light(bool sandi)
     {
         if( _timerOn==true)
         {
            // Debug.Log("бонус Sand действует");
             //таймер для способности
-            onSandTimer?.Invoke(_timerOn);
+            onLightTimer?.Invoke(_timerOn);
           //  sandi = false;
         }
        

@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Bonus : MonoBehaviour
 {
-    [SerializeField] private float speed;
-   // public float speedLow;
+    [SerializeField] private float speed=1f;
+    private float Speed;
+    float koefSand = 0.5f;
+    float koefLight = 2f;
     bool speedNorm = true;
     // [SerializeField] GameManager _gameManager;
     //  [Header("Gost Bonus")]
@@ -13,17 +15,19 @@ public class Bonus : MonoBehaviour
 
     void Update()
     {
-        transform.position += Vector3.left * (speed ) * Time.deltaTime;
+        transform.position += Vector3.left * Speed  * Time.deltaTime;
         Destroy(gameObject, 15);
-        Speed();
+        SpeedNorm();
     }
     private void OnEnable()
     {
         TimerSand.onSandTimer += BonusedSand;
+        TimerLight.onLightTimer += BonusedLight;
     }
     private void OnDisable()
     {
         TimerSand.onSandTimer -= BonusedSand;
+        TimerLight.onLightTimer -= BonusedLight;
     }
 
     private void BonusedSand(bool bonusUp)
@@ -33,21 +37,34 @@ public class Bonus : MonoBehaviour
             //  Debug.Log("бонус Sand действует  на обстакле");
             //таймер для способности
             //  transform.position += Vector3.left * speedLow * Time.deltaTime;
-            speed = 0.5f;
+            Speed = speed*koefSand;
             speedNorm = false;
         }
         speedNorm = true;
     }
 
 
-    private void Speed()
+    private void SpeedNorm()
     {
         if (this.speedNorm)
         {
           // transform.position += Vector3.left * speed * Time.deltaTime;
-            speed = 1f;
+            Speed = speed;
             speedNorm = true;
             // Debug.Log("бонус Sand ne действует  на обстакле");
         }
+    }
+
+    private void BonusedLight(bool bonusUp)
+    {
+        if (bonusUp == true)
+        {
+            //  Debug.Log("бонус Sand действует  на обстакле");
+            //таймер для способности
+            //  transform.position += Vector3.left * speedLow * Time.deltaTime;
+            Speed = speed*koefLight;
+            speedNorm = false;
+        }
+        speedNorm = true;
     }
 }

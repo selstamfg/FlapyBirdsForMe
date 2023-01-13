@@ -5,7 +5,10 @@ using UnityEngine.Events;
 
 public class Box : MonoBehaviour
 {
-    [SerializeField] private float speed;
+    [SerializeField] private float speed=1f;
+    private float Speed;
+    float koefSand = 0.5f;
+    float koefLight = 2f;
     bool speedNorm = true;
     private int _bonusSize;
 
@@ -18,48 +21,76 @@ public class Box : MonoBehaviour
     }
 
 
+    //void Update()
+    //{
+    //    SpeedNorm();
+    //    transform.position += Vector3.left * Speed  * Time.deltaTime;
+    //    Destroy(gameObject, 15);
+
+    //    Physics2D.IgnoreLayerCollision(bulletObject, boxObject, true);
+    //}
+
+   
+
     void Update()
     {
-        Speed();
-        transform.position += Vector3.left * (speed ) * Time.deltaTime;
+        transform.position += Vector3.left * Speed * Time.deltaTime;
         Destroy(gameObject, 15);
-
+        SpeedNorm();
         Physics2D.IgnoreLayerCollision(bulletObject, boxObject, true);
     }
-
     public void Break()
     {
         // ParticleSystemRenderer renderer = Instantiate(_destroyEffect, transform.position, _destroyEffect.transform.rotation).GetComponent<ParticleSystemRenderer>();
         // renderer.material.color = _meshRenderer.material.color;
         Destroy(gameObject);
     }
-
     private void OnEnable()
     {
-        TimerSand.onSandTimer += BonusedSnow;
+        TimerSand.onSandTimer += BonusedSand;
+        TimerLight.onLightTimer += BonusedLight;
     }
     private void OnDisable()
     {
-        TimerSand.onSandTimer -= BonusedSnow;
+        TimerSand.onSandTimer -= BonusedSand;
+        TimerLight.onLightTimer -= BonusedLight;
     }
 
-    private void BonusedSnow(bool bonusUp)
+    private void BonusedSand(bool bonusUp)
     {
-        if (bonusUp)
+        if (bonusUp == true)
         {
-            speed= 0.5f;
+            //  Debug.Log("бонус Sand действует  на обстакле");
+            //таймер для способности
+            //  transform.position += Vector3.left * speedLow * Time.deltaTime;
+            Speed = speed * koefSand;
             speedNorm = false;
         }
         speedNorm = true;
     }
 
 
-    private void Speed()
+    private void SpeedNorm()
     {
         if (this.speedNorm)
         {
-            speed= 1f;
-           speedNorm = true; //  Debug.Log("бонус Sand ne действует  на обстакле");
+            // transform.position += Vector3.left * speed * Time.deltaTime;
+            Speed = speed;
+            speedNorm = true;
+            // Debug.Log("бонус Sand ne действует  на обстакле");
         }
+    }
+
+    private void BonusedLight(bool bonusUp)
+    {
+        if (bonusUp == true)
+        {
+            //  Debug.Log("бонус Sand действует  на обстакле");
+            //таймер для способности
+            //  transform.position += Vector3.left * speedLow * Time.deltaTime;
+            Speed = speed * koefLight;
+            speedNorm = false;
+        }
+        speedNorm = true;
     }
 }

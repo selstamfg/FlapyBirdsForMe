@@ -10,7 +10,8 @@ public class ObstacleSpawner : MonoBehaviour
     [SerializeField] float _maxTime;
     [SerializeField] float _height;
     float _MaxTime;
-    float koefSand = 2;
+    float koefSand = 2f;
+    float koefLight = 0.5f;
    
     [SerializeField] private Obstacle[] _obstacleTemplates;
     [Header("Box")]
@@ -28,6 +29,7 @@ public class ObstacleSpawner : MonoBehaviour
 
     bool speedNorm = true;
 
+
     private float timer = 0;
 
     void Start()
@@ -39,7 +41,7 @@ public class ObstacleSpawner : MonoBehaviour
     void Update()
     {
         BuildTower();
-        Speed(speedNorm);
+        SpeedNorm();
     }
 
 
@@ -113,36 +115,51 @@ public class ObstacleSpawner : MonoBehaviour
     private void OnEnable()
     {
         TimerSand.onSandTimer += BonusedSand;
+        TimerLight.onLightTimer += BonusedLight;
     }
     private void OnDisable()
     {
         TimerSand.onSandTimer -= BonusedSand;
+        TimerLight.onLightTimer -= BonusedLight;
     }
 
     private void BonusedSand(bool bonusUp)
     {
         if (bonusUp == true)
         {
-
-            _MaxTime= _maxTime*koefSand;
+            //  Debug.Log("бонус Sand действует  на обстакле");
+            //таймер для способности
+            //  transform.position += Vector3.left * speedLow * Time.deltaTime;
+            _MaxTime = _maxTime * koefSand;
             speedNorm = false;
-
-        }
-    }
-
-
-    private void Speed(bool speedNorm)
-    {
-        if (speedNorm == true)
-        {
-
-            _MaxTime = _maxTime;
-            
         }
         speedNorm = true;
-
     }
 
+
+    private void SpeedNorm()
+    {
+        if (this.speedNorm)
+        {
+            // transform.position += Vector3.left * speed * Time.deltaTime;
+            _MaxTime = _maxTime;
+            speedNorm = true;
+            // Debug.Log("бонус Sand ne действует  на обстакле");
+        }
+    }
+
+    private void BonusedLight(bool bonusUp)
+    {
+        if (bonusUp == true)
+        {
+            //  Debug.Log("бонус Sand действует  на обстакле");
+            //таймер для способности
+            //  transform.position += Vector3.left * speedLow * Time.deltaTime;
+            _MaxTime = _maxTime * koefLight;
+            speedNorm = false;
+        }
+        speedNorm = true;
+    }
 
 }
 

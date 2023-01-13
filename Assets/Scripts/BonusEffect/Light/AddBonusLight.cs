@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class AddBonusLight : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void Break()
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Destroy(gameObject);
     }
 }

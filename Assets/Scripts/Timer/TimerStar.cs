@@ -68,7 +68,7 @@ public class TimerStar : MonoBehaviour
 
     public void TimerStart()
     {
-
+        StarBox.stari++;
         _timeLeft = _time;
         _timerOn = true;
         timerStar12Canvas.SetActive(true);
@@ -76,9 +76,11 @@ public class TimerStar : MonoBehaviour
 
     public void TimerEnd()
     {
+       
         _timeLeft = _time;
         _timerOn = false;
-        timerStar12Canvas.SetActive(false);
+        timerStar12Canvas.SetActive(false); 
+       // StarBox.stari--;
     }
 
 

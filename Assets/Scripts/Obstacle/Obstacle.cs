@@ -6,9 +6,12 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
     [SerializeField] private float speed;
+    private float Speed;
+    float koefSand = 0.5f;
+    float koefLight = 2f;
     //public float speedLow;
 
-   // [SerializeField] private NastroykaTest _nastroyka;
+    // [SerializeField] private NastroykaTest _nastroyka;
     [SerializeField] private Transform _spawnPoint;
     [SerializeField] private Transform _spawnPointBonus;
     [SerializeField] private Transform _spawnPointScet;
@@ -20,9 +23,9 @@ public class Obstacle : MonoBehaviour
     
     void Update()
     {
-       transform.position += Vector3.left *( speed)* Time.deltaTime;
+       transform.position += Vector3.left * Speed* Time.deltaTime;
         
-        Speed();
+        SpeedNorm();
         Destroy(gameObject,15);
     }
 
@@ -43,10 +46,12 @@ public class Obstacle : MonoBehaviour
     private void OnEnable()
     {
         TimerSand.onSandTimer += BonusedSand;
+        TimerLight.onLightTimer += BonusedLight;
     }
     private void OnDisable()
     {
         TimerSand.onSandTimer -= BonusedSand;
+        TimerLight.onLightTimer -= BonusedLight;
     }
 
     public void Break()
@@ -59,23 +64,32 @@ public class Obstacle : MonoBehaviour
         if (bonusUp)
         {
             //Debug.Log("бонус Sand действует  на обстакле");
-            speed = 0.5f;
+            Speed = speed * koefSand;
             speedNorm = false;
         }
         speedNorm = true;
     }
 
 
-        private void Speed()
+        private void SpeedNorm()
         {
             if (this.speedNorm)
             {
-               speed = 1f;
+               Speed = speed;
             }
             speedNorm = true;
         }
 
-    
+    private void BonusedLight(bool bonusUp)
+    {
+        if (bonusUp == true)
+        {
+
+            Speed = speed * koefLight;
+            speedNorm = false;
+        }
+        speedNorm = true;
+    }
 }
 
 

@@ -12,6 +12,7 @@ public class BirdFly :MonoBehaviour
     [SerializeField] float _howSlow = 0.5f;
     [SerializeField] Shooting _shooting;
     [SerializeField] SpawnStarPoint _orbiting;
+    [SerializeField] Staring _staring;
     [SerializeField] float _growing;
     [SerializeField] float _smalling;
     [SerializeField] float _normaling;
@@ -24,7 +25,7 @@ public class BirdFly :MonoBehaviour
     public TimerEye timerEye12;
     public TimerStar timerStar12;
     public TimerGrow timerGrow12;
-   // public TimerLight timerLight12;
+    public TimerLight timerLight12;
     
    
 
@@ -34,7 +35,7 @@ public class BirdFly :MonoBehaviour
     bool smallEnd = true;
     bool starEnd = true;
     bool growEnd = true;
-    bool lightEnd = true;
+   // bool lightEnd = true;
 
     private Rigidbody2D rigidbody;
     private Transform transform;
@@ -137,6 +138,16 @@ public class BirdFly :MonoBehaviour
 
         }
 
+
+        if (collision.TryGetComponent(out AddBonusLight bonusLightTime))
+        {
+            TimerBonusEnd();
+            onTouchedLight?.Invoke(lighti);
+            timerLight12.TimerStart();
+            bonusLightTime.Break();
+
+        }
+
         if (collision.TryGetComponent(out AddBonusBullet bonusBulletTime))
         {
             TimerBonusEnd();
@@ -199,10 +210,17 @@ public class BirdFly :MonoBehaviour
         if (collision.TryGetComponent(out AddBonusStar bonusStarTime))
         {
             TimerBonusEnd();
-            //if (StarBox.stari==0 && starEnd)
-            //{
-            //    StarBox.stari++;
-            //}
+            if (StarBox.stari == 0 && starEnd)
+            {
+                StarBox.stari++;
+                 StarBox.stari--;
+            }
+           // if (starEnd)
+            {
+               // _orbiting.BuildStar();
+
+            }
+           
             onTouchedStar?.Invoke(stari);
             timerStar12.TimerStart();
             bonusStarTime.Break();
@@ -351,7 +369,17 @@ public class BirdFly :MonoBehaviour
         if (bonusUp != false)
         {
             starEnd = false;
-            _orbiting.BuildStar();
+            if (StarBox.stari == 1 && Input.GetMouseButtonDown(0))
+            {
+                _orbiting.BuildStar();
+                StarBox.stari--;
+                //for (int i = 0; i < 1; i++)
+                //{
+                //    // Fly(_velocity);
+                //    _staring.Fly(_velocity);
+                //}
+            }
+            
         }
         starEnd = true;
         // Time.timeScale = 1;
