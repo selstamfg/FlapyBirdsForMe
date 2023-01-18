@@ -6,6 +6,8 @@ using UnityEngine.Events;
 public class Box : MonoBehaviour
 {
     [SerializeField] private float speed=1f;
+    [SerializeField] private int _id;
+    [SerializeField] private Vector2Int _chances;
     private float Speed;
     float koefSand = 0.5f;
     float koefLight = 2f;
@@ -20,6 +22,15 @@ public class Box : MonoBehaviour
         boxObject = LayerMask.NameToLayer("Box");
     }
 
+    public int GetId
+    {
+        get => _id;
+    }
+
+    public Vector2Int GetChances
+    {
+        get => _chances;
+    }
 
     //void Update()
     //{
@@ -30,7 +41,7 @@ public class Box : MonoBehaviour
     //    Physics2D.IgnoreLayerCollision(bulletObject, boxObject, true);
     //}
 
-   
+
 
     void Update()
     {

@@ -61,7 +61,7 @@ public class TimerGost : MonoBehaviour
     }
 
     public void TimerStart()
-    {
+    {   
         _timeLeft = _time;
         _timerOn = true;
         timerGost12Canvas.SetActive(true);

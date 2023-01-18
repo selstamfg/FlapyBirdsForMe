@@ -97,7 +97,8 @@ public class TimerStar : MonoBehaviour
 
     private void Star(bool stari)
     {
-        if (_timerOn != false)
+     //   if (_timerOn != false)
+        if(StarBox.stari==1)
         {
             // Debug.Log("бонус Sand действует");
             //таймер для способности

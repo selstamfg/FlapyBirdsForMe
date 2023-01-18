@@ -124,6 +124,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  _id: 0
+  _chances: {x: 49, y: 50}
 --- !u!114 &7760126695658275978
 MonoBehaviour:
   m_ObjectHideFlags: 0

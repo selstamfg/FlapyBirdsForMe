@@ -75,6 +75,17 @@ public class TimerLight : MonoBehaviour
         timerLight12Canvas.SetActive(true);
     }
 
+    public void TimerEnd()
+    {
+        _timeLeft = _time;
+        _timerOn = false;
+        timerLight12Canvas.SetActive(false);
+
+    }
+
+
+
+
 
     private void OnEnable()
     {

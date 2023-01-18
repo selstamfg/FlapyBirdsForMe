@@ -256,6 +256,7 @@ public class BirdFly :MonoBehaviour
     {
         if (bonusUp )
         {
+          //  Debug.Log("gost");
             contactNorm = false;
             Physics2D.IgnoreLayerCollision(playerObject, obstacleObject, true);
         }
@@ -269,6 +270,7 @@ public class BirdFly :MonoBehaviour
         {
             contactNorm = true;
             Physics2D.IgnoreLayerCollision(playerObject, obstacleObject, false);
+          //  Debug.Log("gostend");
         }
     }
 
@@ -369,8 +371,8 @@ public class BirdFly :MonoBehaviour
         if (bonusUp != false)
         {
             starEnd = false;
-            if (StarBox.stari == 1 && Input.GetMouseButtonDown(0))
-            {
+           // if (StarBox.stari == 1 && Input.GetMouseButtonDown(0))
+          //  {
                 _orbiting.BuildStar();
                 StarBox.stari--;
                 //for (int i = 0; i < 1; i++)
@@ -378,7 +380,7 @@ public class BirdFly :MonoBehaviour
                 //    // Fly(_velocity);
                 //    _staring.Fly(_velocity);
                 //}
-            }
+           // }
             
         }
         starEnd = true;
@@ -396,6 +398,17 @@ public class BirdFly :MonoBehaviour
 
 
     }
+
+    //private void BonusedLight(bool bonusUp)
+    //{
+    //    if (bonusUp)
+    //    {
+    //        lightEnd = false;
+            
+
+    //    }
+    //    lightEnd = true;
+    //}
     private void TimerBonusEnd()
     {
         timerGost12.TimerEnd();
@@ -405,6 +418,7 @@ public class BirdFly :MonoBehaviour
         timerSmall12.TimerEnd();
         timerStar12.TimerEnd();
         timerGrow12.TimerEnd();
+        timerLight12.TimerEnd();
     }
 
     

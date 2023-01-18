@@ -15,7 +15,8 @@ public class SpawnStarPoint : MonoBehaviour
         {
             Staring spawnedStaring = _staringTemplate;
             Staring newStaring = Instantiate(spawnedStaring);
-            newStaring.transform.position = _spawnPointPivot.position;
+            newStaring.SetTargetTransform(_spawnPointPivot);
+            //newStaring.transform.position = _spawnPointPivot.position;
 
         }
         

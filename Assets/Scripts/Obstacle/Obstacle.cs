@@ -41,6 +41,11 @@ public class Obstacle : MonoBehaviour
             Break();
         }
 
+        if (true)
+        {
+
+        }
+
     }
 
     private void OnEnable()
