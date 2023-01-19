@@ -35,7 +35,7 @@ public class BirdFly :MonoBehaviour
     bool smallEnd = true;
     bool starEnd = true;
     bool growEnd = true;
-   // bool lightEnd = true;
+    bool lightEnd = true;
 
     private Rigidbody2D rigidbody;
     private Transform transform;
@@ -81,6 +81,7 @@ public class BirdFly :MonoBehaviour
          BonusStarEnd();
          BonusSmallEnd();
          BonusGrowEnd();
+         BonusLightEnd();
         
     }
 
@@ -110,8 +111,15 @@ public class BirdFly :MonoBehaviour
                 LifeBox.life++;
                 obstacle.Break();
             }
-            
-            
+
+            if (LightBox.lighti == 1)
+            {
+                LifeBox.life++;
+                obstacle.Break();
+            }
+
+
+
             LifeBox.life--;
 
             if (LifeBox.life == 0)
@@ -139,14 +147,7 @@ public class BirdFly :MonoBehaviour
         }
 
 
-        if (collision.TryGetComponent(out AddBonusLight bonusLightTime))
-        {
-            TimerBonusEnd();
-            onTouchedLight?.Invoke(lighti);
-            timerLight12.TimerStart();
-            bonusLightTime.Break();
-
-        }
+       
 
         if (collision.TryGetComponent(out AddBonusBullet bonusBulletTime))
         {
@@ -188,15 +189,30 @@ public class BirdFly :MonoBehaviour
 
         if (collision.TryGetComponent(out AddBonusGrow bonusGrowTime))
         {
-           //  GrowBox.growi++;
+            //  GrowBox.growi++;
+            //TimerBonusEnd();
             if (GrowBox.growi == 0 && growEnd)
             {
                 GrowBox.growi++;
             }
-            TimerBonusEnd();
+           TimerBonusEnd();
             onTouchedGrow?.Invoke(growi);
             timerGrow12.TimerStart();
             bonusGrowTime.Break();
+        }
+
+        if (collision.TryGetComponent(out AddBonusLight bonusLightTime))
+        {    
+            
+            if (LightBox.lighti == 0 && lightEnd)
+            {
+                LightBox.lighti++;
+            }
+            TimerBonusEnd();
+            onTouchedLight?.Invoke(lighti);
+            timerLight12.TimerStart();
+            bonusLightTime.Break();
+
         }
 
         if (collision.TryGetComponent(out AddBonusEye bonusEyeTime))
@@ -214,11 +230,6 @@ public class BirdFly :MonoBehaviour
             {
                 StarBox.stari++;
                  StarBox.stari--;
-            }
-           // if (starEnd)
-            {
-               // _orbiting.BuildStar();
-
             }
            
             onTouchedStar?.Invoke(stari);
@@ -240,6 +251,7 @@ public class BirdFly :MonoBehaviour
         TimerStar.onStarTimer += BonusedStar;
         TimerSmall.onSmallTimer += BonusedSmall;
         TimerGrow.onGrowTimer += BonusedGrow;
+        TimerLight.onLightTimer += BonusedLight;
 
     }
     private void OnDisable()
@@ -250,6 +262,7 @@ public class BirdFly :MonoBehaviour
         TimerStar.onStarTimer -= BonusedStar;
         TimerSmall.onSmallTimer -= BonusedSmall;
         TimerGrow.onGrowTimer -= BonusedGrow;
+        TimerLight.onLightTimer -= BonusedLight;
     }
 
     private void BonusedGost(bool bonusUp)
@@ -301,7 +314,8 @@ public class BirdFly :MonoBehaviour
         {
              growEnd = false;
             transform.localScale = new Vector3(_growing, _growing, _growing);
-           
+            StarBox.stari = 0;
+            LightBox.lighti = 0;
         }
         growEnd = true;
     }
@@ -371,17 +385,11 @@ public class BirdFly :MonoBehaviour
         if (bonusUp != false)
         {
             starEnd = false;
-           // if (StarBox.stari == 1 && Input.GetMouseButtonDown(0))
-          //  {
-                _orbiting.BuildStar();
-                StarBox.stari--;
-                //for (int i = 0; i < 1; i++)
-                //{
-                //    // Fly(_velocity);
-                //    _staring.Fly(_velocity);
-                //}
-           // }
-            
+            _orbiting.BuildStar();
+            StarBox.stari--;
+
+            LightBox.lighti = 0;
+            GrowBox.growi = 0;
         }
         starEnd = true;
         // Time.timeScale = 1;
@@ -399,16 +407,25 @@ public class BirdFly :MonoBehaviour
 
     }
 
-    //private void BonusedLight(bool bonusUp)
-    //{
-    //    if (bonusUp)
-    //    {
-    //        lightEnd = false;
-            
+    private void BonusedLight(bool bonusUp)
+    {
+        if (bonusUp)
+        {
+            StarBox.stari = 0;
+            GrowBox.growi = 0;
+            lightEnd = false;
+        }
+        lightEnd = true;
+    }
 
-    //    }
-    //    lightEnd = true;
-    //}
+
+    private void BonusLightEnd()
+    {
+        if (this.lightEnd)
+        {
+            lightEnd = true;
+        }
+    }
     private void TimerBonusEnd()
     {
         timerGost12.TimerEnd();

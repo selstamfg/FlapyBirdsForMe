@@ -41,9 +41,9 @@ public class Obstacle : MonoBehaviour
             Break();
         }
 
-        if (true)
+        if (LightBox.lighti == 1)
         {
-
+            Break();
         }
 
     }
