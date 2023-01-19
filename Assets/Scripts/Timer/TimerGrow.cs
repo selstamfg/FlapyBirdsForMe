@@ -68,6 +68,7 @@ public class TimerGrow : MonoBehaviour
 
     public void TimerStart()
     {
+        Debug.Log("timergrow");
         GrowBox.growi++;
         _timeLeft = _time;
         _timerOn = true;
@@ -76,6 +77,7 @@ public class TimerGrow : MonoBehaviour
 
     public void TimerEnd()
     {
+        Debug.Log("timerEndgrow");
         _timeLeft = _time;
         _timerOn = false;
         timerGrow12Canvas.SetActive(false);

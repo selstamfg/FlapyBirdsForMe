@@ -96,9 +96,11 @@ public class Box : MonoBehaviour
     {
         if (bonusUp == true)
         {
+            // LightBox.lighti++;
             //  Debug.Log("бонус Sand действует  на обстакле");
             //таймер для способности
             //  transform.position += Vector3.left * speedLow * Time.deltaTime;
+            
             Speed = speed * koefLight;
             speedNorm = false;
         }

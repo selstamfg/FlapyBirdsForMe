@@ -291,8 +291,6 @@ MonoBehaviour:
   - {fileID: 6187455053414926527, guid: c7c25bae52eba2643b637d2942d1ae93, type: 3}
   _spawnChanceBox: 0
   _bonusTemplates:
-  - {fileID: 2388540012104786328, guid: e7a064d35c07b2c42b0afb281d2a597b, type: 3}
-  - {fileID: 8395822225911350950, guid: 7373492f0168b7e46836c1b0f208f611, type: 3}
   - {fileID: 410960877369834484, guid: b3381928904d9394ea01c7a815abae4c, type: 3}
   _spawnChanceBonus: 100
   _scetTemplates: {fileID: 3947359839665594290, guid: 3247ce351eeb9034ab47b01c1a233540, type: 3}

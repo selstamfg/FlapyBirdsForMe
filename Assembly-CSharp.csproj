@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\BonusEffect\Smalling\TimerSmall.cs" />
     <Compile Include="Assets\Scripts\Timer\TimerSand.cs" />
     <Compile Include="Assets\Scripts\Obstacle\SpawnPointScet.cs" />
+    <Compile Include="Assets\Scripts\BonusEffect\Light\LightBox.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Light\AddBonusLight.cs" />
     <Compile Include="Assets\Scripts\Timer\TimerBullet.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Growing\AddBonusGrow.cs" />
@@ -106,7 +107,6 @@
     <Compile Include="Assets\Scripts\Timer\TimerStar.cs" />
     <Compile Include="Assets\Scripts\Obstacle\Score\AddScore.cs" />
     <Compile Include="Assets\Scripts\Box\SpawnBox.cs" />
-    <Compile Include="Assets\Scripts\BonusEffect\Light\LightBox.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

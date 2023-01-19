@@ -59,8 +59,11 @@ public class TimerLight : MonoBehaviour
                _timeLeft = _time;
                 _timerOn = false;
                 timerLight12Canvas.SetActive(false);
-               // Debug.Log("таймер остановился");
-               
+                LightBox.lighti = 0;
+                StarBox.stari = 0;
+                GrowBox.growi = 0;
+                // Debug.Log("таймер остановился");
+
             }
            
         }
@@ -69,6 +72,7 @@ public class TimerLight : MonoBehaviour
    
     public void TimerStart()
     {
+        Debug.Log("timer");
         LightBox.lighti++;
         _timeLeft = _time;
         _timerOn = true;
@@ -77,11 +81,12 @@ public class TimerLight : MonoBehaviour
 
     public void TimerEnd()
     {
-        LightBox.lighti--;
+        
+        Debug.Log("timerEnd");
         _timeLeft = _time;
         _timerOn = false;
         timerLight12Canvas.SetActive(false);
-
+        LightBox.lighti--;
     }
 
 

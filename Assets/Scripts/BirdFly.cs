@@ -195,7 +195,7 @@ public class BirdFly :MonoBehaviour
             {
                 GrowBox.growi++;
             }
-           TimerBonusEnd();
+            TimerBonusEnd();
             onTouchedGrow?.Invoke(growi);
             timerGrow12.TimerStart();
             bonusGrowTime.Break();
@@ -203,7 +203,7 @@ public class BirdFly :MonoBehaviour
 
         if (collision.TryGetComponent(out AddBonusLight bonusLightTime))
         {    
-            
+           
             if (LightBox.lighti == 0 && lightEnd)
             {
                 LightBox.lighti++;
@@ -251,7 +251,7 @@ public class BirdFly :MonoBehaviour
         TimerStar.onStarTimer += BonusedStar;
         TimerSmall.onSmallTimer += BonusedSmall;
         TimerGrow.onGrowTimer += BonusedGrow;
-        TimerLight.onLightTimer += BonusedLight;
+       TimerLight.onLightTimer += BonusedLight;
 
     }
     private void OnDisable()
@@ -262,7 +262,7 @@ public class BirdFly :MonoBehaviour
         TimerStar.onStarTimer -= BonusedStar;
         TimerSmall.onSmallTimer -= BonusedSmall;
         TimerGrow.onGrowTimer -= BonusedGrow;
-        TimerLight.onLightTimer -= BonusedLight;
+       TimerLight.onLightTimer -= BonusedLight;
     }
 
     private void BonusedGost(bool bonusUp)
@@ -388,7 +388,7 @@ public class BirdFly :MonoBehaviour
             _orbiting.BuildStar();
             StarBox.stari--;
 
-            LightBox.lighti = 0;
+           LightBox.lighti = 0;
             GrowBox.growi = 0;
         }
         starEnd = true;
@@ -411,8 +411,6 @@ public class BirdFly :MonoBehaviour
     {
         if (bonusUp)
         {
-            StarBox.stari = 0;
-            GrowBox.growi = 0;
             lightEnd = false;
         }
         lightEnd = true;
@@ -423,6 +421,7 @@ public class BirdFly :MonoBehaviour
     {
         if (this.lightEnd)
         {
+            
             lightEnd = true;
         }
     }
