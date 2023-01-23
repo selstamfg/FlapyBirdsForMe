@@ -66,6 +66,8 @@ public class BirdFly :MonoBehaviour
 
     private void Start()
     {
+        // Time.timeScale = 0;
+       
         rigidbody = GetComponent<Rigidbody2D>();
         transform = GetComponent<Transform>();
         playerObject = LayerMask.NameToLayer("Player");
@@ -73,7 +75,8 @@ public class BirdFly :MonoBehaviour
        // life = 1;
     }
     private void Update()
-    {
+    { 
+       // _gameManager.GameOver();
          Fly(_velocity);
          Contact();
          BonusBulletEnd();

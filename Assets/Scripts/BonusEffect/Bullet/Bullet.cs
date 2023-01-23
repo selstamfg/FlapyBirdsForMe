@@ -19,17 +19,17 @@ public class Bullet : MonoBehaviour
         rigidbody.velocity = Vector2.right * _speed;
         
          Destroy(gameObject, 2);
-        Debug.Log("Vipolnenie bulett update");
+       // Debug.Log("Vipolnenie bulett update");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Vipolnenie bulett");
+       // Debug.Log("Vipolnenie bulett");
         if (collision.TryGetComponent(out Obstacle obstacle))
         {
             obstacle.Break();
             Destroy(gameObject);
-            Debug.Log("Vipolnenie bulett");
+          //  Debug.Log("Vipolnenie bulett");
         }
     }
     

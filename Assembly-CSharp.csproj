@@ -77,6 +77,7 @@
     <Compile Include="Assets\Scripts\BirdFly.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Star\SpawnStarPoint.cs" />
     <Compile Include="Assets\Scripts\Timer\SimpleTimer.cs" />
+    <Compile Include="Assets\Scripts\Obstacle\BreakObstacleSpawner.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Gost\TimerGost.cs" />
     <Compile Include="Assets\Scripts\Heart.cs" />
     <Compile Include="Assets\Scripts\Box\SpawnPoint.cs" />
@@ -107,6 +108,7 @@
     <Compile Include="Assets\Scripts\Timer\TimerStar.cs" />
     <Compile Include="Assets\Scripts\Obstacle\Score\AddScore.cs" />
     <Compile Include="Assets\Scripts\Box\SpawnBox.cs" />
+    <Compile Include="Assets\Scripts\BreakPart.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

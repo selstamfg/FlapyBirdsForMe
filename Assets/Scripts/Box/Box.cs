@@ -8,6 +8,7 @@ public class Box : MonoBehaviour
     [SerializeField] private float speed=1f;
     [SerializeField] private int _id;
     [SerializeField] private Vector2Int _chances;
+    [SerializeField] private Transform _spawnPointBreak;
     private float Speed;
     float koefSand = 0.5f;
     float koefLight = 2f;
@@ -15,9 +16,11 @@ public class Box : MonoBehaviour
     private int _bonusSize;
 
     int bulletObject, boxObject;
+    private UnityEngine.Object explosion;
 
     private void Start()
     {
+        explosion = Resources.Load("ExplosionBox");
         bulletObject = LayerMask.NameToLayer("Bullet");
         boxObject = LayerMask.NameToLayer("Box");
     }
@@ -54,6 +57,9 @@ public class Box : MonoBehaviour
     {
         // ParticleSystemRenderer renderer = Instantiate(_destroyEffect, transform.position, _destroyEffect.transform.rotation).GetComponent<ParticleSystemRenderer>();
         // renderer.material.color = _meshRenderer.material.color;
+        GameObject explosionRef = (GameObject)Instantiate(explosion);
+        explosionRef.transform.position = _spawnPointBreak.position;
+        Destroy(explosionRef, 1);
         Destroy(gameObject);
     }
     private void OnEnable()

@@ -72,7 +72,7 @@ public class TimerLight : MonoBehaviour
    
     public void TimerStart()
     {
-        Debug.Log("timer");
+       // Debug.Log("timer");
         LightBox.lighti++;
         _timeLeft = _time;
         _timerOn = true;
@@ -82,7 +82,7 @@ public class TimerLight : MonoBehaviour
     public void TimerEnd()
     {
         
-        Debug.Log("timerEnd");
+      //  Debug.Log("timerEnd");
         _timeLeft = _time;
         _timerOn = false;
         timerLight12Canvas.SetActive(false);
