@@ -92,6 +92,7 @@
     <Compile Include="Assets\Scripts\BonusEffect\Life\LifeBox.cs" />
     <Compile Include="Assets\Scripts\Box\AddCoinBox7.cs" />
     <Compile Include="Assets\Scripts\Box\AddCoinBox5.cs" />
+    <Compile Include="Assets\Scripts\BreakPart.cs" />
     <Compile Include="Assets\Scripts\Box\AddCoinBox.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Star\AddBonusStar.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Bonus\Bonus.cs" />
@@ -108,7 +109,6 @@
     <Compile Include="Assets\Scripts\Timer\TimerStar.cs" />
     <Compile Include="Assets\Scripts\Obstacle\Score\AddScore.cs" />
     <Compile Include="Assets\Scripts\Box\SpawnBox.cs" />
-    <Compile Include="Assets\Scripts\BreakPart.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

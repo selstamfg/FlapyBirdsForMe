@@ -5,7 +5,37 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/StartScene.unity
+    guid: ef0ec996252455342861740acefae89c
+  - enabled: 1
+    path: Assets/Scenes/DailyBonusScene.unity
+    guid: 77e6b66c9592f6c4bb986d78cdc8fea3
+  - enabled: 1
+    path: Assets/Scenes/MenuScene.unity
+    guid: aaa11da856fa23648a562ee06c257d40
+  - enabled: 1
+    path: Assets/Scenes/ChalangeScene.unity
+    guid: dcce57ec366355d4e9fc31252451236a
+  - enabled: 1
+    path: Assets/Scenes/FigureScene.unity
+    guid: ddd0a07984ccb1649b933bc9a943762e
+  - enabled: 1
+    path: Assets/Scenes/NestScene.unity
+    guid: 50e980e54c9597548860a98798ee1e66
+  - enabled: 1
+    path: Assets/Scenes/SettingsScene.unity
+    guid: 35a0b15e23ff99c459f7eb00b2e03f5d
+  - enabled: 1
+    path: Assets/Scenes/ShopScene.unity
+    guid: 294020eb5cb24a24c94562c10e30fd0d
+  - enabled: 1
+    path: Assets/Scenes/TowerScene.unity
+    guid: f9cee10bd5d378d41b9c1ed858fdfe21
+  - enabled: 1
+    path: Assets/Scenes/SampleScene 1.unity
+    guid: 14a760f185fdd0649b0e570677ff694f
   m_configObjects: {}
