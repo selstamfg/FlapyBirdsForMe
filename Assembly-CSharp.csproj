@@ -79,7 +79,7 @@
     <Compile Include="Assets\Scripts\Timer\SimpleTimer.cs" />
     <Compile Include="Assets\Scripts\Obstacle\BreakObstacleSpawner.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Gost\TimerGost.cs" />
-    <Compile Include="Assets\Scripts\Heart.cs" />
+    <Compile Include="Assets\Scripts\Heart\Heart.cs" />
     <Compile Include="Assets\Scripts\Box\SpawnPoint.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Bullet\Bullet.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Bullet\AddBonusBullet.cs" />
@@ -101,14 +101,15 @@
     <Compile Include="Assets\Scripts\BonusEffect\Star\Staring.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Star\StarBox.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Snow\AddBonusSnow.cs" />
-    <Compile Include="Assets\Scripts\Zoom.cs" />
-    <Compile Include="Assets\Scripts\HeartView.cs" />
+    <Compile Include="Assets\Scripts\BonusEffect\Eye\Zoom.cs" />
+    <Compile Include="Assets\Scripts\Heart\HeartView.cs" />
     <Compile Include="Assets\Scripts\Obstacle\ObstacleSpawner.cs" />
     <Compile Include="Assets\Scripts\Bird.cs" />
     <Compile Include="Assets\Scripts\Box\AddCoinBox3.cs" />
     <Compile Include="Assets\Scripts\Timer\TimerStar.cs" />
     <Compile Include="Assets\Scripts\Obstacle\Score\AddScore.cs" />
     <Compile Include="Assets\Scripts\Box\SpawnBox.cs" />
+    <Compile Include="Assets\Scripts\MainMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
