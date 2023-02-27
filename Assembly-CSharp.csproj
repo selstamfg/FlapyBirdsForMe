@@ -96,6 +96,7 @@
     <Compile Include="Assets\Scripts\Box\AddCoinBox.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Star\AddBonusStar.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Bonus\Bonus.cs" />
+    <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Gost\AddBonusGost.cs" />
     <Compile Include="Assets\Scripts\Timer\TimerLight.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Star\Staring.cs" />
@@ -109,7 +110,11 @@
     <Compile Include="Assets\Scripts\Timer\TimerStar.cs" />
     <Compile Include="Assets\Scripts\Obstacle\Score\AddScore.cs" />
     <Compile Include="Assets\Scripts\Box\SpawnBox.cs" />
-    <Compile Include="Assets\Scripts\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\DailyBonus\GameControler.cs" />
+    <Compile Include="Assets\Scripts\DailyBonus\Reward.cs" />
+    <Compile Include="Assets\Scripts\DailyBonus\RewardPref.cs" />
+    <Compile Include="Assets\Scripts\DailyBonus\DailyRewards.cs" />
+    <Compile Include="Assets\Scripts\DailyBonusVer2\Rewards.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
