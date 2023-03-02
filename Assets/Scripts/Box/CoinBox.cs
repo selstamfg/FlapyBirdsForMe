@@ -11,14 +11,19 @@ public class CoinBox : MonoBehaviour
     public static int _bonus3 = 0;
     public static int _bonus5 = 0;
     public static int _bonus7 = 0;
-    private int _sum;
+    public static int _sum;
 
     private void Start()
     {
-        _bonus = 0;
-        _bonus3 = 0;
-        _bonus5 = 0;
-        _bonus7 = 0;
+        if (GameManager.replay)
+        {
+            _bonus = 0;
+            _bonus3 = 0;
+            _bonus5 = 0;
+            _bonus7 = 0;
+
+        }
+       
     }
 
 

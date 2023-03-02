@@ -6,10 +6,15 @@ public class Score : MonoBehaviour
 {
     public static int score = 0;
 
-
+   
     private void Start()
     {
-        score = 0;
+        if (GameManager.replay)
+        { 
+            score = 0;
+
+        }
+       
     }
 
 

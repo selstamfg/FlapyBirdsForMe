@@ -5,18 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject gameOverCanvas;
-   
-   
+    public GameObject _gameOverCanvas;
+
+    public static bool replay;
 
     public void  GameOver()
     {
-        gameOverCanvas.SetActive(true);
+        _gameOverCanvas.SetActive(true);
         Time.timeScale = 0;
+        replay = false;
     }
 
     public void Replay()
     {
+        replay = true;
         SceneManager.LoadScene(0);
     }
 

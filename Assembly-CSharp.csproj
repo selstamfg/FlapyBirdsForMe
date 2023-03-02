@@ -71,10 +71,12 @@
     <Compile Include="Assets\Scripts\Timer\TimerSnow.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Bonus\SpawnPointBonus.cs" />
     <Compile Include="Assets\Scripts\Box\CoinBox.cs" />
+    <Compile Include="Assets\Scripts\BonusScore.cs" />
     <Compile Include="Assets\Scripts\Obstacle\Obstacle.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Bonus\BonusSpawner.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Bullet\Shooting.cs" />
-    <Compile Include="Assets\Scripts\BirdFly.cs" />
+    <Compile Include="Assets\Scripts\DailyBonus\RewardPref.cs" />
+    <Compile Include="Assets\Scripts\Bird\BirdFly.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Star\SpawnStarPoint.cs" />
     <Compile Include="Assets\Scripts\Timer\SimpleTimer.cs" />
     <Compile Include="Assets\Scripts\Obstacle\BreakObstacleSpawner.cs" />
@@ -88,9 +90,13 @@
     <Compile Include="Assets\Scripts\Timer\TimerGrow.cs" />
     <Compile Include="Assets\Scripts\Obstacle\Score\Score.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Sand\AddBonusSandTime.cs" />
+    <Compile Include="Assets\Scripts\DailyBonusVer2\Rewards.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Star\Star.cs" />
+    <Compile Include="Assets\Scripts\DailyBonus\Reward.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Life\LifeBox.cs" />
+    <Compile Include="Assets\Scripts\CharactersManager.cs" />
     <Compile Include="Assets\Scripts\Box\AddCoinBox7.cs" />
+    <Compile Include="Assets\Scripts\DailyBonus\DailyRewards.cs" />
     <Compile Include="Assets\Scripts\Box\AddCoinBox5.cs" />
     <Compile Include="Assets\Scripts\BreakPart.cs" />
     <Compile Include="Assets\Scripts\Box\AddCoinBox.cs" />
@@ -100,21 +106,19 @@
     <Compile Include="Assets\Scripts\BonusEffect\Gost\AddBonusGost.cs" />
     <Compile Include="Assets\Scripts\Timer\TimerLight.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Star\Staring.cs" />
+    <Compile Include="Assets\Scripts\DailyBonus\GameControler.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Star\StarBox.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Snow\AddBonusSnow.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Eye\Zoom.cs" />
     <Compile Include="Assets\Scripts\Heart\HeartView.cs" />
     <Compile Include="Assets\Scripts\Obstacle\ObstacleSpawner.cs" />
-    <Compile Include="Assets\Scripts\Bird.cs" />
+    <Compile Include="Assets\Scripts\Bird\Bird.cs" />
     <Compile Include="Assets\Scripts\Box\AddCoinBox3.cs" />
     <Compile Include="Assets\Scripts\Timer\TimerStar.cs" />
     <Compile Include="Assets\Scripts\Obstacle\Score\AddScore.cs" />
     <Compile Include="Assets\Scripts\Box\SpawnBox.cs" />
-    <Compile Include="Assets\Scripts\DailyBonus\GameControler.cs" />
-    <Compile Include="Assets\Scripts\DailyBonus\Reward.cs" />
-    <Compile Include="Assets\Scripts\DailyBonus\RewardPref.cs" />
-    <Compile Include="Assets\Scripts\DailyBonus\DailyRewards.cs" />
-    <Compile Include="Assets\Scripts\DailyBonusVer2\Rewards.cs" />
+    <Compile Include="Assets\Scripts\Obstacle\Score\ScoreManager.cs" />
+    <Compile Include="Assets\Scripts\Obstacle\Score\Control.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
