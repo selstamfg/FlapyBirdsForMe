@@ -12,7 +12,7 @@ public class CoinBox : MonoBehaviour
     public static int _bonus5 = 0;
     public static int _bonus7 = 0;
     public static int _sum;
-
+  
     private void Start()
     {
         if (GameManager.replay)
@@ -31,5 +31,8 @@ public class CoinBox : MonoBehaviour
     {
         _sum = _bonus + _bonus3*a3+_bonus5*a5+ _bonus7*a7;
         GetComponent<UnityEngine.UI.Text>().text = _sum.ToString();
+     
+        PlayerPrefs.SetInt("Score", _sum);
+        
     }
 }

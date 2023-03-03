@@ -332,7 +332,6 @@ GameObject:
   - component: {fileID: 278374192}
   - component: {fileID: 278374195}
   - component: {fileID: 278374194}
-  - component: {fileID: 278374193}
   - component: {fileID: 278374196}
   m_Layer: 5
   m_Name: pipesHighScore
@@ -360,18 +359,6 @@ RectTransform:
   m_AnchoredPosition: {x: -60, y: -161}
   m_SizeDelta: {x: 82, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &278374193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 278374191}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78bda0a7da77b3541a57bacfd5911690, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &278374194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5569,6 +5556,7 @@ GameObject:
   - component: {fileID: 1755309102}
   - component: {fileID: 1755309101}
   - component: {fileID: 1755309100}
+  - component: {fileID: 1755309104}
   m_Layer: 5
   m_Name: Game Over Canvas
   m_TagString: Untagged
@@ -5667,6 +5655,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1755309104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755309099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c68ec528a5a54d041b784dee17a0c535, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  scoreText: {fileID: 0}
 --- !u!1 &1789009756
 GameObject:
   m_ObjectHideFlags: 0

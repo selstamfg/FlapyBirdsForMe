@@ -98,11 +98,14 @@
     <Compile Include="Assets\Scripts\Box\AddCoinBox7.cs" />
     <Compile Include="Assets\Scripts\DailyBonus\DailyRewards.cs" />
     <Compile Include="Assets\Scripts\Box\AddCoinBox5.cs" />
+    <Compile Include="Assets\Scripts\Obstacle\Score\CoinsManager.cs" />
     <Compile Include="Assets\Scripts\BreakPart.cs" />
     <Compile Include="Assets\Scripts\Box\AddCoinBox.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Star\AddBonusStar.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Bonus\Bonus.cs" />
+    <Compile Include="Assets\Scripts\Obstacle\Score\ScoreManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\Obstacle\Score\Control.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Gost\AddBonusGost.cs" />
     <Compile Include="Assets\Scripts\Timer\TimerLight.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Star\Staring.cs" />
@@ -117,8 +120,7 @@
     <Compile Include="Assets\Scripts\Timer\TimerStar.cs" />
     <Compile Include="Assets\Scripts\Obstacle\Score\AddScore.cs" />
     <Compile Include="Assets\Scripts\Box\SpawnBox.cs" />
-    <Compile Include="Assets\Scripts\Obstacle\Score\ScoreManager.cs" />
-    <Compile Include="Assets\Scripts\Obstacle\Score\Control.cs" />
+    <Compile Include="Assets\Scripts\LoseScene.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
