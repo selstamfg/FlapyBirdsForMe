@@ -86,12 +86,12 @@ public class DailyRewards : MonoBehaviour
 
     private void UpdateRewardsState()
     {
-        canClaimReward = true;
+       canClaimReward = true;
         if (lastClaimTime.HasValue)
         {
             var timeSpan = DateTime.UtcNow - lastClaimTime.Value;
 
-            if (timeSpan.TotalHours<claimDeadline)
+            if (timeSpan.TotalHours>claimDeadline)
             {
                 lastClaimTime = null;
                 currentStreak = 0;

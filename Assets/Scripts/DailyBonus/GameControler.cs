@@ -9,13 +9,13 @@ public class GameControler : MonoBehaviour
 
     public int Coins
     {
-        get => PlayerPrefs.GetInt("Coins,0");
+        get => PlayerPrefs.GetInt("Coins",0);
         private set => PlayerPrefs.SetInt("Coins", value);
     } 
 
     public int Animal 
     {
-        get => PlayerPrefs.GetInt("Animal,0");
+        get => PlayerPrefs.GetInt("Animal",0);
         private set => PlayerPrefs.SetInt("Animal", value);
     }
     [SerializeField] private TextMeshProUGUI coinsText;
