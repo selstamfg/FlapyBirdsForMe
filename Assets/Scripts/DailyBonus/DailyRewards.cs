@@ -57,8 +57,8 @@ public class DailyRewards : MonoBehaviour
 
     private bool canClaimReward;
     private int maxStreakCount = 7;
-    private float claimCooldown = 24f;
-    private float claimDeadline = 48f;
+    private float claimCooldown = 24f / 24 / 60 / 6 / 2;
+    private float claimDeadline = 48f / 24 / 60 / 6 / 2;
 
     private void Start()
     {
@@ -145,6 +145,8 @@ public class DailyRewards : MonoBehaviour
                 GameControler.Instance.AddAnimal(reward.Value);
                 break;
         }
+
+        ClaimRewardPanel.Instance.Show(reward);
 
         lastClaimTime = DateTime.UtcNow;
         currentStreak = (currentStreak + 1) % maxStreakCount;

@@ -9,8 +9,8 @@ public class GameControler : MonoBehaviour
 
     public int Coins
     {
-        get => PlayerPrefs.GetInt("Coins",0);
-        private set => PlayerPrefs.SetInt("Coins", value);
+        get => PlayerPrefs.GetInt("Money", 0);
+        private set => PlayerPrefs.SetInt("Money", value);
     } 
 
     public int Animal 

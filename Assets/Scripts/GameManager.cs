@@ -19,6 +19,12 @@ public class GameManager : MonoBehaviour
     public void Replay()
     {
         replay = true;
+        SceneManager.LoadScene(1);
+    }
+
+    public void  Menu()
+    {
+        
         SceneManager.LoadScene(0);
     }
 
