@@ -54,6 +54,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Resources\LeanTween\Editor\LeanTweenDocumentationEditor.cs" />
+    <Compile Include="Assets\Resources\Makaka Games\Publisher\Publisher Window\Welcome Screen\Scripts\Editor\PublisherWelcomeScreen.cs" />
+    <Compile Include="Assets\Resources\Makaka Games\Publisher\Publisher Window\Inspector Info\Scripts\Editor\PublisherReadmeEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

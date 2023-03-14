@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    public int money;
+    public static int  money;
     public int earnedMoney;
     public Text moneyText;
 

@@ -106,12 +106,14 @@
     <Compile Include="Assets\Scripts\BonusEffect\Growing\GrowBox.cs" />
     <Compile Include="Assets\Scripts\Timer\TimerGrow.cs" />
     <Compile Include="Assets\Resources\LeanTween\Examples\Scripts\GeneralBasics2d.cs" />
+    <Compile Include="Assets\Scripts\SkinControl\assingScin.cs" />
     <Compile Include="Assets\Resources\LeanTween\Examples\Scripts\PathSplines.cs" />
     <Compile Include="Assets\Scripts\Obstacle\Score\Score.cs" />
     <Compile Include="Assets\Resources\LeanTween\Examples\Scripts\GeneralEventsListeners.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Sand\AddBonusSandTime.cs" />
     <Compile Include="Assets\Resources\LeanTween\Examples\Scripts\PathSplineTrack.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Star\Star.cs" />
+    <Compile Include="Assets\Resources\_Heathen Engineering\Samples\UX Examples\Flat Icons [Free]\ToggleSetAnimatorBoolean.cs" />
     <Compile Include="Assets\Resources\LeanTween\Framework\LeanTest.cs" />
     <Compile Include="Assets\Scripts\DailyBonus\Reward.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Life\LifeBox.cs" />
@@ -136,6 +138,7 @@
     <Compile Include="Assets\Resources\LeanTween\Examples\Scripts\PathBezier2d.cs" />
     <Compile Include="Assets\Scripts\DailyBonus\GameControler.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Star\StarBox.cs" />
+    <Compile Include="Assets\Scripts\SkinControl\ScinControl.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Snow\AddBonusSnow.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Eye\Zoom.cs" />
     <Compile Include="Assets\Scripts\Heart\HeartView.cs" />
@@ -143,6 +146,7 @@
     <Compile Include="Assets\Resources\LeanTween\Examples\Scripts\GeneralEasingTypes.cs" />
     <Compile Include="Assets\Resources\LeanTween\Examples\Scripts\GeneralSequencer.cs" />
     <Compile Include="Assets\Scripts\Obstacle\ObstacleSpawner.cs" />
+    <Compile Include="Assets\Resources\Makaka Games\Publisher\Publisher Window\Inspector Info\Scripts\PublisherReadme.cs" />
     <Compile Include="Assets\Scripts\Bird\Bird.cs" />
     <Compile Include="Assets\Scripts\Box\AddCoinBox3.cs" />
     <Compile Include="Assets\Resources\LeanTween\Examples\Archived\OldGUIExamplesCS.cs" />
@@ -152,6 +156,10 @@
     <Compile Include="Assets\Resources\LeanTween\Examples\Archived\TestingRigidbodyCS.cs" />
     <Compile Include="Assets\Resources\LeanTween\Examples\Scripts\Following.cs" />
     <Compile Include="Assets\Scripts\Box\SpawnBox.cs" />
+    <Compile Include="Assets\Scripts\SkinControl\ScinControl1.cs" />
+    <Compile Include="Assets\Scripts\SkinControl\Money.cs" />
+    <Compile Include="Assets\Scripts\SkinControl\SkinControl2.cs" />
+    <Compile Include="Assets\Scripts\SkinControl\SkinControled.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -162,6 +170,7 @@
     <None Include="Assets\Resources\LeanTween\License.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\Resources\Makaka Games\Mobile Game Icon Pack\Fonts\Font_Read_Me.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
@@ -173,6 +182,7 @@
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\2DBirds_Pack3\Documentation 1\Documentation.txt" />
     <None Include="Assets\Resources\LeanTween\Examples\Archived\2dUnlitWithFade.shader" />
+    <None Include="Assets\Resources\_Heathen Engineering\Documentation\UX\Flat Icons [Free]\Read Me.txt" />
     <None Include="Assets\Resources\Customizable Skybox\Stylized Sky\Shaders\Stylized Sky.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
