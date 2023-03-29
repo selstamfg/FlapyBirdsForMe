@@ -33,8 +33,9 @@ public class Obstacle : MonoBehaviour
     void Update()
     {
        transform.position += Vector3.left * Speed* Time.deltaTime;
-        
-        SpeedNorm();
+
+        BonusedSandiLight();
+       // BonusedLight();
         Destroy(gameObject,15);
     }
 
@@ -45,7 +46,7 @@ public class Obstacle : MonoBehaviour
             Break();
         }
 
-        if (GrowBox.growi == 1)
+        if (PlayerPrefs.GetInt("BonusGrow") == 1)
         {
             Break();
         }
@@ -57,17 +58,6 @@ public class Obstacle : MonoBehaviour
 
     }
 
-    private void OnEnable()
-    {
-        TimerSand.onSandTimer += BonusedSand;
-        TimerLight.onLightTimer += BonusedLight;
-    }
-    private void OnDisable()
-    {
-        TimerSand.onSandTimer -= BonusedSand;
-        TimerLight.onLightTimer -= BonusedLight;
-    }
-
     public void Break()
     {
         GameObject explosionRef = (GameObject)Instantiate(explosion);
@@ -77,39 +67,20 @@ public class Obstacle : MonoBehaviour
         Destroy(explosionRef, 1);
     }
 
-   
-  
-
-    private void BonusedSand(bool bonusUp)
+    private void BonusedSandiLight()
     {
-        if (bonusUp)
+        if (PlayerPrefs.GetInt("BonusSand") == 1)
         {
-            //Debug.Log("бонус Sand действует  на обстакле");
             Speed = speed * koefSand;
-            speedNorm = false;
         }
-        speedNorm = true;
-    }
-
-
-        private void SpeedNorm()
+        else if ((PlayerPrefs.GetInt("BonusLight") == 1))
         {
-            if (this.speedNorm)
-            {
-               Speed = speed;
-            }
-            speedNorm = true;
-        }
-
-    private void BonusedLight(bool bonusUp)
-    {
-        if (bonusUp == true)
-        {
-
             Speed = speed * koefLight;
-            speedNorm = false;
         }
-        speedNorm = true;
+        else
+        {
+            Speed = speed;
+        }
     }
 }
 

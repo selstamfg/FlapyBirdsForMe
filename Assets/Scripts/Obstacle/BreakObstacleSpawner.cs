@@ -36,7 +36,8 @@ public class BreakObstacleSpawner : MonoBehaviour
     void Update()
     {
         BuildTower();
-        SpeedNorm();
+        BonusedSandiLight();
+        //BonusedLight();
     }
 
 
@@ -52,8 +53,6 @@ public class BreakObstacleSpawner : MonoBehaviour
 
     public void GenerateRandomObstacle(Obstacle[] _obstacleTemplates, float _height, Box[] _boxTemplates, int _spawnChanceBox, Bonus[] _bonusTemplates, int _spawnChanceBonus, Scet _scetTemplates)
     {
-
-
         Obstacle spawnedObstacle = _obstacleTemplates[Random.Range(0, _obstacleTemplates.Length)];
         Obstacle newObstacle = Instantiate(spawnedObstacle);
         Destroy(newObstacle, 15);
@@ -90,9 +89,6 @@ public class BreakObstacleSpawner : MonoBehaviour
             }
         }
 
-
-
-
         if (Random.Range(0, 100) < _spawnChanceBonus)
         {
 
@@ -111,54 +107,19 @@ public class BreakObstacleSpawner : MonoBehaviour
         timer = 0;
     }
 
-
-    private void OnEnable()
+    private void BonusedSandiLight()
     {
-        TimerSand.onSandTimer += BonusedSand;
-        TimerLight.onLightTimer += BonusedLight;
-    }
-    private void OnDisable()
-    {
-        TimerSand.onSandTimer -= BonusedSand;
-        TimerLight.onLightTimer -= BonusedLight;
-    }
-
-    private void BonusedSand(bool bonusUp)
-    {
-        if (bonusUp == true)
+        if (PlayerPrefs.GetInt("BonusSand") == 1)
         {
-            //  Debug.Log("бонус Sand действует  на обстакле");
-            //таймер для способности
-            //  transform.position += Vector3.left * speedLow * Time.deltaTime;
             _MaxTime = _maxTime * koefSand;
-            speedNorm = false;
         }
-        speedNorm = true;
-    }
-
-
-    private void SpeedNorm()
-    {
-        if (this.speedNorm)
+        else if ((PlayerPrefs.GetInt("BonusLight") == 1))
         {
-            // transform.position += Vector3.left * speed * Time.deltaTime;
-            _MaxTime = _maxTime;
-            speedNorm = true;
-            // Debug.Log("бонус Sand ne действует  на обстакле");
-        }
-    }
-
-    private void BonusedLight(bool bonusUp)
-    {
-        if (bonusUp == true)
-        {
-            //  Debug.Log("бонус Sand действует  на обстакле");
-            //таймер для способности
-            //  transform.position += Vector3.left * speedLow * Time.deltaTime;
             _MaxTime = _maxTime * koefLight;
-            speedNorm = false;
         }
-        speedNorm = true;
+        else
+        {
+            _MaxTime = _maxTime;
+        }
     }
-
 }

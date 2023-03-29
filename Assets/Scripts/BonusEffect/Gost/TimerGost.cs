@@ -15,11 +15,6 @@ public class TimerGost : MonoBehaviour
     public float _timeLeft = 0f;
     private bool _timerOn = false;
 
-    
-    public static Action<bool> onGostTimer;
-    private bool preassureNorm = true;
-
-
     void Update()
     {
         Timer();
@@ -30,7 +25,6 @@ public class TimerGost : MonoBehaviour
         if (_timeLeft < 0)
             _timeLeft = 0;
 
-
         float minutes = Mathf.FloorToInt(_timeLeft / 60);
         float seconds = Mathf.FloorToInt(_timeLeft % 60);
         _timerText.text = string.Format("{0:00} : {1:00}", minutes, seconds);
@@ -40,20 +34,16 @@ public class TimerGost : MonoBehaviour
     {
         if (_timerOn)
         {
-
             if (_timeLeft > 0)
             {
                 _timeLeft -= Time.deltaTime;
                 UpdateTimeText();
 
-                Gost(_timerOn);
-                
                 var normalizedValue1 = Mathf.Clamp(_timeLeft / _time, 0.0f, 1.0f);
                 timerImage1.fillAmount = normalizedValue1;
             }
             else
             {
-               
                 TimerEnd();
                 // Debug.Log("таймер остановился");
             }
@@ -61,7 +51,8 @@ public class TimerGost : MonoBehaviour
     }
 
     public void TimerStart()
-    {   
+    {   PlayerPrefs.SetInt("BonusGost", 1);
+       // Debug.Log("StartTimerGost");
         _timeLeft = _time;
         _timerOn = true;
         timerGost12Canvas.SetActive(true);
@@ -69,10 +60,11 @@ public class TimerGost : MonoBehaviour
 
     public void TimerEnd()
     {
+       // Debug.Log("EndTimerGost");
         _timeLeft = _time;
         _timerOn = false;
         timerGost12Canvas.SetActive(false);
-
+        PlayerPrefs.SetInt("BonusGost", 0);
     }
 
     private void OnEnable()
@@ -86,12 +78,8 @@ public class TimerGost : MonoBehaviour
 
 
 
-    private void Gost(bool booli)
+    private void Gost()
     {
-        if (_timerOn == true )
-        {
-            // Debug.Log("бонус Gost действует");
-            onGostTimer?.Invoke(_timerOn);
-        }
+        TimerStart();
     }
 }

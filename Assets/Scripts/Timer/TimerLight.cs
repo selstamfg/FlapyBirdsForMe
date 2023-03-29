@@ -11,15 +11,11 @@ public class TimerLight : MonoBehaviour
     [SerializeField] private Image timerImage1;
     
     public GameObject timerLight12Canvas;
-  //  public AddBonusGost _gost;
-   // public AddBonusSandTime _sand;
 
     public float _timeLeft = 0f;
     private bool _timerOn = false;
 
-    public static Action<bool> onLightTimer;
-   // public static Action<bool> onGostTimer;
-    private bool preassureNorm= true;
+   //public static Action  onLightTimer;
 
 
     void Update()
@@ -32,7 +28,6 @@ public class TimerLight : MonoBehaviour
         if (_timeLeft < 0)
             _timeLeft = 0;
 
-
         float minutes = Mathf.FloorToInt(_timeLeft / 60);
         float seconds = Mathf.FloorToInt(_timeLeft % 60);
         _timerText.text = string.Format("{0:00} : {1:00}", minutes, seconds);
@@ -42,38 +37,25 @@ public class TimerLight : MonoBehaviour
     {
         if (_timerOn)
         {
-
             if (_timeLeft > 0)
             {
                 _timeLeft -= Time.deltaTime;
                 UpdateTimeText();
 
-                Light(_timerOn);
-
                 var normalizedValue1 = Mathf.Clamp(_timeLeft / _time, 0.0f, 1.0f);
                 timerImage1.fillAmount = normalizedValue1;
-
             }
             else
             {
-               _timeLeft = _time;
-                _timerOn = false;
-                timerLight12Canvas.SetActive(false);
-                LightBox.lighti = 0;
-                StarBox.stari = 0;
-                GrowBox.growi = 0;
-                // Debug.Log("таймер остановился");
-
+                TimerEnd();
             }
-           
         }
-        
     }
-   
+
     public void TimerStart()
     {
-       // Debug.Log("timer");
-        LightBox.lighti++;
+        Debug.Log("TimerStartLight");
+        PlayerPrefs.SetInt("BonusLight", 1);
         _timeLeft = _time;
         _timerOn = true;
         timerLight12Canvas.SetActive(true);
@@ -81,41 +63,24 @@ public class TimerLight : MonoBehaviour
 
     public void TimerEnd()
     {
-        
-      //  Debug.Log("timerEnd");
+        Debug.Log("TimerEndLight");
         _timeLeft = _time;
         _timerOn = false;
         timerLight12Canvas.SetActive(false);
-        LightBox.lighti--;
+        PlayerPrefs.SetInt("BonusLight", 0);
     }
-
-
-
-
 
     private void OnEnable()
     {
         BirdFly.onTouchedLight += Light;
-        
     }
     private void OnDisable()
     {
         BirdFly.onTouchedLight -= Light;
-       
     }
 
-    private void Light(bool sandi)
+    private void Light()
     {
-        if( _timerOn==true)
-        {
-           // Debug.Log("бонус Sand действует");
-            //таймер для способности
-            onLightTimer?.Invoke(_timerOn);
-          //  sandi = false;
-        }
-       
-      
+        TimerStart();
     }
-
-  
 }    

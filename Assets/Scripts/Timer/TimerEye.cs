@@ -11,20 +11,19 @@ public class TimerEye : MonoBehaviour
     [SerializeField] private Image timerImage1;
 
     public GameObject timerEye12Canvas;
-    //  public AddBonusGost _gost;
-    // public AddBonusSandTime _sand;
-
+ 
     public float _timeLeft = 0f;
     private bool _timerOn = false;
 
-    public static Action<bool> onEyeTimer;
-
+ //   public static Action<bool> onEyeTimer;
+    
 
 
 
     void Update()
     {
         Timer();
+        
     }
 
     private void UpdateTimeText()
@@ -48,8 +47,9 @@ public class TimerEye : MonoBehaviour
                 _timeLeft -= Time.deltaTime;
                 UpdateTimeText();
 
-                Eye(_timerOn);
-
+                // Eye(_timerOn);
+              //  Debug.Log("таймер idet");
+               // onEyeTimer?.Invoke(_timerOn);
                 var normalizedValue1 = Mathf.Clamp(_timeLeft / _time, 0.0f, 1.0f);
                 timerImage1.fillAmount = normalizedValue1;
 
@@ -58,7 +58,7 @@ public class TimerEye : MonoBehaviour
             {
 
                 TimerEnd();
-                // Debug.Log("таймер остановился");
+                 Debug.Log("таймер остановился");
 
             }
 
@@ -68,7 +68,7 @@ public class TimerEye : MonoBehaviour
 
     public void TimerStart()
     {
-
+       // Debug.Log("бонус Eye Start");
         _timeLeft = _time;
         _timerOn = true;
         timerEye12Canvas.SetActive(true);
@@ -94,13 +94,16 @@ public class TimerEye : MonoBehaviour
 
     }
 
-    private void Eye(bool eyei)
+    private void Eye()
     {
-        if (_timerOn != false)
+        Debug.Log("бонус Eye действует");
+        TimerStart();
+       // if (_timerOn != false)
         {
-            // Debug.Log("бонус Sand действует");
+            
+           // Debug.Log("бонус Eye vklad действует");
             //таймер для способности
-            onEyeTimer?.Invoke(_timerOn);
+           // onEyeTimer?.Invoke(_timerOn);
             //  sandi = false;
         }
 

@@ -11,16 +11,11 @@ public class TimerBullet : MonoBehaviour
     [SerializeField] private Image timerImage1;
 
     public GameObject timerBullet12Canvas;
-    //  public AddBonusGost _gost;
-    // public AddBonusSandTime _sand;
 
     public float _timeLeft = 0f;
     private bool _timerOn = false;
 
-    public static Action<bool> onBulletTimer;
-
-
-
+  //  public static Action<bool> onBulletTimer;
 
     void Update()
     {
@@ -42,33 +37,24 @@ public class TimerBullet : MonoBehaviour
     {
         if (_timerOn)
         {
-
             if (_timeLeft > 0)
             {
                 _timeLeft -= Time.deltaTime;
                 UpdateTimeText();
 
-                Bullet(_timerOn);
-
                 var normalizedValue1 = Mathf.Clamp(_timeLeft / _time, 0.0f, 1.0f);
                 timerImage1.fillAmount = normalizedValue1;
-
             }
             else
             {
-
                 TimerEnd();
-                // Debug.Log("таймер остановился");
-
             }
-
         }
-
     }
 
     public void TimerStart()
     {
-
+        PlayerPrefs.SetInt("BonusBullet", 1);
         _timeLeft = _time;
         _timerOn = true;
         timerBullet12Canvas.SetActive(true);
@@ -79,31 +65,21 @@ public class TimerBullet : MonoBehaviour
         _timeLeft = _time;
         _timerOn = false;
         timerBullet12Canvas.SetActive(false);
-
+        PlayerPrefs.SetInt("BonusBullet", 0);
     }
 
 
     private void OnEnable()
     {
         BirdFly.onTouchedBullet+= Bullet;
-
     }
     private void OnDisable()
     {
         BirdFly.onTouchedBullet -= Bullet;
-
     }
 
-    private void Bullet(bool bulli)
+    private void Bullet()
     {
-        if (_timerOn == true)
-        {
-            // Debug.Log("бонус Sand действует");
-            //таймер для способности
-            onBulletTimer?.Invoke(_timerOn);
-            //  sandi = false;
-        }
-
-
+        TimerStart();
     }
 }

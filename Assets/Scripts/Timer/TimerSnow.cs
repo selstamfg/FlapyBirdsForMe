@@ -11,16 +11,11 @@ public class TimerSnow : MonoBehaviour
     [SerializeField] private Image timerImage1;
 
     public GameObject timerSnow12Canvas;
-    //  public AddBonusGost _gost;
-    // public AddBonusSandTime _sand;
 
     public float _timeLeft = 0f;
     private bool _timerOn = false;
 
-    public static Action<bool> onSnowTimer;
-
-
-
+    public static Action  onSnowTimer;
 
     void Update()
     {
@@ -42,33 +37,27 @@ public class TimerSnow : MonoBehaviour
     {
         if (_timerOn)
         {
+           // Debug.Log("бонус Snow  действует");
 
             if (_timeLeft > 0)
             {
                 _timeLeft -= Time.deltaTime;
                 UpdateTimeText();
-
-                Snow(_timerOn);
-
                 var normalizedValue1 = Mathf.Clamp(_timeLeft / _time, 0.0f, 1.0f);
                 timerImage1.fillAmount = normalizedValue1;
-
             }
             else
             {
-
                 TimerEnd();
-                // Debug.Log("таймер остановился");
-
+               //  Debug.Log("таймер остановился");
             }
-
         }
-
     }
 
     public void TimerStart()
     {
-
+       // Debug.Log("бонус Snow start");
+        PlayerPrefs.SetInt("BonusSnow", 1);
         _timeLeft = _time;
         _timerOn = true;
         timerSnow12Canvas.SetActive(true);
@@ -76,34 +65,25 @@ public class TimerSnow : MonoBehaviour
 
     public void TimerEnd()
     {
+       // Debug.Log("бонус Snow end действует");
         _timeLeft = _time;
         _timerOn = false;
         timerSnow12Canvas.SetActive(false);
-
+        PlayerPrefs.SetInt("BonusSnow", 0);
     }
 
 
     private void OnEnable()
     {
         BirdFly.onTouchedSnow += Snow;
-
     }
     private void OnDisable()
     {
         BirdFly.onTouchedSnow -= Snow;
-
     }
 
-    private void Snow(bool snowi)
+    private void Snow()
     {
-        if (_timerOn != false)
-        {
-            // Debug.Log("бонус Sand действует");
-            //таймер для способности
-            onSnowTimer?.Invoke(_timerOn);
-            //  sandi = false;
-        }
-
-
+        TimerStart();
     }
 }

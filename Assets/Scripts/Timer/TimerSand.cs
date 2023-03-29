@@ -11,17 +11,12 @@ public class TimerSand : MonoBehaviour
     [SerializeField] private Image timerImage1;
     
     public GameObject timerSand12Canvas;
-  //  public AddBonusGost _gost;
-   // public AddBonusSandTime _sand;
 
     public float _timeLeft = 0f;
     private bool _timerOn = false;
 
-    public static Action<bool> onSandTimer;
+   // public static Action onSandTimer;
     
-   
-
-
     void Update()
     {
         Timer();
@@ -32,7 +27,6 @@ public class TimerSand : MonoBehaviour
         if (_timeLeft < 0)
             _timeLeft = 0;
 
-
         float minutes = Mathf.FloorToInt(_timeLeft / 60);
         float seconds = Mathf.FloorToInt(_timeLeft % 60);
         _timerText.text = string.Format("{0:00} : {1:00}", minutes, seconds);
@@ -42,33 +36,24 @@ public class TimerSand : MonoBehaviour
     {
         if (_timerOn)
         {
-
             if (_timeLeft > 0)
             {
                 _timeLeft -= Time.deltaTime;
                 UpdateTimeText();
 
-                Sand(_timerOn);
-               
                 var normalizedValue1 = Mathf.Clamp(_timeLeft / _time, 0.0f, 1.0f);
                 timerImage1.fillAmount = normalizedValue1;
-
             }
             else
             {
-                
                 TimerEnd();
-               // Debug.Log("таймер остановился");
-               
             }
-           
         }
-        
     }
    
     public void TimerStart()
     {
-
+        PlayerPrefs.SetInt("BonusSand", 1);
         _timeLeft = _time;
         _timerOn = true;
         timerSand12Canvas.SetActive(true);
@@ -79,33 +64,21 @@ public class TimerSand : MonoBehaviour
         _timeLeft = _time;
         _timerOn = false;
         timerSand12Canvas.SetActive(false);
-
+        PlayerPrefs.SetInt("BonusSand", 0);
     }
 
 
     private void OnEnable()
     {
         BirdFly.onTouchedSand += Sand;
-
     }
     private void OnDisable()
     {
         BirdFly.onTouchedSand -= Sand;
-
     }
 
-    private void Sand(bool sandi)
+    private void Sand()
     {
-        if (_timerOn == true)
-        {
-            // Debug.Log("бонус Sand действует");
-            //таймер для способности
-            onSandTimer?.Invoke(_timerOn);
-            //  sandi = false;
-        }
-
-
+        TimerStart();
     }
-
-
 }    

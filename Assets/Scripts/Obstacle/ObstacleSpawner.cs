@@ -53,7 +53,8 @@ public class ObstacleSpawner : MonoBehaviour
     void Update()
     {
         BuildTower();
-        SpeedNorm();
+       // BonusedLight();
+        BonusedSandiLight();
     }
 
 
@@ -86,18 +87,14 @@ public class ObstacleSpawner : MonoBehaviour
 
     public void GenerateRandomObstacle(Obstacle[] _obstacleTemplates, float _height, Box[] _boxTemplates, int _spawnChanceBox, Bonus[] _bonusTemplates, int _spawnChanceBonus, Scet _scetTemplates)
     {
-
-        
         Obstacle spawnedObstacle = _obstacleTemplates[Random.Range(0, _obstacleTemplates.Length)];
         Obstacle newObstacle = Instantiate(spawnedObstacle);
         Destroy(newObstacle, 15);
-        //public Obstacle desObs = newObstacle;
-        //  GetComponent();
+
         newObstacle.transform.position = transform.position + new Vector3(0, Random.Range(-_height, _height), 0);
         Transform _currentPointBox = newObstacle.SpawnPoint;
         Transform _currentPointBonus = newObstacle.SpawnPointBonus;
         Transform _currentPointScet = newObstacle.SpawnPointScet;
-
 
         //if (Random.Range(0, 100) < _spawnChanceBox)
         //{
@@ -121,79 +118,38 @@ public class ObstacleSpawner : MonoBehaviour
                    Box newBox = Instantiate(spawnedBox);
 
                     newBox.transform.position = _currentPointBox.position;
-                //break;
             }
         }
 
-
-
-
         if (Random.Range(0, 100) < _spawnChanceBonus)
         {
-
             Bonus spawnedBonus = _bonusTemplates[Random.Range(0, _bonusTemplates.Length)];
             Bonus newBonus = Instantiate(spawnedBonus);
 
             newBonus.transform.position = _currentPointBonus.position;
-
-
         }
         Scet spawnedScet = _scetTemplates;
         Scet newScet = Instantiate(spawnedScet);
         newScet.transform.position = _currentPointScet.position;
 
-
         timer = 0;
     }
 
 
-    private void OnEnable()
+    private void BonusedSandiLight()
     {
-        TimerSand.onSandTimer += BonusedSand;
-        TimerLight.onLightTimer += BonusedLight;
-    }
-    private void OnDisable()
-    {
-        TimerSand.onSandTimer -= BonusedSand;
-        TimerLight.onLightTimer -= BonusedLight;
-    }
-
-    private void BonusedSand(bool bonusUp)
-    {
-        if (bonusUp == true)
+        if (PlayerPrefs.GetInt("BonusSand") == 1)
         {
-            //  Debug.Log("бонус Sand действует  на обстакле");
-            //таймер для способности
-            //  transform.position += Vector3.left * speedLow * Time.deltaTime;
             _MaxTime = _maxTime * koefSand;
-            speedNorm = false;
         }
-        speedNorm = true;
-    }
-
-
-    private void SpeedNorm()
-    {
-        if (this.speedNorm)
+        else if ((PlayerPrefs.GetInt("BonusLight") == 1))
         {
-            // transform.position += Vector3.left * speed * Time.deltaTime;
-            _MaxTime = _maxTime;
-            speedNorm = true;
-            // Debug.Log("бонус Sand ne действует  на обстакле");
-        }
-    }
-
-    private void BonusedLight(bool bonusUp)
-    {
-        if (bonusUp == true)
-        {
-            //  Debug.Log("бонус Sand действует  на обстакле");
-            //таймер для способности
-            //  transform.position += Vector3.left * speedLow * Time.deltaTime;
             _MaxTime = _maxTime * koefLight;
-            speedNorm = false;
         }
-        speedNorm = true;
+        else
+        {
+            _MaxTime = _maxTime;
+        }
     }
 
     //[Serializable]
@@ -202,7 +158,6 @@ public class ObstacleSpawner : MonoBehaviour
     //    public string id;
     //    public Box _box;
     //}
-
 }
 
 

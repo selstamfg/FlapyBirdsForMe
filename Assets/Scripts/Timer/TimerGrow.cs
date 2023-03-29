@@ -17,7 +17,7 @@ public class TimerGrow : MonoBehaviour
     public float _timeLeft = 0f;
     private bool _timerOn = false;
 
-    public static Action<bool> onGrowTimer;
+   // public static Action<bool> onGrowTimer;
 
 
 
@@ -48,7 +48,7 @@ public class TimerGrow : MonoBehaviour
                 _timeLeft -= Time.deltaTime;
                 UpdateTimeText();
 
-                Grow(_timerOn);
+               // Grow(_timerOn);
 
                 var normalizedValue1 = Mathf.Clamp(_timeLeft / _time, 0.0f, 1.0f);
                 timerImage1.fillAmount = normalizedValue1;
@@ -69,7 +69,8 @@ public class TimerGrow : MonoBehaviour
     public void TimerStart()
     {
       //  Debug.Log("timergrow");
-        GrowBox.growi++;
+       // GrowBox.growi++;
+        PlayerPrefs.SetInt("BonusGrow", 1);
         _timeLeft = _time;
         _timerOn = true;
         timerGrow12Canvas.SetActive(true);
@@ -78,10 +79,12 @@ public class TimerGrow : MonoBehaviour
     public void TimerEnd()
     {
        // Debug.Log("timerEndgrow");
+       
         _timeLeft = _time;
         _timerOn = false;
         timerGrow12Canvas.SetActive(false);
-        GrowBox.growi--;
+         PlayerPrefs.SetInt("BonusGrow", 0);
+      //  GrowBox.growi--;
     }
 
 
@@ -96,15 +99,16 @@ public class TimerGrow : MonoBehaviour
 
     }
 
-    private void Grow(bool growi)
+    private void Grow()
     {
-        if (_timerOn != false)
-        {
+        TimerStart();
+      //  if (_timerOn != false)
+       // {
             // Debug.Log("бонус Sand действует");
             //таймер для способности
-            onGrowTimer?.Invoke(_timerOn);
+       //     onGrowTimer?.Invoke(_timerOn);
             //  sandi = false;
-        }
+       // }
 
 
     }

@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class TimerSmall : MonoBehaviour
 {
-
     [SerializeField] private float _time;
     [SerializeField] private Text _timerText;
     [SerializeField] private Image timerImage1;
@@ -17,8 +16,6 @@ public class TimerSmall : MonoBehaviour
     private bool _timerOn = false;
 
 
-    public static Action<bool> onSmallTimer;
-    private bool preassureNorm = true;
 
 
     void Update()
@@ -41,28 +38,28 @@ public class TimerSmall : MonoBehaviour
     {
         if (_timerOn)
         {
-
             if (_timeLeft > 0)
             {
                 _timeLeft -= Time.deltaTime;
                 UpdateTimeText();
-
-                Small(_timerOn);
 
                 var normalizedValue1 = Mathf.Clamp(_timeLeft / _time, 0.0f, 1.0f);
                 timerImage1.fillAmount = normalizedValue1;
             }
             else
             {
-
                 TimerEnd();
                 // Debug.Log("таймер остановился");
             }
         }
+
     }
 
     public void TimerStart()
     {
+        //  Debug.Log("timergrow");
+        // GrowBox.growi++;
+        PlayerPrefs.SetInt("BonusSmall", 1);
         _timeLeft = _time;
         _timerOn = true;
         timerSmall12Canvas.SetActive(true);
@@ -70,29 +67,38 @@ public class TimerSmall : MonoBehaviour
 
     public void TimerEnd()
     {
+        // Debug.Log("timerEndgrow");
+       
         _timeLeft = _time;
         _timerOn = false;
         timerSmall12Canvas.SetActive(false);
-
+        PlayerPrefs.SetInt("BonusSmall", 0); 
+        //  GrowBox.growi--;
     }
+
 
     private void OnEnable()
     {
         BirdFly.onTouchedSmall += Small;
+
     }
     private void OnDisable()
     {
-        BirdFly.onTouchedSmall -= Small;
+        BirdFly.onTouchedSmall-= Small;
+
     }
 
-
-
-    private void Small(bool booli)
+    private void Small()
     {
-        if (_timerOn == true)
-        {
-            // Debug.Log("бонус Gost действует");
-            onSmallTimer?.Invoke(_timerOn);
-        }
+        TimerStart();
+        //  if (_timerOn != false)
+        // {
+        // Debug.Log("бонус Sand действует");
+        //таймер для способности
+        //     onGrowTimer?.Invoke(_timerOn);
+        //  sandi = false;
+        // }
+
+
     }
 }
