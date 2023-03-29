@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,12 +9,10 @@ public class Obstacle : MonoBehaviour
     [SerializeField] private float speed;
     private float Speed;
     float koefSand = 0.5f;
-    float koefLight = 2f;
+    float koefLight = 3f;
 
     private UnityEngine.Object explosion;
-    //public float speedLow;
 
-    // [SerializeField] private NastroykaTest _nastroyka;
     [SerializeField] private Transform _spawnPoint;
     [SerializeField] private Transform _spawnPointBonus;
     [SerializeField] private Transform _spawnPointScet;
@@ -22,7 +21,7 @@ public class Obstacle : MonoBehaviour
     public Transform SpawnPointBonus => _spawnPointBonus;
     public Transform SpawnPointScet => _spawnPointScet;
 
-    bool speedNorm=true;
+    public static Action onTouchedGameOver;
 
     private void Start()
     {
@@ -35,28 +34,50 @@ public class Obstacle : MonoBehaviour
        transform.position += Vector3.left * Speed* Time.deltaTime;
 
         BonusedSandiLight();
-       // BonusedLight();
         Destroy(gameObject,15);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
-    {  
-        if (LifeBox.life != 1)
-        {
-            Break();
-        }
+    {
+      //  Debug.Log("OnTriggerEnter2D");
 
-        if (PlayerPrefs.GetInt("BonusGrow") == 1)
+        if (collision.gameObject.tag == "Player")
         {
-            Break();
-        }
+          //  Debug.Log("TagPlayer");
+            LifeBox.life--;
 
-        if (LightBox.lighti == 1)
+
+            if (PlayerPrefs.GetInt("BonusGrow") == 1)
+            {
+                LifeBox.life++;
+                Break();
+            }
+
+            if (PlayerPrefs.GetInt("BonusLight") == 1)
+            {
+                LifeBox.life++;
+                Break();
+            }
+
+
+
+            if (LifeBox.life > 0)
+            {
+                Break();
+            }
+
+            if (LifeBox.life <= 0)
+            {
+                onTouchedGameOver?.Invoke();
+            }
+
+        }
+        else
         {
-            Break();
+            //Debug.Log("Collision object does not have Player tag");
         }
-
     }
+    
 
     public void Break()
     {

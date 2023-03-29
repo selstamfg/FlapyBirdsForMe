@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
         _gameOverCanvas.SetActive(true);
         Time.timeScale = 0;
         replay = false;
+        Debug.Log("GameOver");
     }
 
     public void Replay()
@@ -28,29 +29,12 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    //private void CountingActive()
-    //{
-    //    pipesUpdateCanvas.SetActive(true);
-    //    lifeUpdateCanvas.SetActive(true);
-    //    coinsUpdateCanvas.SetActive(true);
-    //}
-
-    //private void CountingNotActive()
-    //{
-    //    pipesUpdateCanvas.SetActive(false);
-    //    lifeUpdateCanvas.SetActive(false);
-    //    coinsUpdateCanvas.SetActive(false);
-    //}
-
-    //public void TimerLight12()
-    //{
-    //    timer12Canvas.SetActive(true);
-
-
-    //}
-
-    //public void ReloadTimer12()
-    //{
-    //    timer12Canvas.SetActive(false);
-    //}
+    private void OnEnable()
+    {
+        Obstacle.onTouchedGameOver += GameOver;
+    }
+    private void OnDisable()
+    {
+        Obstacle.onTouchedGameOver -= GameOver;
+    }
 }

@@ -53,7 +53,20 @@ public class Box : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void BonusedSandiLight()
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //  Debug.Log("OnTriggerEnter2D");
+
+        if (collision.gameObject.tag == "Player")
+        {
+            Break();
+        }
+    }
+
+
+
+
+            private void BonusedSandiLight()
     {
         if (PlayerPrefs.GetInt("BonusSand") == 1)
         {

@@ -44,7 +44,6 @@ public class BirdFly :MonoBehaviour
         transform = GetComponent<Transform>();
         playerObject = LayerMask.NameToLayer("Player");
         obstacleObject = LayerMask.NameToLayer("Obstacle");
-       // life = 1;
     }
     private void Update()
     { 
@@ -53,7 +52,6 @@ public class BirdFly :MonoBehaviour
         BonusedGost();
         BonusedGrowiSmall();
         BonusedBullet();
-        BonusedStar();
     }
 
 
@@ -62,41 +60,13 @@ public class BirdFly :MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             rigidbody.velocity = Vector2.up * velocity;
-            //circleCollider.radius = 1;
         }
     }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out Box box))
-        {
-            box.Break();
-        }
 
-        if (collision.TryGetComponent(out Obstacle obstacle))
-        {
-            // gameManager.GameOver();
-            if (PlayerPrefs.GetInt("BonusGrow") == 1)
-            {
-                LifeBox.life++;
-                obstacle.Break();
-            }
-
-            if (PlayerPrefs.GetInt("BonusLight") == 1)
-            {
-                LifeBox.life++;
-                obstacle.Break();
-            }
-
-            LifeBox.life--;
-
-            if (LifeBox.life == 0)
-            {
-                //TimerBonusEnd();
-                _gameManager.GameOver();
-            }
-        }
 
         if (collision.TryGetComponent(out AddBonusGost bonusGost))
         {
@@ -140,11 +110,6 @@ public class BirdFly :MonoBehaviour
 
         if (collision.TryGetComponent(out AddBonusGrow bonusGrowTime))
         {
-            //  GrowBox.growi++;
-            //if (GrowBox.growi == 0 && PlayerPrefs.GetInt("BonusGrow") == 0)
-            //{
-            //    GrowBox.growi++;
-            //}
             TimerBonusEnd();
             onTouchedGrow?.Invoke();
             bonusGrowTime.Break();
@@ -152,11 +117,7 @@ public class BirdFly :MonoBehaviour
 
         if (collision.TryGetComponent(out AddBonusLight bonusLightTime))
         {
-            //if (LightBox.lighti == 0 && PlayerPrefs.GetInt("BonusLight") == 0)
-            //{
-            //    LightBox.lighti++;
-            //}
-            Debug.Log("Ydar s Light");
+           //Debug.Log("Ydar s Light");
             TimerBonusEnd();
             onTouchedLight?.Invoke();
             bonusLightTime.Break();
@@ -172,11 +133,6 @@ public class BirdFly :MonoBehaviour
         if (collision.TryGetComponent(out AddBonusStar bonusStarTime))
         {
             TimerBonusEnd();
-            //if (StarBox.stari == 0 && PlayerPrefs.GetInt("BonusStar")==0)
-            //{
-            //    StarBox.stari++;
-            //     StarBox.stari--;
-            //}
             onTouchedStar?.Invoke();
             _orbiting.BuildStar();
             bonusStarTime.Break();
@@ -231,14 +187,6 @@ public class BirdFly :MonoBehaviour
         {
             Time.timeScale = _howSlow;
             Time.fixedDeltaTime = Time.timeScale * 0.015f;
-        }
-    }
-
-    private void BonusedStar()
-    {
-        if (PlayerPrefs.GetInt("BonusStar") == 1)
-        {
-           // _orbiting.BuildStar();
         }
     }
     
