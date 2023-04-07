@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 1712640338400091409}
   m_Layer: 9
   m_Name: Enemy 2
-  m_TagString: Untagged
+  m_TagString: Box
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,7 +59,7 @@ Transform:
   m_GameObject: {fileID: 9069516572054751334}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -4, y: 4, z: 4}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 9147309333654731305}
   m_Father: {fileID: 0}

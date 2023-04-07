@@ -12,10 +12,10 @@ public class Bonus : MonoBehaviour
 
     void Update()
     {
-        transform.position += Vector3.left * Speed  * Time.deltaTime;
-        Destroy(gameObject, 15);
-       // BonusedLight();
+        transform.position += Vector3.left * Speed * Time.deltaTime;
+
         BonusedSandiLight();
+        Destroy(gameObject, 15);
     }
 
     private void BonusedSandiLight()
@@ -24,8 +24,9 @@ public class Bonus : MonoBehaviour
         {
             Speed = speed * koefSand;
         }
-        else if((PlayerPrefs.GetInt("BonusLight") == 1))
+        else if ((PlayerPrefs.GetInt("BonusLight") == 1))
         {
+            Debug.Log("LightBonus");
             Speed = speed * koefLight;
         }
         else

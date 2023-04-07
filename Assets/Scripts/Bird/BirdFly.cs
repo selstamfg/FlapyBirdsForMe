@@ -6,8 +6,7 @@ using System;
 public class BirdFly :MonoBehaviour
 {
     [Header("General")]
-    [SerializeField] GameManager _gameManager;
-    [SerializeField] float _velocity;
+  //  [SerializeField] GameManager _gameManager;
     [Header("Script Bonused on Bird")]
     [SerializeField] float _howSlow = 0.5f;
     [SerializeField] Shooting _shooting;
@@ -40,29 +39,19 @@ public class BirdFly :MonoBehaviour
     private void Start()
     {
         TimerBonusEnd();
-        rigidbody = GetComponent<Rigidbody2D>();
+        //rigidbody = GetComponent<Rigidbody2D>();
         transform = GetComponent<Transform>();
         playerObject = LayerMask.NameToLayer("Player");
         obstacleObject = LayerMask.NameToLayer("Obstacle");
     }
     private void Update()
     { 
-        Fly(_velocity);
+      //  Fly(_velocity);
         BonusedSnow();
         BonusedGost();
         BonusedGrowiSmall();
         BonusedBullet();
     }
-
-
-    public void Fly(float velocity)
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            rigidbody.velocity = Vector2.up * velocity;
-        }
-    }
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

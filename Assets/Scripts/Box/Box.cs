@@ -12,8 +12,6 @@ public class Box : MonoBehaviour
     private float Speed;
     float koefSand = 0.5f;
     float koefLight = 2f;
-    bool speedNorm = true;
-    private int _bonusSize;
 
     int bulletObject, boxObject;
     private UnityEngine.Object explosion;
@@ -63,10 +61,7 @@ public class Box : MonoBehaviour
         }
     }
 
-
-
-
-            private void BonusedSandiLight()
+    private void BonusedSandiLight()
     {
         if (PlayerPrefs.GetInt("BonusSand") == 1)
         {
@@ -74,6 +69,7 @@ public class Box : MonoBehaviour
         }
         else if ((PlayerPrefs.GetInt("BonusLight") == 1))
         {
+            Debug.Log("LightBox");
             Speed = speed * koefLight;
         }
         else
@@ -81,6 +77,9 @@ public class Box : MonoBehaviour
             Speed = speed;
         }
     }
+
+
+
 
 
 }

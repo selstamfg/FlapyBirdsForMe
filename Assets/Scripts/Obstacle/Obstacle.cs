@@ -9,7 +9,7 @@ public class Obstacle : MonoBehaviour
     [SerializeField] private float speed;
     private float Speed;
     float koefSand = 0.5f;
-    float koefLight = 3f;
+    float koefLight = 2f;
 
     private UnityEngine.Object explosion;
 
@@ -96,6 +96,7 @@ public class Obstacle : MonoBehaviour
         }
         else if ((PlayerPrefs.GetInt("BonusLight") == 1))
         {
+            Debug.Log("LightObstacle");
             Speed = speed * koefLight;
         }
         else

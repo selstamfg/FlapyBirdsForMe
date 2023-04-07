@@ -198,36 +198,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 46305505}
   m_CullTransparentMesh: 1
---- !u!1 &70137389
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 70137390}
-  m_Layer: 6
-  m_Name: HeartView
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &70137390
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 70137389}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1912031701}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &99622760
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,8 +243,7 @@ MonoBehaviour:
   - {fileID: 6187455053414926527, guid: c7c25bae52eba2643b637d2942d1ae93, type: 3}
   _spawnChanceBox: 0
   _bonusTemplates:
-  - {fileID: 410960877369834484, guid: b3381928904d9394ea01c7a815abae4c, type: 3}
-  - {fileID: 2355004528674739683, guid: 19b206274625cb045a8cf3bc33f9d7a5, type: 3}
+  - {fileID: 1120660047792382718, guid: 31b1ed1a3725f7f47ba5417ad5cd3fe8, type: 3}
   _spawnChanceBonus: 100
   _scetTemplates: {fileID: 3947359839665594290, guid: 3247ce351eeb9034ab47b01c1a233540, type: 3}
 --- !u!4 &99622762
@@ -787,6 +756,41 @@ RectTransform:
   - {fileID: 2071959618}
   - {fileID: 1267710908}
   m_Father: {fileID: 588879981}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &398300377
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 398300378}
+  m_Layer: 5
+  m_Name: PlayerPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &398300378
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398300377}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1603901349}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -2205,7 +2209,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1912031701}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &875275541
 GameObject:
@@ -2287,7 +2291,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1912031701}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &901820665
 GameObject:
@@ -4953,7 +4957,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1600825323
+--- !u!1 &1603901347
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4961,28 +4965,52 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1600825324}
-  m_Layer: 6
-  m_Name: HeartPoint
+  - component: {fileID: 1603901349}
+  - component: {fileID: 1603901348}
+  m_Layer: 5
+  m_Name: BirdSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1600825324
-Transform:
+--- !u!114 &1603901348
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1600825323}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.15, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1912031701}
-  m_RootOrder: 2
+  m_GameObject: {fileID: 1603901347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d169a42d471e9b4491f83bb82d31d06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objects:
+  - {fileID: 7322479139939081348, guid: a23feaf1d7a3acb449af59db52c27e97, type: 3}
+  - {fileID: 4276338732681686867, guid: f16f6a210440df44e87687a72d5825c9, type: 3}
+  spawnPosition: {fileID: 398300378}
+  _normaling: 0.2
+--- !u!224 &1603901349
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603901347}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_Children:
+  - {fileID: 398300378}
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.053993225, y: 2.2610016}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1678565260
 GameObject:
   m_ObjectHideFlags: 0
@@ -5834,6 +5862,7 @@ GameObject:
   - component: {fileID: 1912031702}
   - component: {fileID: 1912031704}
   - component: {fileID: 1912031703}
+  - component: {fileID: 1912031705}
   m_Layer: 6
   m_Name: Bird
   m_TagString: Player
@@ -5924,8 +5953,6 @@ Transform:
   m_Children:
   - {fileID: 1106545303}
   - {fileID: 1066127587}
-  - {fileID: 1600825324}
-  - {fileID: 70137390}
   - {fileID: 884139991}
   - {fileID: 790116788}
   m_Father: {fileID: 0}
@@ -5964,8 +5991,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a585d6fefca2c943a78c58105b88805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameManager: {fileID: 1293818419}
-  _velocity: 4
   _howSlow: 0.5
   _shooting: {fileID: 1066127586}
   _orbiting: {fileID: 884139990}
@@ -5989,6 +6014,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.06
+--- !u!114 &1912031705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912031698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7a5b425dc303b34497df0f2f7dac977, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _velocity: 4
+  _movementType: var1
+  _followSpeed: 5
+  smoothTime: 0
+  _mass: 0
 --- !u!1 &1964337150
 GameObject:
   m_ObjectHideFlags: 0
