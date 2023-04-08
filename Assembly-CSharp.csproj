@@ -61,6 +61,7 @@
     <Compile Include="Assets\Resources\LeanTween\Examples\Scripts\GeneralCameraShake.cs" />
     <Compile Include="Assets\Resources\LeanTween\Framework\LTDescr.cs" />
     <Compile Include="Assets\Scripts\Test\GameManagerTest.cs" />
+    <Compile Include="Assets\Scripts\FigureMain.cs" />
     <Compile Include="Assets\Resources\LeanTween\Framework\LeanTweenExt.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Smalling\AddBonusSmall.cs" />
     <Compile Include="Assets\Scripts\Timer\TimerEye.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="Assets\Resources\LeanTween\Examples\Scripts\TestingUnitTests.cs" />
     <Compile Include="Assets\Resources\LeanTween\Examples\Archived\TestingPunch.cs" />
     <Compile Include="Assets\Resources\LeanTween\Framework\LTSeq.cs" />
+    <Compile Include="Assets\Scripts\BirdSpawner.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Timer\Timer.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Smalling\TimerSmall.cs" />
@@ -148,6 +150,7 @@
     <Compile Include="Assets\Scripts\BonusEffect\Snow\AddBonusSnow.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Eye\Zoom.cs" />
     <Compile Include="Assets\Scripts\Heart\HeartView.cs" />
+    <Compile Include="Assets\Scripts\Bird\BirdTransformPosition.cs" />
     <Compile Include="Assets\Scripts\TimerIndex.cs" />
     <Compile Include="Assets\Scripts\Timer\Timers.cs" />
     <Compile Include="Assets\Resources\LeanTween\Framework\LTDescrOptional.cs" />
@@ -166,9 +169,8 @@
     <Compile Include="Assets\Resources\LeanTween\Examples\Scripts\Following.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Box\SpawnBox.cs" />
-    <Compile Include="Assets\Scripts\FigureMain.cs" />
-    <Compile Include="Assets\Scripts\BirdSpawner.cs" />
-    <Compile Include="Assets\Scripts\Bird\BirdTransformPosition.cs" />
+    <Compile Include="Assets\Scripts\Portal\Portal.cs" />
+    <Compile Include="Assets\Scripts\Portal\Portal2.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

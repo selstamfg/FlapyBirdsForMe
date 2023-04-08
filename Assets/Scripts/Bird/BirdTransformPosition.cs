@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-
+using UnityEngine.SceneManagement;
 
 public class BirdTransformPosition : MonoBehaviour
 {
@@ -14,7 +13,7 @@ public class BirdTransformPosition : MonoBehaviour
     [SerializeField] float _mass;
     private Vector2 _velocityRef;
     private Rigidbody2D _rigidbody;
-
+   // private float _normaling=1;
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -24,6 +23,17 @@ public class BirdTransformPosition : MonoBehaviour
 
     private void Update()
     {
+        Scene currentScene = SceneManager.GetActiveScene();
+        if (currentScene.name == "MenuScene")
+        {
+            _rigidbody.simulated = false;
+        }
+        else
+        {
+            _rigidbody.simulated = true;
+        }
+
+
         switch (_movementType)
         {
             case "var1":

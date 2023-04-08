@@ -39,7 +39,7 @@ public class BirdSpawner : MonoBehaviour
 
     private GameObject playerObject;
     private int currentObjectIndex = -1;
-    [SerializeField] float _normaling;
+  //  [SerializeField] float _normaling;
     void Start()
     {
         currentObjectIndex = PlayerPrefs.GetInt("skinNum");
@@ -60,6 +60,6 @@ public class BirdSpawner : MonoBehaviour
     void SpawnCurrentObject()
     {
         playerObject = Instantiate(objects[currentObjectIndex], spawnPosition.position, Quaternion.identity);
-        playerObject.transform.localScale = new Vector3(_normaling, _normaling, _normaling);
+      //  playerObject.transform.localScale = new Vector3(_normaling, _normaling, _normaling);
     }
 }

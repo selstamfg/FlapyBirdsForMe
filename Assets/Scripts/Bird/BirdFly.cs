@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class BirdFly :MonoBehaviour
 {
@@ -43,10 +44,18 @@ public class BirdFly :MonoBehaviour
         transform = GetComponent<Transform>();
         playerObject = LayerMask.NameToLayer("Player");
         obstacleObject = LayerMask.NameToLayer("Obstacle");
+        //Scene currentScene = SceneManager.GetActiveScene();
+        //if (currentScene.name == "MenuScene")
+        //{
+
+        //    transform.localScale = new Vector3(_growing, _growing, _growing);
+        //}
     }
     private void Update()
-    { 
-      //  Fly(_velocity);
+    {
+        //  Fly(_velocity);
+       
+        
         BonusedSnow();
         BonusedGost();
         BonusedGrowiSmall();
@@ -151,6 +160,7 @@ public class BirdFly :MonoBehaviour
 
     private void BonusedGrowiSmall()
     {
+        Scene currentScene = SceneManager.GetActiveScene();
         if (PlayerPrefs.GetInt("BonusGrow") == 1)
         {
             transform.localScale = new Vector3(_growing, _growing, _growing);
@@ -158,6 +168,10 @@ public class BirdFly :MonoBehaviour
         else if((PlayerPrefs.GetInt("BonusSmall") == 1))
         {
             transform.localScale = new Vector3(_smalling, _smalling, _smalling);
+        }
+        else if  (currentScene.name == "MenuScene")
+        {
+            transform.localScale = new Vector3(_growing, _growing, _growing);
         }
         else
         {
