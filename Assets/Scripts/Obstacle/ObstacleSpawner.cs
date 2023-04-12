@@ -20,6 +20,10 @@ public class ObstacleSpawner : MonoBehaviour
     [SerializeField] private Bonus[] _bonusTemplates;
     [SerializeField] int _spawnChanceBonus;
     private Transform _currentPointBonus;
+    [Header("Portal")]
+    //[SerializeField] private Bonus[] _portalTemplates;
+    [SerializeField] int _bonusIndex;
+    [SerializeField] int _obstaclePassed;
     [Header("Scet")]
     [SerializeField] private Scet _scetTemplates;
     private Transform _currentPointScet;
@@ -29,7 +33,7 @@ public class ObstacleSpawner : MonoBehaviour
     private int _missCount;
     private bool speedNorm = true;
     private float timer = 0;
-
+    private int _obstacleScore;
     void Start()
     {
         BuildTower();
@@ -38,6 +42,7 @@ public class ObstacleSpawner : MonoBehaviour
 
     void Update()
     {
+        _obstacleScore = (int)Score.score;
         BuildTower();
         BonusedSandiLight();
     }
@@ -92,11 +97,25 @@ public class ObstacleSpawner : MonoBehaviour
 
         if (Random.Range(0, 100) < _spawnChanceBonus)
         {
+            //if (_obstacleScore % _obstaclePassed ==0)
+            //{
+            //    Bonus spawnedBonus = _bonusTemplates[Random.Range(_bonusIndex, _bonusTemplates.Length)];
+            //    Bonus newBonus = Instantiate(spawnedBonus);
+            //    newBonus.transform.position = _currentPointBonus.position;
+            //}
+            //else
+            //{ 
+            //    Bonus spawnedBonus = _bonusTemplates[Random.Range(0, _bonusIndex)];
+            //    Bonus newBonus = Instantiate(spawnedBonus);
+            //    newBonus.transform.position = _currentPointBonus.position;
+            //}
+
             Bonus spawnedBonus = _bonusTemplates[Random.Range(0, _bonusTemplates.Length)];
             Bonus newBonus = Instantiate(spawnedBonus);
+             newBonus.transform.position = _currentPointBonus.position;
 
-            newBonus.transform.position = _currentPointBonus.position;
         }
+
         Scet spawnedScet = _scetTemplates;
         Scet newScet = Instantiate(spawnedScet);
         newScet.transform.position = _currentPointScet.position;

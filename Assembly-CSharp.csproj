@@ -59,6 +59,7 @@
     <Compile Include="Assets\Resources\LeanTween\Framework\LeanTween.cs" />
     <Compile Include="Assets\Resources\LeanTween\Examples\Scripts\LogoCinematic.cs" />
     <Compile Include="Assets\Resources\LeanTween\Examples\Scripts\GeneralCameraShake.cs" />
+    <Compile Include="Assets\Scripts\Portal\Portal.cs" />
     <Compile Include="Assets\Resources\LeanTween\Framework\LTDescr.cs" />
     <Compile Include="Assets\Scripts\Test\GameManagerTest.cs" />
     <Compile Include="Assets\Scripts\FigureMain.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="Assets\Scripts\BonusEffect\Smalling\TimerSmall.cs" />
     <Compile Include="Assets\Scripts\Timer\TimerSand.cs" />
     <Compile Include="Assets\Scripts\Obstacle\SpawnPointScet.cs" />
+    <Compile Include="Assets\Scripts\Portal\SceneSwi.cs" />
     <Compile Include="Assets\Resources\LeanTween\Examples\Scripts\GeneralUISpace.cs" />
     <Compile Include="Assets\Resources\LeanTween\Framework\LeanAudio.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Light\LightBox.cs" />
@@ -130,6 +132,7 @@
     <Compile Include="Assets\Scripts\Box\AddCoinBox5.cs" />
     <Compile Include="Assets\Resources\LeanTween\Examples\Scripts\PathSpline2d.cs" />
     <Compile Include="Assets\Scripts\Obstacle\Score\CoinsManager.cs" />
+    <Compile Include="Assets\Scripts\Portal\SceneMain.cs" />
     <Compile Include="Assets\Scripts\BreakPart.cs" />
     <Compile Include="Assets\Scripts\Box\AddCoinBox.cs" />
     <Compile Include="Assets\Resources\LeanTween\Examples\Scripts\TestingZLegacyExt.cs" />
@@ -146,6 +149,7 @@
     <Compile Include="Assets\Resources\LeanTween\Examples\Scripts\PathBezier2d.cs" />
     <Compile Include="Assets\Scripts\DailyBonus\GameControler.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Star\StarBox.cs" />
+    <Compile Include="Assets\Scripts\Portal\Portal2.cs" />
     <Compile Include="Assets\Scripts\SkinControl\ScinControl.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Snow\AddBonusSnow.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Eye\Zoom.cs" />
@@ -163,14 +167,14 @@
     <Compile Include="Assets\Scripts\Box\AddCoinBox3.cs" />
     <Compile Include="Assets\Resources\LeanTween\Examples\Archived\OldGUIExamplesCS.cs" />
     <Compile Include="Assets\Resources\LeanTween\Examples\Scripts\GeneralBasic.cs" />
+    <Compile Include="Assets\Scripts\Portal\NewBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\Timer\TimerStar.cs" />
     <Compile Include="Assets\Scripts\Obstacle\Score\AddScore.cs" />
     <Compile Include="Assets\Resources\LeanTween\Examples\Archived\TestingRigidbodyCS.cs" />
     <Compile Include="Assets\Resources\LeanTween\Examples\Scripts\Following.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Box\SpawnBox.cs" />
-    <Compile Include="Assets\Scripts\Portal\Portal.cs" />
-    <Compile Include="Assets\Scripts\Portal\Portal2.cs" />
+    <Compile Include="Assets\Scripts\Portal\SceneMain2.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
