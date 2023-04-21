@@ -34,6 +34,7 @@ public class ObstacleSpawner : MonoBehaviour
     private bool speedNorm = true;
     private float timer = 0;
     private int _obstacleScore;
+    private int _koefBox = 5;
     void Start()
     {
         BuildTower();
@@ -82,18 +83,53 @@ public class ObstacleSpawner : MonoBehaviour
         //}
         int spawnChanceBox = Random.Range(0, 100);
 
+        //for (int i = 0; i < _boxTemplates.Length; i++)
+        //{
+        //    Vector2Int chances = _boxTemplates[i].GetChances;
+        //    Box spawnedBox = _boxTemplates[i];
+
+        //    if (spawnChanceBox >= chances.x && spawnChanceBox <= chances.y)
+        //    {
+        //        Box newBox = Instantiate(spawnedBox);
+
+        //        newBox.transform.position = _currentPointBox.position;
+        //    }
+        //}
+
+        Box[] boxTemplates = _boxTemplates; // кэшируем _boxTemplates
         for (int i = 0; i < _boxTemplates.Length; i++)
-        {
+        { 
+            Box spawnedBox = _boxTemplates[i];
             Vector2Int chances = _boxTemplates[i].GetChances;
-              Box spawnedBox = _boxTemplates[i];
+            Vector2Int dopchances = _boxTemplates[i].GetDopChances;
+           
 
-            if (spawnChanceBox >= chances.x && spawnChanceBox <= chances.y)
+            if (i == 1)
             {
-                   Box newBox = Instantiate(spawnedBox);
+                _boxTemplates[1].SetDopChances(new Vector2Int((int)(dopchances.x - _koefBox * PlayerPrefs.GetInt("skilkofK1")), (int)(dopchances.y )));
+            }
+            else if (i == 3)
+            {
+                _boxTemplates[1].SetDopChances(new Vector2Int((int)(dopchances.x - _koefBox * PlayerPrefs.GetInt("skilkofK3")), (int)(dopchances.y)));
+            }
+            else if (i == 11)
+            {
+                _boxTemplates[1].SetDopChances(new Vector2Int((int)(dopchances.x - _koefBox * PlayerPrefs.GetInt("skilkofK11")), (int)(dopchances.y)));
+            }
 
-                    newBox.transform.position = _currentPointBox.position;
+            if ((spawnChanceBox >= chances.x && spawnChanceBox <= chances.y) || (spawnChanceBox >= dopchances.x && spawnChanceBox <= dopchances.y))
+            {
+                Box newBox = Instantiate(spawnedBox);
+                newBox.transform.position = _currentPointBox.position;
             }
         }
+
+
+
+
+
+
+
 
         if (Random.Range(0, 100) < _spawnChanceBonus)
         {

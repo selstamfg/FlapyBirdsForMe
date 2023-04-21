@@ -243,7 +243,7 @@ MonoBehaviour:
   - {fileID: 6187455053414926527, guid: c7c25bae52eba2643b637d2942d1ae93, type: 3}
   _spawnChanceBox: 0
   _bonusTemplates:
-  - {fileID: 2703093696364337778, guid: f9e67769cd927884f9813569e1b411f4, type: 3}
+  - {fileID: 4785897963165105494, guid: 8eeb03f108f4a7344bccae93c259d1a0, type: 3}
   _spawnChanceBonus: 100
   _bonusIndex: 1
   _obstaclePassed: 5
@@ -1373,7 +1373,7 @@ MonoBehaviour:
   - {fileID: 6187455053414926527, guid: c7c25bae52eba2643b637d2942d1ae93, type: 3}
   _spawnChanceBox: 0
   _bonusTemplates:
-  - {fileID: 2703093696364337778, guid: f9e67769cd927884f9813569e1b411f4, type: 3}
+  - {fileID: 4785897963165105494, guid: 8eeb03f108f4a7344bccae93c259d1a0, type: 3}
   _spawnChanceBonus: 100
   _bonusIndex: 1
   _obstaclePassed: 5
@@ -6643,7 +6643,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1969429110
 Transform:
   m_ObjectHideFlags: 0
@@ -7282,7 +7282,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2147305895
 Transform:
   m_ObjectHideFlags: 0

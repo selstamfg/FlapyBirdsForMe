@@ -103,9 +103,12 @@
     <Compile Include="Assets\Resources\LeanTween\Examples\Scripts\PathSpline.cs" />
     <Compile Include="Assets\Scripts\Obstacle\BreakObstacleSpawner.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Gost\TimerGost.cs" />
+    <Compile Include="Assets\Scripts\Bird\BirdSkills.cs" />
     <Compile Include="Assets\Scripts\Heart\Heart.cs" />
     <Compile Include="Assets\Scripts\Box\SpawnPoint.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Bullet\Bullet.cs" />
+    <Compile Include="Assets\Scripts\Portal\SceneMain2.cs" />
+    <Compile Include="Assets\Scripts\Nest\Egg.cs" />
     <Compile Include="Assets\Resources\LeanTween\Examples\Scripts\GeneralAdvancedTechniques.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Bullet\AddBonusBullet.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Eye\AddBonusEye.cs" />
@@ -128,8 +131,9 @@
     <Compile Include="Assets\Scripts\BonusEffect\Life\LifeBox.cs" />
     <Compile Include="Assets\Scripts\Box\AddCoinBox7.cs" />
     <Compile Include="Assets\Scripts\DailyBonus\DailyRewards.cs" />
-    <Compile Include="Assets\Resources\LeanTween\Examples\Scripts\TestingZLegacy.cs" />
+    <Compile Include="Assets\Scripts\Nest\GameController.cs" />
     <Compile Include="Assets\Scripts\Box\AddCoinBox5.cs" />
+    <Compile Include="Assets\Resources\LeanTween\Examples\Scripts\TestingZLegacy.cs" />
     <Compile Include="Assets\Resources\LeanTween\Examples\Scripts\PathSpline2d.cs" />
     <Compile Include="Assets\Scripts\Obstacle\Score\CoinsManager.cs" />
     <Compile Include="Assets\Scripts\Portal\SceneMain.cs" />
@@ -167,6 +171,7 @@
     <Compile Include="Assets\Scripts\Box\AddCoinBox3.cs" />
     <Compile Include="Assets\Resources\LeanTween\Examples\Archived\OldGUIExamplesCS.cs" />
     <Compile Include="Assets\Resources\LeanTween\Examples\Scripts\GeneralBasic.cs" />
+    <Compile Include="Assets\Scripts\Nest\Nest.cs" />
     <Compile Include="Assets\Scripts\Portal\NewBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\Timer\TimerStar.cs" />
     <Compile Include="Assets\Scripts\Obstacle\Score\AddScore.cs" />
@@ -174,7 +179,6 @@
     <Compile Include="Assets\Resources\LeanTween\Examples\Scripts\Following.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Box\SpawnBox.cs" />
-    <Compile Include="Assets\Scripts\Portal\SceneMain2.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

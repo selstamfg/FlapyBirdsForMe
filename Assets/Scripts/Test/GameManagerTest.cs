@@ -12,8 +12,6 @@ public class GameManagerTest : MonoBehaviour
     private void OnDisable()
     {
         PlayerTest.onTouched -= ConsoleMessage;
-
-       
     }
 
     private void ConsoleMessage()

@@ -98,7 +98,5 @@ public class TimerSmall : MonoBehaviour
         //     onGrowTimer?.Invoke(_timerOn);
         //  sandi = false;
         // }
-
-
     }
 }
