@@ -8,7 +8,7 @@ public class SceneMain : MonoBehaviour
     public GameObject[] sceneCanvases;
 
     private int currentCanvasIndex = 0;
-    public GameObject _whiteSpritePrefab;
+    public RectTransform _whiteSpritePrefab;
     public float fadeOutTime = 1.0f;
 
     private GameObject whiteSprite;
@@ -60,9 +60,24 @@ public class SceneMain : MonoBehaviour
                 sceneCanvases[0].SetActive(true);
             }
         }
-        whiteSprite = Instantiate(_whiteSpritePrefab);
-        whiteSprite.transform.position = Camera.main.transform.position + Camera.main.transform.forward;
-        StartCoroutine(FadeOut(whiteSprite.GetComponent<SpriteRenderer>()));
+
+        _whiteSpritePrefab.gameObject.SetActive(true);
+
+        LeanTween.alpha(_whiteSpritePrefab, 0, 0);
+        LeanTween.alpha(_whiteSpritePrefab, 1, 0.25f).setOnComplete(() =>
+        {
+            LeanTween.delayedCall(gameObject, 0.5f, () =>
+            {
+                LeanTween.alpha(_whiteSpritePrefab, 0, 0.25f).setOnComplete(() =>
+                {
+                    _whiteSpritePrefab.gameObject.SetActive(false);
+                });
+            });
+        });
+
+        //whiteSprite = Instantiate(_whiteSpritePrefab);
+        //whiteSprite.transform.position = Camera.main.transform.position + Camera.main.transform.forward;
+        //StartCoroutine(FadeOut(whiteSprite.GetComponent<SpriteRenderer>()));
         //  _squareReset.transform.parent = transform;
         //  StartCoroutine(FadeOut(_squareReset.GetComponent<SpriteRenderer>().material));
     }
@@ -106,5 +121,8 @@ public class SceneMain : MonoBehaviour
     private void OnDisable()
     {
         Portal.onTouchedPortal -= Reset;
+        LeanTween.cancel(gameObject);
+        if (_whiteSpritePrefab != null)
+            LeanTween.cancel(_whiteSpritePrefab.gameObject);
     }
 }

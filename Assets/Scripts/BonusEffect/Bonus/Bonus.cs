@@ -20,13 +20,16 @@ public class Bonus : MonoBehaviour
 
     private void BonusedSandiLight()
     {
-        if (PlayerPrefs.GetInt("BonusSand") == 1)
+        int bonusSand = PlayerPrefs.GetInt("BonusSand");
+        int bonusLight = PlayerPrefs.GetInt("BonusLight");
+
+        if (bonusSand == 1)
         {
             Speed = speed * koefSand;
         }
-        else if ((PlayerPrefs.GetInt("BonusLight") == 1))
+        else if (bonusLight == 1)
         {
-            Debug.Log("LightBonus");
+            Debug.Log("LightBox");
             Speed = speed * koefLight;
         }
         else
