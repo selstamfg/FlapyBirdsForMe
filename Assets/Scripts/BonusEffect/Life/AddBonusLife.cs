@@ -10,7 +10,8 @@ public class AddBonusLife : MonoBehaviour
         if (LifeBox.life<2) 
         {
             LifeBox.life++;
-
+            //PlayerPrefs.SetInt("life", LifeBox.life); // сохраняем значение в PlayerPrefs
+           // PlayerPrefs.Save();
         }
     }
 

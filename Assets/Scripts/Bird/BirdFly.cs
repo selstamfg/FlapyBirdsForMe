@@ -135,6 +135,12 @@ public class BirdFly :MonoBehaviour
             _orbiting.BuildStar();
             bonusStarTime.Break();
         }
+
+        if (collision.TryGetComponent(out AddMysticEgg mysticEgg))
+        {
+            mysticEgg.Break();
+        }
+
     }
 
 

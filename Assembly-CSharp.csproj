@@ -83,6 +83,7 @@
     <Compile Include="Assets\Scripts\BonusEffect\Light\LightBox.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Light\AddBonusLight.cs" />
     <Compile Include="Assets\Scripts\Timer\TimerBullet.cs" />
+    <Compile Include="Assets\Scripts\Egg\AddMysticEgg.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Growing\AddBonusGrow.cs" />
     <Compile Include="Assets\Scripts\Timer\TimerSnow.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Bonus\SpawnPointBonus.cs" />
@@ -108,7 +109,6 @@
     <Compile Include="Assets\Scripts\Box\SpawnPoint.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Bullet\Bullet.cs" />
     <Compile Include="Assets\Scripts\Portal\SceneMain2.cs" />
-    <Compile Include="Assets\Scripts\Nest\Egg.cs" />
     <Compile Include="Assets\Resources\LeanTween\Examples\Scripts\GeneralAdvancedTechniques.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Bullet\AddBonusBullet.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Eye\AddBonusEye.cs" />
@@ -124,6 +124,7 @@
     <Compile Include="Assets\Scripts\BonusEffect\Sand\AddBonusSandTime.cs" />
     <Compile Include="Assets\Resources\LeanTween\Examples\Scripts\PathSplineTrack.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Star\Star.cs" />
+    <Compile Include="Assets\Scripts\Egg\EggType.cs" />
     <Compile Include="Assets\Resources\_Heathen Engineering\Samples\UX Examples\Flat Icons [Free]\ToggleSetAnimatorBoolean.cs" />
     <Compile Include="Assets\Resources\LeanTween\Framework\LeanTest.cs" />
     <Compile Include="Assets\Scripts\SkinControl\Money.cs" />
@@ -131,9 +132,9 @@
     <Compile Include="Assets\Scripts\BonusEffect\Life\LifeBox.cs" />
     <Compile Include="Assets\Scripts\Box\AddCoinBox7.cs" />
     <Compile Include="Assets\Scripts\DailyBonus\DailyRewards.cs" />
-    <Compile Include="Assets\Scripts\Nest\GameController.cs" />
-    <Compile Include="Assets\Scripts\Box\AddCoinBox5.cs" />
     <Compile Include="Assets\Resources\LeanTween\Examples\Scripts\TestingZLegacy.cs" />
+    <Compile Include="Assets\Scripts\Box\AddCoinBox5.cs" />
+    <Compile Include="Assets\Scripts\Egg\MysticEgg.cs" />
     <Compile Include="Assets\Resources\LeanTween\Examples\Scripts\PathSpline2d.cs" />
     <Compile Include="Assets\Scripts\Obstacle\Score\CoinsManager.cs" />
     <Compile Include="Assets\Scripts\Portal\SceneMain.cs" />
@@ -167,11 +168,12 @@
     <Compile Include="Assets\Resources\LeanTween\Examples\Scripts\GeneralSequencer.cs" />
     <Compile Include="Assets\Scripts\Obstacle\ObstacleSpawner.cs" />
     <Compile Include="Assets\Resources\Makaka Games\Publisher\Publisher Window\Inspector Info\Scripts\PublisherReadme.cs" />
+    <Compile Include="Assets\Scripts\Egg\Egg2.cs" />
     <Compile Include="Assets\Scripts\Bird\Bird.cs" />
     <Compile Include="Assets\Scripts\Box\AddCoinBox3.cs" />
     <Compile Include="Assets\Resources\LeanTween\Examples\Archived\OldGUIExamplesCS.cs" />
+    <Compile Include="Assets\Scripts\Egg\MysticEggBox.cs" />
     <Compile Include="Assets\Resources\LeanTween\Examples\Scripts\GeneralBasic.cs" />
-    <Compile Include="Assets\Scripts\Nest\Nest.cs" />
     <Compile Include="Assets\Scripts\Portal\NewBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\Timer\TimerStar.cs" />
     <Compile Include="Assets\Scripts\Obstacle\Score\AddScore.cs" />
@@ -179,6 +181,7 @@
     <Compile Include="Assets\Resources\LeanTween\Examples\Scripts\Following.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Box\SpawnBox.cs" />
+    <Compile Include="Assets\Scripts\Skill\SkillControled.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

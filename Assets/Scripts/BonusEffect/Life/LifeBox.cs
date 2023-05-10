@@ -10,7 +10,9 @@ public class LifeBox : MonoBehaviour
     private void Start()
     {
         life = 1;
-      //  LifeLevel();
+        //  LifeLevel();
+        // читаем сохраненное значение из PlayerPrefs
+       // life = PlayerPrefs.GetInt("life", 1);
     }
 
 
@@ -19,13 +21,5 @@ public class LifeBox : MonoBehaviour
     {
         GetComponent<UnityEngine.UI.Text>().text = life.ToString();
     }
-
-
-    
-   
-
-
-
-
 
 }

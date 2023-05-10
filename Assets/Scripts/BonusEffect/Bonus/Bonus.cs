@@ -8,7 +8,10 @@ public class Bonus : MonoBehaviour
     private float Speed;
     float koefSand = 0.5f;
     float koefLight = 2f;
-    
+    // private Vector2Int _dop—hances = new Vector2Int(100, 100);
+    private Vector2Int _dop—hances;
+    [SerializeField] private Vector2Int _chances;
+    [SerializeField] private int _id;
 
     void Update()
     {
@@ -37,6 +40,55 @@ public class Bonus : MonoBehaviour
             Speed = speed;
         }
     }
+
+    //private void BonusedSkill()
+    //{
+    //    int skillNum = PlayerPrefs.GetInt("skillNum");
+       
+
+    //    if (skillNum == 11)
+    //    {
+    //        _dop—hances = new Vector2Int(100, 100);
+    //    }
+    //    else if (skillNum == 12)
+    //    {
+    //        Debug.Log("LightBox");
+    //        Speed = speed * koefLight;
+    //    }
+    //    else
+    //    {
+    //        Speed = speed;
+    //    }
+    //}
+
+   
+    
+
+
+    public Vector2Int GetChances
+    {
+        get => _chances;
+    }
+
+    public int GetId
+    {
+        get => _id;
+    }
+
+    public Vector2Int DopChances
+    {
+
+        get => _dop—hances;
+        set
+        {
+            _dop—hances = value;
+        }
+    }
+
+    //public void SetDopChances(Vector2Int newDopChances)
+    //{
+    //    _dop—hances = newDopChances;
+    //}
 
     //private void BonusedLight()
     //{

@@ -241,7 +241,7 @@ MonoBehaviour:
   - {fileID: 8764891293012385696, guid: 5ea95fd957d68174b9407b0fad2f21f6, type: 3}
   - {fileID: 48988177059364977, guid: 29365601645b7d14d99bfcbaec1721ac, type: 3}
   - {fileID: 6187455053414926527, guid: c7c25bae52eba2643b637d2942d1ae93, type: 3}
-  _spawnChanceBox: 0
+  _spawnChanceBox: 100
   _bonusTemplates:
   - {fileID: 2703093696364337778, guid: f9e67769cd927884f9813569e1b411f4, type: 3}
   - {fileID: 3190936103476901695, guid: 8c5487ed76c6a5e408bad97257b67ef6, type: 3}

@@ -75,6 +75,30 @@ public class SceneMain : MonoBehaviour
             });
         });
 
+        //if (_whiteSpritePrefab != null)
+        //{
+        //    LeanTween.cancel(_whiteSpritePrefab.gameObject);
+        //    _whiteSpritePrefab.gameObject.SetActive(true);
+
+        //    LeanTween.alpha(_whiteSpritePrefab, 0, 0);
+        //    LeanTween.alpha(_whiteSpritePrefab, 1, 0.25f).setOnComplete(() =>
+        //    {
+        //        LeanTween.delayedCall(gameObject, 0.5f, () =>
+        //        {
+        //            LeanTween.alpha(_whiteSpritePrefab, 0, 0.25f).setOnComplete(() =>
+        //            {
+        //                if (_whiteSpritePrefab != null)
+        //                {
+        //                    _whiteSpritePrefab.gameObject.SetActive(false);
+        //                    Destroy(_whiteSpritePrefab.gameObject);
+        //                }
+        //            });
+        //        });
+        //    });
+        //}
+
+
+
         //whiteSprite = Instantiate(_whiteSpritePrefab);
         //whiteSprite.transform.position = Camera.main.transform.position + Camera.main.transform.forward;
         //StartCoroutine(FadeOut(whiteSprite.GetComponent<SpriteRenderer>()));
