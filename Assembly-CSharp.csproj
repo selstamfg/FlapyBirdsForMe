@@ -73,6 +73,7 @@
     <Compile Include="Assets\Resources\LeanTween\Framework\LTSeq.cs" />
     <Compile Include="Assets\Scripts\BirdSpawner.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Skill\SkillControled.cs" />
     <Compile Include="Assets\Scripts\Timer\Timer.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Smalling\TimerSmall.cs" />
     <Compile Include="Assets\Scripts\Timer\TimerSand.cs" />
@@ -181,7 +182,8 @@
     <Compile Include="Assets\Resources\LeanTween\Examples\Scripts\Following.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Box\SpawnBox.cs" />
-    <Compile Include="Assets\Scripts\Skill\SkillControled.cs" />
+    <Compile Include="Assets\Scripts\BonusLevelUp\ClaimBonusUpPanel.cs" />
+    <Compile Include="Assets\Scripts\BonusLevelUp\BonusUp.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

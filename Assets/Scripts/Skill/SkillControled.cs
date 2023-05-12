@@ -5,9 +5,6 @@ using UnityEngine.UI;
 
 public class SkillControled : MonoBehaviour
 {
-   
-
-
     public int skillNum;
     public Button buyButton;
     public Image iLock;
@@ -105,5 +102,39 @@ public class SkillControled : MonoBehaviour
             }
         }
     }
+
+
+    public void UpgradeSkill()
+    {
+        int currentLevel = PlayerPrefs.GetInt(GetComponent<Image>().name + "level", 1);
+        int requiredItemAmount = 1; // Количество расходников, требующихся для улучшения скила
+
+        // Проверяем, есть ли достаточно расходников для улучшения
+        if (PlayerPrefs.GetInt("ItemAmount") >= requiredItemAmount)
+        {
+            // Уменьшаем количество расходников и увеличиваем уровень скила
+            PlayerPrefs.SetInt("ItemAmount", PlayerPrefs.GetInt("ItemAmount") - requiredItemAmount);
+            PlayerPrefs.SetInt(GetComponent<Image>().name + "level", currentLevel + 1);
+
+            // Обновляем UI, чтобы отразить изменения
+           // UpdateUI();
+        }
+        else
+        {
+            // Выводим сообщение о том, что у игрока недостаточно расходников для улучшения
+            Debug.Log("Not enough items to upgrade skill.");
+        }
+    }
+
+    //void UpdateUI()
+    //{
+    //    // Обновляем изображение уровня скила на основе текущего уровня
+    //    int currentLevel = PlayerPrefs.GetInt(GetComponent<Image>().name + "level", 0);
+    //    // ...
+    //}
+
+
+
+
 }
 

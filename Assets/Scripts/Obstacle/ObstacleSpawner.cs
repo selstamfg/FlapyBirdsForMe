@@ -18,7 +18,7 @@ public class ObstacleSpawner : MonoBehaviour
     private Transform _currentPointBox;
     [Header("Bonus")]
     [SerializeField] private Bonus[] _bonusTemplates;
-    [SerializeField] int _spawnChanceBonus;
+   // [SerializeField] int _spawnChanceBonus;
     private Transform _currentPointBonus;
     [Header("Portal")]
     //[SerializeField] private Bonus[] _portalTemplates;
@@ -55,14 +55,14 @@ public class ObstacleSpawner : MonoBehaviour
     {
         if (timer > _MaxTime)
         {
-            GenerateRandomObstacle(_obstacleTemplates, _height, _boxTemplates, _spawnChanceBox, _bonusTemplates, _spawnChanceBonus, _scetTemplates);
+            GenerateRandomObstacle(_obstacleTemplates, _height, _boxTemplates, _bonusTemplates, _scetTemplates);
 
         }
         timer += Time.deltaTime;
     }
     
 
-    public void GenerateRandomObstacle(Obstacle[] _obstacleTemplates, float _height, Box[] _boxTemplates, int _spawnChanceBox, Bonus[] _bonusTemplates, int _spawnChanceBonus, Scet _scetTemplates)
+    public void GenerateRandomObstacle(Obstacle[] _obstacleTemplates, float _height, Box[] _boxTemplates,  Bonus[] _bonusTemplates,  Scet _scetTemplates)
     {
         Obstacle spawnedObstacle = _obstacleTemplates[Random.Range(0, _obstacleTemplates.Length)];
         Obstacle newObstacle = Instantiate(spawnedObstacle);
@@ -73,90 +73,74 @@ public class ObstacleSpawner : MonoBehaviour
         Transform _currentPointBonus = newObstacle.SpawnPointBonus;
         Transform _currentPointScet = newObstacle.SpawnPointScet;
 
-        if (Random.Range(0, 100) < _spawnChanceBox)
-        {
-
-            Box spawnedBox = _boxTemplates[Random.Range(0, _boxTemplates.Length)];
-            Box newBox = Instantiate(spawnedBox);
-
-            newBox.transform.position = _currentPointBox.position;
-
-
-        }
-
-
-        //for (int i = 0; i < _boxTemplates.Length; i++)
+        //if (Random.Range(0, 100) < _spawnChanceBox)
         //{
-        //    Vector2Int chances = _boxTemplates[i].GetChances;
-        //    Box spawnedBox = _boxTemplates[i];
 
-        //    if (spawnChanceBox >= chances.x && spawnChanceBox <= chances.y)
-        //    {
-        //        Box newBox = Instantiate(spawnedBox);
+        //    Box spawnedBox = _boxTemplates[Random.Range(0, _boxTemplates.Length)];
+        //    Box newBox = Instantiate(spawnedBox);
 
-        //        newBox.transform.position = _currentPointBox.position;
-        //    }
-
-        //int spawnChanceBox = Random.Range(0, 100);
-
-        //Box[] boxTemplates = _boxTemplates; // кэшируем _boxTemplates
-        //for (int i = 0; i < _boxTemplates.Length; i++)
-        //{
-        //    Box spawnedBox = _boxTemplates[i];
-        //    Vector2Int chances = _boxTemplates[i].GetChances;
-        //    Vector2Int dopchances = _boxTemplates[i].GetDopChances;
+        //    newBox.transform.position = _currentPointBox.position;
 
 
-        //    if (i == 1)
-        //    {
-        //        _boxTemplates[i].SetDopChances(new Vector2Int((int)(dopchances.x - _koefBox * PlayerPrefs.GetInt("skilkofK1")), (int)(dopchances.y)));
-        //    }
-        //    else if (i == 2)
-        //    {
-        //        _boxTemplates[i].SetDopChances(new Vector2Int((int)(dopchances.x - _koefBox * PlayerPrefs.GetInt("skilkofK3")), (int)(dopchances.y)));
-        //    }
-        //    else if (i == 3)
-        //    {
-        //        _boxTemplates[i].SetDopChances(new Vector2Int((int)(dopchances.x - _koefBox * PlayerPrefs.GetInt("skilkofK11")), (int)(dopchances.y)));
-        //    }
-
-        //    if ((spawnChanceBox >= chances.x && spawnChanceBox <= chances.y) || (spawnChanceBox >= dopchances.x && spawnChanceBox <= dopchances.y))
-        //    {
-        //        Box newBox = Instantiate(spawnedBox);
-        //        newBox.transform.position = _currentPointBox.position;
-        //    }
         //}
 
-
-
-
-
-
-
-
-
-        if (Random.Range(0, 100) < _spawnChanceBonus)
+        int _spawnChanceBox = (Random.Range(0, 100));
         {
-            //if (_obstacleScore % _obstaclePassed ==0)
-            //{
-            //    Bonus spawnedBonus = _bonusTemplates[Random.Range(_bonusIndex, _bonusTemplates.Length)];
-            //    Bonus newBonus = Instantiate(spawnedBonus);
-            //    newBonus.transform.position = _currentPointBonus.position;
-            //}
-            //else
-            //{ 
-            //    Bonus spawnedBonus = _bonusTemplates[Random.Range(0, _bonusIndex)];
-            //    Bonus newBonus = Instantiate(spawnedBonus);
-            //    newBonus.transform.position = _currentPointBonus.position;
-            //}
+            foreach (var currentBox in _boxTemplates)
+            {
+                Vector2Int chances = currentBox.GetChances;
 
-            Bonus spawnedBonus = _bonusTemplates[Random.Range(0, _bonusTemplates.Length)];
-            Bonus newBonus = Instantiate(spawnedBonus);
-            newBonus.transform.position = _currentPointBonus.position;
-
+                if (_spawnChanceBox >= chances.x && _spawnChanceBox <= chances.y) 
+                {
+                    Box newBox = Instantiate(currentBox);
+                    newBox.transform.position = _currentPointBox.position;
+                }
+            }
         }
 
-       // int spawnChanceBonus = Random.Range(0, 100);
+        //if (Random.Range(0, 100) < _spawnChanceBonus)
+        //{
+        //    Bonus spawnedBonus = _bonusTemplates[Random.Range(0, _bonusTemplates.Length)];
+        //    Bonus newBonus = Instantiate(spawnedBonus);
+        //    newBonus.transform.position = _currentPointBonus.position;
+        //}
+
+        //if (Random.Range(0, 100) < _spawnChanceBonus)
+        //{
+        //    Bonus spawnedBonus = _bonusTemplates[Random.Range(0, _bonusTemplates.Length)];
+        //    Bonus newBonus = Instantiate(spawnedBonus);
+        //    newBonus.transform.position = _currentPointBonus.position;
+        //}
+        int _spawnChanceBonus = (Random.Range(0, 100));
+        {
+            foreach (var currentBonus in _bonusTemplates)
+            {
+                int currentSkillNum = PlayerPrefs.GetInt("skillNum");
+                int bonusId = currentBonus.GetId;
+                int currentSkillKof = PlayerPrefs.GetInt("skilKof" + bonusId);
+                Vector2Int chances = currentBonus.GetChances;
+                Vector2Int dopchances = currentBonus.DopChances;
+
+                if (bonusId== currentSkillNum)
+                {
+                    currentBonus.DopChances = (new Vector2Int((int)(dopchances.x - _koefBonus * currentSkillKof), (int)(dopchances.y)));
+                }
+                else
+                {
+                    currentBonus.DopChances = (new Vector2Int((int)(dopchances.x), (int)(dopchances.y)));
+                }
+                
+
+                if ((_spawnChanceBonus >= chances.x && _spawnChanceBonus <= chances.y) || (_spawnChanceBonus >= dopchances.x && _spawnChanceBonus <= dopchances.y))
+                {
+
+                    Bonus newBonus = Instantiate(currentBonus);
+                    newBonus.transform.position = _currentPointBonus.position;
+                }
+            }
+        }
+
+
         if (Random.Range(0, 100) < _spawnChanceBonus)
         {
             int currentBonusId = PlayerPrefs.GetInt("skillNum");
@@ -165,51 +149,20 @@ public class ObstacleSpawner : MonoBehaviour
             Vector2Int chances = currentBonus.GetChances;
             Vector2Int dopchances = currentBonus.DopChances;
 
-            currentBonus.DopChances=(new Vector2Int((int)(dopchances.x - _koefBonus * currentSkillKof), (int)(dopchances.y)));
+            currentBonus.DopChances = (new Vector2Int((int)(dopchances.x - _koefBonus * currentSkillKof), (int)(dopchances.y)));
 
-            if ((_spawnChanceBonus >= chances.x && _spawnChanceBonus <= chances.y) || (_spawnChanceBonus >= dopchances.x && _spawnChanceBonus <= dopchances.y)) 
+            if ((_spawnChanceBonus >= chances.x && _spawnChanceBonus <= chances.y) || (_spawnChanceBonus >= dopchances.x && _spawnChanceBonus <= dopchances.y))
             {
                 Bonus newBonus = Instantiate(currentBonus);
                 newBonus.transform.position = _currentPointBonus.position;
             }
-            //Bonus[] bonusTemplates = _bonusTemplates; // кэшируем _boxTemplates
-            //for (int i = 0; i < _bonusTemplates.Length; i++)
-            //{
-            //    Bonus spawnedBonus = _bonusTemplates[i];
-            //    Vector2Int chances = _bonusTemplates[i].GetChances;
-            //    Vector2Int dopchances = _bonusTemplates[i].GetDopChances;
-
-
-            //    if ((i == 1) && (PlayerPrefs.GetInt("skillNum") == 11))
-            //    {
-            //        _bonusTemplates[i].SetDopChances(new Vector2Int((int)(dopchances.x - _koefBonus * PlayerPrefs.GetInt("skilkofK11")), (int)(dopchances.y)));
-            //    }
-            //    else if ((i == 2) && (PlayerPrefs.GetInt("skillNum") == 12))
-            //    {
-            //        _bonusTemplates[i].SetDopChances(new Vector2Int((int)(dopchances.x - _koefBonus * PlayerPrefs.GetInt("skilkofK12")), (int)(dopchances.y)));
-            //    }
-            //    else if ((i == 3) && (PlayerPrefs.GetInt("skillNum") == 13))
-            //    {
-            //        _bonusTemplates[i].SetDopChances(new Vector2Int((int)(dopchances.x - _koefBonus * PlayerPrefs.GetInt("skilkofK13")), (int)(dopchances.y)));
-            //    }
-
-            //    if ((_spawnChanceBonus >= chances.x && _spawnChanceBonus <= chances.y) || (_spawnChanceBonus >= dopchances.x && _spawnChanceBonus <= dopchances.y))
-            //    {
-            //        Bonus newBonus = Instantiate(spawnedBonus);
-            //        newBonus.transform.position = _currentPointBonus.position;
-            //    }
-            //}
-
-
-
-
 
         }
 
 
 
 
-            Scet spawnedScet = _scetTemplates;
+        Scet spawnedScet = _scetTemplates;
         Scet newScet = Instantiate(spawnedScet);
         newScet.transform.position = _currentPointScet.position;
 
