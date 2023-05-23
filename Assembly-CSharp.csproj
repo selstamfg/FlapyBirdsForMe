@@ -100,12 +100,14 @@
     <Compile Include="Assets\Scripts\Bird\BirdFly.cs" />
     <Compile Include="Assets\Scripts\TimerMain.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Star\SpawnStarPoint.cs" />
+    <Compile Include="Assets\Scripts\BonusLevelUp\BonusUp.cs" />
     <Compile Include="Assets\Resources\LeanTween\Examples\Scripts\PathBezier.cs" />
     <Compile Include="Assets\Scripts\Timer\SimpleTimer.cs" />
     <Compile Include="Assets\Resources\LeanTween\Examples\Scripts\PathSpline.cs" />
     <Compile Include="Assets\Scripts\Obstacle\BreakObstacleSpawner.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Gost\TimerGost.cs" />
     <Compile Include="Assets\Scripts\Bird\BirdSkills.cs" />
+    <Compile Include="Assets\Scripts\Menu\FigureMenu.cs" />
     <Compile Include="Assets\Scripts\Heart\Heart.cs" />
     <Compile Include="Assets\Scripts\Box\SpawnPoint.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Bullet\Bullet.cs" />
@@ -146,7 +148,7 @@
     <Compile Include="Assets\Scripts\BonusEffect\Star\AddBonusStar.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Bonus\Bonus.cs" />
     <Compile Include="Assets\Scripts\Obstacle\Score\ScoreManager.cs" />
-    <Compile Include="Assets\Scripts\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\Menu\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Obstacle\Score\Control.cs" />
     <Compile Include="Assets\Scripts\SkinControl\ScinControl1.cs" />
     <Compile Include="Assets\Scripts\BonusEffect\Gost\AddBonusGost.cs" />
@@ -175,6 +177,7 @@
     <Compile Include="Assets\Resources\LeanTween\Examples\Archived\OldGUIExamplesCS.cs" />
     <Compile Include="Assets\Scripts\Egg\MysticEggBox.cs" />
     <Compile Include="Assets\Resources\LeanTween\Examples\Scripts\GeneralBasic.cs" />
+    <Compile Include="Assets\Scripts\BonusLevelUp\ClaimBonusUpPanel.cs" />
     <Compile Include="Assets\Scripts\Portal\NewBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\Timer\TimerStar.cs" />
     <Compile Include="Assets\Scripts\Obstacle\Score\AddScore.cs" />
@@ -182,10 +185,9 @@
     <Compile Include="Assets\Resources\LeanTween\Examples\Scripts\Following.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Box\SpawnBox.cs" />
-    <Compile Include="Assets\Scripts\BonusLevelUp\ClaimBonusUpPanel.cs" />
-    <Compile Include="Assets\Scripts\BonusLevelUp\BonusUp.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Prefabs\Fonts\chunkfiveex\SIL Open Font License 1.1.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\Resources\LeanTween\ReadMe.txt" />
@@ -193,25 +195,33 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\Resources\LeanTween\License.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\Cute Birds_4\Documentation.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\Resources\Makaka Games\Mobile Game Icon Pack\Fonts\Font_Read_Me.txt" />
+    <None Include="Assets\Cute_Pets\Documentation (Cute_Pets).txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\Prefabs\Fonts\kaushanscript\SIL Open Font License.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\Prefabs\Fonts\peacesans\FREE FONT LICENSE.txt" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\Prefabs\Fonts\molot\molot-eula.txt" />
     <None Include="Assets\2DBirds_Pack3\Documentation 1\Documentation.txt" />
     <None Include="Assets\Resources\LeanTween\Examples\Archived\2dUnlitWithFade.shader" />
     <None Include="Assets\Resources\_Heathen Engineering\Documentation\UX\Flat Icons [Free]\Read Me.txt" />
     <None Include="Assets\Resources\Customizable Skybox\Stylized Sky\Shaders\Stylized Sky.shader" />
+    <None Include="Assets\Prefabs\Fonts\Read Me.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\2DBirds_Eagle\Documentation\Documentation.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\Prefabs\Fonts\firasansheavy\SIL Open Font License.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
@@ -887,6 +897,9 @@
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.PackageManagerUI.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

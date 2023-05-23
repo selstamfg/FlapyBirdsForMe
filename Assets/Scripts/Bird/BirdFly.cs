@@ -53,9 +53,7 @@ public class BirdFly :MonoBehaviour
     }
     private void Update()
     {
-        //  Fly(_velocity);
-       
-        
+        //  Fly(_velocity); 
         BonusedSnow();
         BonusedGost();
         BonusedGrowiSmall();

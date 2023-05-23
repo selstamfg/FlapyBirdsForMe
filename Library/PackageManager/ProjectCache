@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638164721489286941
-    m_Hash: 1982820420
+      ticks: 638204432934861685
+    m_Hash: 2652052024
   m_LockFileStatus:
     m_FilePath: D:/Unity/FlapyBirdsForMe/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638164721489296939
-    m_Hash: 2843118569
+      ticks: 638204433008328656
+    m_Hash: 1031954170
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -114,6 +114,7 @@ m_PackageAssets:
         - 5.2.3
         - 5.2.4
         - 5.2.6
+        - 5.2.7
         - 6.0.0-pre.1
         - 6.0.0-pre.2
         - 6.0.1
@@ -134,6 +135,7 @@ m_PackageAssets:
         - 7.0.8
         - 7.0.9
         - 7.0.10
+        - 7.0.11
         - 8.0.0-pre.3
         - 8.0.0-pre.4
         - 8.0.0
@@ -147,9 +149,12 @@ m_PackageAssets:
         - 9.0.0
         - 9.0.1
         - 9.0.2
+        - 9.0.3
         - 10.0.0-pre.1
         - 10.0.0-pre.2
         - 10.0.0
+        - 10.0.1
+        - 10.0.2
         compatible:
         - 5.0.10
         - 5.1.0
@@ -159,6 +164,7 @@ m_PackageAssets:
         - 5.2.3
         - 5.2.4
         - 5.2.6
+        - 5.2.7
         verified: 5.0.10
       dependencies:
       - name: com.unity.2d.common
@@ -596,6 +602,7 @@ m_PackageAssets:
         - 10.0.0-pre.1
         - 10.0.0-pre.2
         - 10.0.0
+        - 10.0.1
         compatible:
         - 5.1.7
         - 5.2.0
@@ -793,6 +800,7 @@ m_PackageAssets:
         - 2.0.0
         - 2.0.1
         - 2.0.3
+        - 2.0.4
         - 2.1.0-preview.3
         - 2.1.0-preview.5
         - 2.1.0-preview.6
@@ -820,6 +828,7 @@ m_PackageAssets:
         - 2.0.0
         - 2.0.1
         - 2.0.3
+        - 2.0.4
         - 2.1.0-preview.3
         - 2.1.0-preview.5
         - 2.1.0-preview.6
@@ -926,6 +935,8 @@ m_PackageAssets:
         - 3.0.16
         - 3.0.17
         - 3.0.18
+        - 3.0.20
+        - 3.0.21
         compatible:
         - 1.0.2
         - 1.0.6
@@ -961,6 +972,8 @@ m_PackageAssets:
         - 3.0.16
         - 3.0.17
         - 3.0.18
+        - 3.0.20
+        - 3.0.21
         verified: 2.0.7
       dependencies:
       - name: com.unity.test-framework
@@ -1037,6 +1050,7 @@ m_PackageAssets:
         - 2.0.15
         - 2.0.16
         - 2.0.17
+        - 2.0.18
         compatible:
         - 1.0.2
         - 1.0.3
@@ -1058,7 +1072,8 @@ m_PackageAssets:
         - 2.0.15
         - 2.0.16
         - 2.0.17
-        verified: 2.0.17
+        - 2.0.18
+        verified: 2.0.18
       dependencies:
       - name: com.unity.test-framework
         version: 1.1.9
@@ -1165,6 +1180,124 @@ m_PackageAssets:
         url: git+https://github.com/Unity-Technologies/com.unity.ide.vscode.git
         revision: 1f4f605d5c988cb610c372b5c5216c46cc8f5d30
         path: 
+    - packageId: com.unity.package-manager-ui@2.0.7
+      testable: 0
+      isDirectDependency: 1
+      version: 2.0.7
+      source: 1
+      resolvedPath: D:\Unity\FlapyBirdsForMe\Library\PackageCache\com.unity.package-manager-ui@2.0.7
+      assetPath: Packages/com.unity.package-manager-ui
+      name: com.unity.package-manager-ui
+      displayName: Package Manager UI
+      author:
+        name: 
+        email: 
+        url: 
+      category: 
+      type: 
+      description: 'Use the Unity Package Manager user interface to manage a Project''s
+        packages and discover new packages.
+
+
+        For more information, click
+        the ''View documentation'' link above. '
+      status: 4
+      errors: []
+      versions:
+        all:
+        - 0.0.1
+        - 0.0.2
+        - 0.0.3
+        - 0.0.4
+        - 1.2.0
+        - 1.3.0
+        - 1.5.1
+        - 1.6.1
+        - 1.7.0
+        - 1.7.2
+        - 1.8.0
+        - 1.8.1
+        - 1.8.2
+        - 1.8.7
+        - 1.8.8
+        - 1.9.8
+        - 1.9.9
+        - 1.9.10
+        - 1.9.11
+        - 2.0.0-preview.2
+        - 2.0.0-preview.3
+        - 2.0.0-preview.4
+        - 2.0.0-preview.5
+        - 2.0.0-preview.6
+        - 2.0.0-preview.7
+        - 2.0.1
+        - 2.0.2
+        - 2.0.3
+        - 2.0.7
+        - 2.0.8
+        - 2.0.12
+        - 2.0.13
+        - 2.1.0-preview.1
+        - 2.2.0
+        compatible:
+        - 0.0.1
+        - 0.0.2
+        - 0.0.3
+        - 0.0.4
+        - 1.2.0
+        - 1.3.0
+        - 1.5.1
+        - 1.6.1
+        - 1.7.0
+        - 1.7.2
+        - 1.8.0
+        - 1.8.1
+        - 1.8.2
+        - 1.8.7
+        - 1.8.8
+        - 1.9.8
+        - 1.9.9
+        - 1.9.10
+        - 1.9.11
+        - 2.0.0-preview.2
+        - 2.0.0-preview.3
+        - 2.0.0-preview.4
+        - 2.0.0-preview.5
+        - 2.0.0-preview.6
+        - 2.0.0-preview.7
+        - 2.0.1
+        - 2.0.2
+        - 2.0.3
+        - 2.0.7
+        - 2.0.8
+        - 2.0.12
+        - 2.0.13
+        - 2.1.0-preview.1
+        - 2.2.0
+        verified: 2.2.0
+      dependencies: []
+      resolvedDependencies: []
+      keywords: []
+      registry:
+        id: main
+        name: 
+        url: https://packages.unity.com
+        scopes: []
+        isDefault: 1
+        capabilities: 7
+      hasRegistry: 1
+      hideInEditor: 1
+      entitlements:
+        isAllowed: 1
+      isAssetStorePackage: 0
+      datePublishedTicks: 636898897740000000
+      documentationUrl: 
+      hasRepository: 0
+      repository:
+        type: 
+        url: 
+        revision: 
+        path: 
     - packageId: com.unity.probuilder@4.5.2
       testable: 0
       isDirectDependency: 1
@@ -1230,6 +1363,7 @@ m_PackageAssets:
         - 5.0.3
         - 5.0.4
         - 5.0.6
+        - 5.0.7
         compatible:
         - 4.0.2
         - 4.0.3
@@ -1261,6 +1395,7 @@ m_PackageAssets:
         - 5.0.3
         - 5.0.4
         - 5.0.6
+        - 5.0.7
         verified: 4.5.2
       dependencies:
       - name: com.unity.settings-manager
@@ -1368,6 +1503,7 @@ m_PackageAssets:
         - 1.3.2
         - 1.3.3
         - 1.3.4
+        - 1.3.5
         - 2.0.1-exp.1
         - 2.0.1-exp.2
         - 2.0.1-pre.12
@@ -1382,6 +1518,7 @@ m_PackageAssets:
         - 1.3.2
         - 1.3.3
         - 1.3.4
+        - 1.3.5
         - 2.0.1-exp.1
         - 2.0.1-exp.2
         - 2.0.1-pre.12
@@ -1682,6 +1819,7 @@ m_PackageAssets:
         - 1.6.2
         - 1.6.3
         - 1.6.4
+        - 1.6.5
         - 1.7.0-pre.1
         - 1.7.0-pre.2
         - 1.7.0
@@ -1716,6 +1854,7 @@ m_PackageAssets:
         - 1.6.2
         - 1.6.3
         - 1.6.4
+        - 1.6.5
         - 1.7.0-pre.1
         - 1.7.0-pre.2
         - 1.7.0
@@ -1796,6 +1935,7 @@ m_PackageAssets:
       versions:
         all:
         - 1.0.0
+        - 3.0.0-exp.1
         compatible:
         - 1.0.0
         verified: 1.0.0
@@ -3746,6 +3886,8 @@ m_PackageAssets:
         - 3.0.1
         - 3.0.2
         - 3.1.0
+        - 3.2.0
+        - 3.2.1
         compatible:
         - 1.0.0-preview.2
         - 1.0.0-preview.3
@@ -3761,6 +3903,8 @@ m_PackageAssets:
         - 3.0.1
         - 3.0.2
         - 3.1.0
+        - 3.2.0
+        - 3.2.1
         verified: 2.0.2
       dependencies: []
       resolvedDependencies: []
@@ -3829,6 +3973,8 @@ m_PackageAssets:
         - 1.7.0
         - 1.7.1
         - 1.8.1
+        - 1.8.2
+        - 1.9.0
         compatible:
         - 1.0.1
         - 1.1.0-pre.7
@@ -3850,6 +3996,8 @@ m_PackageAssets:
         - 1.7.0
         - 1.7.1
         - 1.8.1
+        - 1.8.2
+        - 1.9.0
         verified: 1.0.1
       dependencies:
       - name: com.unity.modules.unitywebrequest
@@ -4028,6 +4176,7 @@ m_PackageAssets:
         - 9.0.0-pre.1
         - 9.0.0-pre.2
         - 9.0.0
+        - 9.0.1
         compatible:
         - 4.0.4
         - 4.1.0
