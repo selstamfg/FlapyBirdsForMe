@@ -24,7 +24,7 @@ public class SkillControled : MonoBehaviour
         {
             foreach (Image img in skills)
             {
-                if ("skin1" == img.name)
+                if ("skill1" == img.name)
                 {
                     PlayerPrefs.SetInt("skill1" + "buy", 1);
                     PlayerPrefs.SetInt("skill1" + "equip", 1);
