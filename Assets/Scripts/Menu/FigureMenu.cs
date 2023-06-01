@@ -1,10 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class FigureMenu : MonoBehaviour
 {
+    public static int money;
+    public static int animal;
+    public int earnedMoney;
+    public TextMeshProUGUI moneyText;
+    public TextMeshProUGUI animalText;
     public Text nameText;
     public Text descriptionText;
     private int currentObjectIndex = -1;
@@ -18,6 +24,7 @@ public class FigureMenu : MonoBehaviour
         currentObjectIndex = PlayerPrefs.GetInt("skinNum");
         NameCurrentObject();
         SkillCurrentObject();
+        InfoCoin();
     }
 
     void Update()
@@ -53,6 +60,19 @@ public class FigureMenu : MonoBehaviour
         {
             descriptionText.text = skillDescriptions[currentSkillIndex];
         }
+    }
+
+    private void InfoCoin()
+    {
+        money = PlayerPrefs.GetInt("Money");
+        earnedMoney = PlayerPrefs.GetInt("Score");
+        money += earnedMoney;
+        PlayerPrefs.SetInt("Money", money);
+        moneyText.text = money.ToString();
+        earnedMoney = 0;
+        PlayerPrefs.SetInt("Score", earnedMoney);
+        animal = PlayerPrefs.GetInt("Animal");
+        animalText.text = animal.ToString();
     }
 
 }

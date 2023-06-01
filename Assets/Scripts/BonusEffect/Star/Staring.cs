@@ -6,7 +6,7 @@ public class Staring : MonoBehaviour
 {
     [SerializeField] float velocity;
     private Transform _targetPos;
-    private Rigidbody2D rigidbody;
+    private Rigidbody2D _rigidbody;
 
     public void SetTargetTransform(Transform target)
     {
@@ -15,7 +15,7 @@ public class Staring : MonoBehaviour
 
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+        _rigidbody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame

@@ -5,18 +5,18 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private float _speed;
-    private Rigidbody2D rigidbody;
+    private Rigidbody2D _rigidbody;
 
     private void Start()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+        _rigidbody = GetComponent<Rigidbody2D>();
        
     }
 
 
     private void Update()
     {
-        rigidbody.velocity = Vector2.right * _speed;
+        _rigidbody.velocity = Vector2.right * _speed;
         
          Destroy(gameObject, 2);
        // Debug.Log("Vipolnenie bulett update");

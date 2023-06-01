@@ -19,8 +19,8 @@ public class BirdFly :MonoBehaviour
     [Header("Timer Bonused")]
    
     
-    private Rigidbody2D rigidbody;
-    private Transform transform;
+    private Rigidbody2D _rigidbody;
+    private Transform _transform;
     private float _timerAfterGrow;
     int playerObject, obstacleObject;
    
@@ -41,7 +41,7 @@ public class BirdFly :MonoBehaviour
     {
         TimerBonusEnd();
         //rigidbody = GetComponent<Rigidbody2D>();
-        transform = GetComponent<Transform>();
+        _transform = GetComponent<Transform>();
         playerObject = LayerMask.NameToLayer("Player");
         obstacleObject = LayerMask.NameToLayer("Obstacle");
         //Scene currentScene = SceneManager.GetActiveScene();

@@ -353,7 +353,7 @@ RectTransform:
   m_GameObject: {fileID: 5483443933567545689}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 0}
   m_Children:
   - {fileID: 1153489012875498960}
   - {fileID: 6159053384066497781}
@@ -393,8 +393,8 @@ MonoBehaviour:
   dayText: {fileID: 2766426822675780750}
   rewardValue: {fileID: 4540668430038332397}
   rewardIcon: {fileID: 5254152972039046661}
-  rewardCoins: {fileID: -2413806693520163455, guid: ba402fec2f5db8a4f85c7ceb0b340d12, type: 3}
-  rewardAnimal: {fileID: 7482667652216324306, guid: eff0759aecf876b429b11fbc5fe29743, type: 3}
+  rewardCoins: {fileID: 21300042, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
+  rewardAnimal: {fileID: 21300044, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
 --- !u!1 &5580394982845031754
 GameObject:
   m_ObjectHideFlags: 0

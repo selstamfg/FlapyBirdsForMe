@@ -10,19 +10,11 @@ public class MainMenu : MonoBehaviour
     public static int  money;
     public static int animal;
     public int earnedMoney;
-    public Text moneyText;
+    public TextMeshProUGUI moneyText;
     public TextMeshProUGUI animalText;
     private void Start()
     {
-        money = PlayerPrefs.GetInt("Money");
-        earnedMoney = PlayerPrefs.GetInt("Score");
-        money += earnedMoney;
-        PlayerPrefs.SetInt("Money", money);
-        moneyText.text = money.ToString();
-        earnedMoney = 0;
-        PlayerPrefs.SetInt("Score", earnedMoney);
-        animal = PlayerPrefs.GetInt("Animal");
-        animalText.text = animal.ToString();
+        InfoCoin();
     }
 
 
@@ -37,5 +29,17 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("Game Exit");
         Application.Quit();
+    }
+    private void InfoCoin()
+    {
+        money = PlayerPrefs.GetInt("Money");
+        earnedMoney = PlayerPrefs.GetInt("Score");
+        money += earnedMoney;
+        PlayerPrefs.SetInt("Money", money);
+        moneyText.text = money.ToString();
+        earnedMoney = 0;
+        PlayerPrefs.SetInt("Score", earnedMoney);
+        animal = PlayerPrefs.GetInt("Animal");
+        animalText.text = animal.ToString();
     }
 }

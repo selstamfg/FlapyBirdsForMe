@@ -31,11 +31,11 @@ public class ObstacleSpawner : MonoBehaviour
     private float _MaxTime;
     private float koefSand = 2f;
     private float koefLight = 0.5f;
-    private int _missCount;
-    private bool speedNorm = true;
+   // private int _missCount;
+   // private bool speedNorm = true;
     private float timer = 0;
     private int _obstacleScore;
-    private int _koefBox = 5;
+   // private int _koefBox = 5;
     private int _koefBonus = 5;
     void Start()
     {
@@ -141,23 +141,23 @@ public class ObstacleSpawner : MonoBehaviour
         }
 
 
-        if (Random.Range(0, 100) < _spawnChanceBonus)
-        {
-            int currentBonusId = PlayerPrefs.GetInt("skillNum");
-            int currentSkillKof = PlayerPrefs.GetInt("skilkofK" + currentBonusId);
-            Bonus currentBonus = GetBonus(currentBonusId);
-            Vector2Int chances = currentBonus.GetChances;
-            Vector2Int dopchances = currentBonus.DopChances;
+        //if (Random.Range(0, 100) < _spawnChanceBonus)
+        //{
+        //    int currentBonusId = PlayerPrefs.GetInt("skillNum");
+        //    int currentSkillKof = PlayerPrefs.GetInt("skilkofK" + currentBonusId);
+        //    Bonus currentBonus = GetBonus(currentBonusId);
+        //    Vector2Int chances = currentBonus.GetChances;
+        //    Vector2Int dopchances = currentBonus.DopChances;
 
-            currentBonus.DopChances = (new Vector2Int((int)(dopchances.x - _koefBonus * currentSkillKof), (int)(dopchances.y)));
+        //    currentBonus.DopChances = (new Vector2Int((int)(dopchances.x - _koefBonus * currentSkillKof), (int)(dopchances.y)));
 
-            if ((_spawnChanceBonus >= chances.x && _spawnChanceBonus <= chances.y) || (_spawnChanceBonus >= dopchances.x && _spawnChanceBonus <= dopchances.y))
-            {
-                Bonus newBonus = Instantiate(currentBonus);
-                newBonus.transform.position = _currentPointBonus.position;
-            }
+        //    if ((_spawnChanceBonus >= chances.x && _spawnChanceBonus <= chances.y) || (_spawnChanceBonus >= dopchances.x && _spawnChanceBonus <= dopchances.y))
+        //    {
+        //        Bonus newBonus = Instantiate(currentBonus);
+        //        newBonus.transform.position = _currentPointBonus.position;
+        //    }
 
-        }
+        //}
 
 
 
