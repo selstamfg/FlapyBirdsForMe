@@ -264,7 +264,7 @@ MonoBehaviour:
   _shooting: {fileID: 8156038125696447174}
   _orbiting: {fileID: 1330472003878196837}
   _staring: {fileID: 8415634392554271004, guid: 4d6aa1c80e8e7e241b53a38a02a8f86c, type: 3}
-  _growing: 0.7
+  _growing: 0.6
   _smalling: 0.1
   _normaling: 0.2
 --- !u!50 &-4029978743141872518

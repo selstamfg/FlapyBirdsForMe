@@ -174,7 +174,6 @@
     <Compile Include="Assets\Scripts\SkinControl\SkinControl2.cs" />
     <Compile Include="Assets\Resources\LeanTween\Examples\Scripts\GeneralSequencer.cs" />
     <Compile Include="Assets\Scripts\Obstacle\ObstacleSpawner.cs" />
-    <Compile Include="Assets\Resources\Makaka Games\Publisher\Publisher Window\Inspector Info\Scripts\PublisherReadme.cs" />
     <Compile Include="Assets\Scripts\Egg\Egg2.cs" />
     <Compile Include="Assets\Scripts\Bird\Bird.cs" />
     <Compile Include="Assets\Scripts\Box\AddCoinBox3.cs" />
@@ -199,10 +198,9 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\Resources\LeanTween\License.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
-    <None Include="Assets\Cute Birds_4\Documentation.txt" />
+    <None Include="Assets\Resources\Cute Birds_4\Documentation.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
-    <None Include="Assets\Resources\Makaka Games\Mobile Game Icon Pack\Fonts\Font_Read_Me.txt" />
-    <None Include="Assets\Cute_Pets\Documentation (Cute_Pets).txt" />
+    <None Include="Assets\Resources\Cute_Pets\Documentation (Cute_Pets).txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
@@ -215,10 +213,9 @@
     <None Include="Assets\Prefabs\Fonts\peacesans\FREE FONT LICENSE.txt" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\Prefabs\Fonts\molot\molot-eula.txt" />
-    <None Include="Assets\2DBirds_Pack3\Documentation 1\Documentation.txt" />
+    <None Include="Assets\Resources\2DBirds_Pack3\Documentation 1\Documentation.txt" />
     <None Include="Assets\Resources\LeanTween\Examples\Archived\2dUnlitWithFade.shader" />
     <None Include="Assets\Resources\_Heathen Engineering\Documentation\UX\Flat Icons [Free]\Read Me.txt" />
-    <None Include="Assets\Resources\Customizable Skybox\Stylized Sky\Shaders\Stylized Sky.shader" />
     <None Include="Assets\Prefabs\Fonts\Read Me.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />

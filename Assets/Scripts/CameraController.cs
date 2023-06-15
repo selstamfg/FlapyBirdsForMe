@@ -151,5 +151,8 @@ public class CameraController : MonoBehaviour
         zoomOutCoroutine = StartCoroutine(ZoomOutCoroutine());
     }
 
-
+    private void OnDisable()
+    {
+        BirdFly.onTouchedEye -= Eye;
+    }
 }

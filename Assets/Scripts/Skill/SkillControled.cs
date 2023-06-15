@@ -61,7 +61,7 @@ public class SkillControled : MonoBehaviour
     {
         if (PlayerPrefs.GetInt(GetComponent<Image>().name + "buy") == 0)
         {
-            if (MainMenu.money >= price)
+            if (FigureMenu.money >= price)
             {
                 iLock.GetComponent<Image>().sprite = trueLock;
                 buyButton.GetComponent<Image>().sprite = equipped;

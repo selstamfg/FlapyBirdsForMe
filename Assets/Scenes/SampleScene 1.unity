@@ -243,8 +243,7 @@ MonoBehaviour:
   - {fileID: 6187455053414926527, guid: c7c25bae52eba2643b637d2942d1ae93, type: 3}
   _spawnChanceBox: 100
   _bonusTemplates:
-  - {fileID: 1120660047792382718, guid: 31b1ed1a3725f7f47ba5417ad5cd3fe8, type: 3}
-  - {fileID: 4785897963165105494, guid: 8eeb03f108f4a7344bccae93c259d1a0, type: 3}
+  - {fileID: 3190936103476901695, guid: 8c5487ed76c6a5e408bad97257b67ef6, type: 3}
   _bonusIndex: 1
   _obstaclePassed: 5
   _scetTemplates: {fileID: 3947359839665594290, guid: 3247ce351eeb9034ab47b01c1a233540, type: 3}

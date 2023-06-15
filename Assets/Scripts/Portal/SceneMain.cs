@@ -145,8 +145,11 @@ public class SceneMain : MonoBehaviour
     private void OnDisable()
     {
         Portal.onTouchedPortal -= Reset;
-        LeanTween.cancel(gameObject);
-        if (_whiteSpritePrefab != null)
-            LeanTween.cancel(_whiteSpritePrefab.gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        if (LeanTween.isTweening(gameObject))
+            LeanTween.cancel(gameObject);
     }
 }
